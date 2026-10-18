@@ -1,0 +1,14 @@
+Monte Carlo: % of robots that finish the whole dance (random dynamics each)
+dance           test            p3full   schfull    schres
+dance_102       training DR     100.0%         -         -
+dance_102       1.5x wider      100.0%         -         -
+gangnam         training DR     100.0%         -         -
+gangnam         1.5x wider       78.1%         -         -
+schuhplattler   training DR      93.8%     89.1%     20.3%
+schuhplattler   1.5x wider       70.3%     67.2%      4.7%
+
+p3full schuhplattler training-DR falls by time: {'2-3s': 2, '1-2s': 1, '3-4s': 1}  causes: {'ee_body_pos': 4}
+
+schfull schuhplattler training-DR falls by time: {'0-1s': 5, '2-3s': 2}  causes: {'ee_body_pos': 7}
+
+schres schuhplattler training-DR falls by time: {'1-2s': 23, '2-3s': 21, '3-4s': 6, '4-5s': 1}  causes: {'ee_body_pos': 47, 'anchor_pos': 2, 'anchor_pos,ee_body_pos': 2}

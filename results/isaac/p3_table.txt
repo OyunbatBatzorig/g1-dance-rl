@@ -1,0 +1,148 @@
+Monte Carlo: % of robots that finish the whole dance (random dynamics each)
+dance           test                p3
+dance_102       training DR     100.0%
+dance_102       1.5x wider       98.0%
+gangnam         training DR     100.0%
+gangnam         1.5x wider       88.3%
+schuhplattler   training DR      76.6%
+schuhplattler   1.5x wider       50.8%
+
+sweep mass (dance_102): success % per value, other factors random in training DR
+   value        p3
+    0.60      100%
+    0.70      100%
+    0.80      100%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.20      100%
+    1.30       97%
+    1.40       81%
+    1.50       41%
+    1.60       19%
+
+sweep gains (dance_102): success % per value, other factors random in training DR
+   value        p3
+    0.50        0%
+    0.60       19%
+    0.70       72%
+    0.75       94%
+    0.80       97%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.25      100%
+    1.40      100%
+
+sweep friction (dance_102): success % per value, other factors random in training DR
+   value        p3
+    0.10        0%
+    0.20       84%
+    0.30      100%
+    0.50      100%
+    0.80      100%
+    1.00      100%
+    1.50      100%
+    2.00      100%
+
+sweep delay (dance_102): success % per value, other factors random in training DR
+   value        p3
+    0.00      100%
+    5.00      100%
+   10.00      100%
+   15.00      100%
+   20.00      100%
+
+sweep mass (gangnam): success % per value, other factors random in training DR
+   value        p3
+    0.60       91%
+    0.70      100%
+    0.80      100%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.20       97%
+    1.30       75%
+    1.40       47%
+    1.50       12%
+    1.60        0%
+
+sweep gains (gangnam): success % per value, other factors random in training DR
+   value        p3
+    0.50        0%
+    0.60        0%
+    0.70       50%
+    0.75       88%
+    0.80       94%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.25       97%
+    1.40      100%
+
+sweep friction (gangnam): success % per value, other factors random in training DR
+   value        p3
+    0.10        0%
+    0.20        0%
+    0.30       97%
+    0.50      100%
+    0.80      100%
+    1.00      100%
+    1.50       97%
+    2.00      100%
+
+sweep delay (gangnam): success % per value, other factors random in training DR
+   value        p3
+    0.00      100%
+    5.00      100%
+   10.00      100%
+   15.00      100%
+   20.00      100%
+
+sweep mass (schuhplattler): success % per value, other factors random in training DR
+   value        p3
+    0.60       91%
+    0.70       84%
+    0.80       94%
+    0.90       81%
+    1.00       72%
+    1.10       69%
+    1.20       53%
+    1.30       25%
+    1.40        3%
+    1.50        3%
+    1.60        0%
+
+sweep gains (schuhplattler): success % per value, other factors random in training DR
+   value        p3
+    0.50        0%
+    0.60        0%
+    0.70        3%
+    0.75       25%
+    0.80       47%
+    0.90       88%
+    1.00       81%
+    1.10       78%
+    1.25       84%
+    1.40       94%
+
+sweep friction (schuhplattler): success % per value, other factors random in training DR
+   value        p3
+    0.10        0%
+    0.20        0%
+    0.30       56%
+    0.50       91%
+    0.80       88%
+    1.00       69%
+    1.50       66%
+    2.00       50%
+
+sweep delay (schuhplattler): success % per value, other factors random in training DR
+   value        p3
+    0.00       72%
+    5.00       72%
+   10.00       84%
+   15.00       72%
+   20.00       78%
+
+p3 schuhplattler training-DR falls by time: {'2-3s': 32, '1-2s': 14, '3-4s': 6, '5-6s': 2, '8-9s': 2}  causes: {'ee_body_pos': 59, 'anchor_pos,ee_body_pos': 1}

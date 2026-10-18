@@ -1,0 +1,17 @@
+G1 Dance RL
+Copyright 2026 Oyunbat Batzorig
+
+This project is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It contains files derived from, and is meant to be used inside, unitree_rl_lab
+(https://github.com/unitreerobotics/unitree_rl_lab), Copyright Unitree Robotics, Apache License 2.0:
+  tasks/schuhplattler/tracking_env_cfg.py   modified from the Dance-102 mimic task (motion file and task name)
+  tasks/schuhplattler/__init__.py           modified from the Dance-102 mimic task registration
+  tasks/schuhplattler/residual/*            new files that subclass unitree_rl_lab / Isaac Lab classes
+
+Third-party projects used (not included here):
+  Isaac Lab              BSD-3-Clause          https://github.com/isaac-sim/IsaacLab
+  unitree_ros (G1 model) BSD-3-Clause          https://github.com/unitreerobotics/unitree_ros
+  GMR                    MIT                   https://github.com/YanjieZe/GMR
+  GVHMR                  non-commercial research license   https://github.com/zju3dv/GVHMR
+  SMPL-X                 non-commercial license, not redistributed   https://smpl-x.is.tue.mpg.de

@@ -1,0 +1,100 @@
+Monte Carlo: % of robots that finish the whole dance (random dynamics each)
+dance           test                p2
+dance_102       training DR     100.0%
+dance_102       1.5x wider       94.5%
+gangnam         training DR      99.6%
+gangnam         1.5x wider       87.9%
+
+sweep mass (dance_102): success % per value, other factors random in training DR
+   value        p2
+    0.60      100%
+    0.70      100%
+    0.80      100%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.20       97%
+    1.30       91%
+    1.40       84%
+    1.50       41%
+    1.60       25%
+
+sweep gains (dance_102): success % per value, other factors random in training DR
+   value        p2
+    0.50        0%
+    0.60       28%
+    0.70       88%
+    0.75       91%
+    0.80       97%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.25      100%
+    1.40      100%
+
+sweep friction (dance_102): success % per value, other factors random in training DR
+   value        p2
+    0.10        0%
+    0.20       50%
+    0.30      100%
+    0.50      100%
+    0.80      100%
+    1.00      100%
+    1.50      100%
+    2.00      100%
+
+sweep delay (dance_102): success % per value, other factors random in training DR
+   value        p2
+    0.00      100%
+    5.00      100%
+   10.00      100%
+   15.00      100%
+   20.00      100%
+
+sweep mass (gangnam): success % per value, other factors random in training DR
+   value        p2
+    0.60       81%
+    0.70       97%
+    0.80      100%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.20       97%
+    1.30       75%
+    1.40       28%
+    1.50        9%
+    1.60        6%
+
+sweep gains (gangnam): success % per value, other factors random in training DR
+   value        p2
+    0.50        0%
+    0.60        0%
+    0.70       50%
+    0.75       81%
+    0.80      100%
+    0.90      100%
+    1.00      100%
+    1.10      100%
+    1.25      100%
+    1.40       97%
+
+sweep friction (gangnam): success % per value, other factors random in training DR
+   value        p2
+    0.10        0%
+    0.20        0%
+    0.30       84%
+    0.50      100%
+    0.80      100%
+    1.00      100%
+    1.50      100%
+    2.00      100%
+
+sweep delay (gangnam): success % per value, other factors random in training DR
+   value        p2
+    0.00      100%
+    5.00      100%
+   10.00      100%
+   15.00      100%
+   20.00      100%
+
+p2 gangnam training-DR falls by time: {'15-16s': 1}  causes: {'ee_body_pos': 1}

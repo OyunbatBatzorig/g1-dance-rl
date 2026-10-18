@@ -1,0 +1,10 @@
+Monte Carlo: % of robots that finish the whole dance (random dynamics each)
+dance           test          iso5k_p1  iso5k_p2  iso5k_p3
+dance_102       training DR     100.0%    100.0%    100.0%
+dance_102       1.5x wider       96.9%     87.5%     92.2%
+gangnam         training DR          -    100.0%    100.0%
+gangnam         1.5x wider           -     78.1%     79.7%
+schuhplattler   training DR          -         -      4.7%
+schuhplattler   1.5x wider           -         -      0.0%
+
+iso5k_p3 schuhplattler training-DR falls by time: {'2-3s': 28, '1-2s': 25, '3-4s': 5, '4-5s': 1, '6-7s': 1}  causes: {'ee_body_pos': 60, 'anchor_pos,ee_body_pos': 1}

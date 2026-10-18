@@ -1,0 +1,1939 @@
+{
+ "nominal": {
+  "seed": 1000,
+  "dr": {
+   "kp": 1.0,
+   "mass": 1.0,
+   "friction": 1.0,
+   "delay_ms": 0.0
+  },
+  "success": true,
+  "t_fail": null,
+  "cause": null,
+  "joint_rmse": 0.14081299324130278,
+  "body_err": 0.03824358572800172,
+  "duration": 32.28
+ },
+ "runs": [
+  {
+   "seed": 1001,
+   "dr": {
+    "kp": 0.9489819193681596,
+    "mass": 1.0220209752619618,
+    "friction": 1.5381623786570673,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14410770917305687,
+   "body_err": 0.041181780296769804,
+   "duration": 32.28
+  },
+  {
+   "seed": 1002,
+   "dr": {
+    "kp": 0.9363830694251072,
+    "mass": 1.0496309347717534,
+    "friction": 0.8263523227280141,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14466505951758016,
+   "body_err": 0.04119543635355572,
+   "duration": 32.28
+  },
+  {
+   "seed": 1003,
+   "dr": {
+    "kp": 1.0166296267497659,
+    "mass": 0.9653472041564436,
+    "friction": 0.7428086761316111,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14393770257766805,
+   "body_err": 0.04030716952279265,
+   "duration": 32.28
+  },
+  {
+   "seed": 1004,
+   "dr": {
+    "kp": 0.987339388824216,
+    "mass": 0.994510453327572,
+    "friction": 1.8333803136994569,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14418286167672126,
+   "body_err": 0.04154287354976068,
+   "duration": 32.28
+  },
+  {
+   "seed": 1005,
+   "dr": {
+    "kp": 1.0382561924172746,
+    "mass": 0.9945170449729995,
+    "friction": 1.2833345780074614,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1421726817593965,
+   "body_err": 0.03922124442927593,
+   "duration": 32.28
+  },
+  {
+   "seed": 1006,
+   "dr": {
+    "kp": 0.9868659988219443,
+    "mass": 0.9619969823921595,
+    "friction": 1.1258190039725544,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14225985693038873,
+   "body_err": 0.039483767759936006,
+   "duration": 32.28
+  },
+  {
+   "seed": 1007,
+   "dr": {
+    "kp": 1.0217399227896333,
+    "mass": 1.0610107747069102,
+    "friction": 1.6949008510639112,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14501406212859586,
+   "body_err": 0.04281478604674374,
+   "duration": 32.28
+  },
+  {
+   "seed": 1008,
+   "dr": {
+    "kp": 0.9768518446256393,
+    "mass": 1.0089475506933134,
+    "friction": 0.31223501198400405,
+    "delay_ms": 0.0
+   },
+   "success": false,
+   "t_fail": 8.26,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.10855533665155581,
+   "body_err": 0.029070163760212854,
+   "duration": 32.28
+  },
+  {
+   "seed": 1009,
+   "dr": {
+    "kp": 0.9753843741863009,
+    "mass": 0.9789906704107069,
+    "friction": 0.4743131626566328,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14340636528695455,
+   "body_err": 0.0396422612685393,
+   "duration": 32.28
+  },
+  {
+   "seed": 1010,
+   "dr": {
+    "kp": 0.9878842280335326,
+    "mass": 1.0373194356079756,
+    "friction": 1.1250177794523202,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14112754198988878,
+   "body_err": 0.03960431346113797,
+   "duration": 32.28
+  },
+  {
+   "seed": 1011,
+   "dr": {
+    "kp": 0.9601632432494573,
+    "mass": 0.9878885057109911,
+    "friction": 1.0845643620116157,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14334837577020973,
+   "body_err": 0.04104445863754506,
+   "duration": 32.28
+  },
+  {
+   "seed": 1012,
+   "dr": {
+    "kp": 1.0136559437540258,
+    "mass": 1.045758350952867,
+    "friction": 1.2806417339224603,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1455944085580529,
+   "body_err": 0.040392360260276,
+   "duration": 32.28
+  },
+  {
+   "seed": 1013,
+   "dr": {
+    "kp": 1.0581890796570106,
+    "mass": 1.0076023805477803,
+    "friction": 0.5644142893008265,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14460365076955936,
+   "body_err": 0.040629464381435436,
+   "duration": 32.28
+  },
+  {
+   "seed": 1014,
+   "dr": {
+    "kp": 1.024522919034662,
+    "mass": 0.9882640983416092,
+    "friction": 0.46006955526573173,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14153074399538604,
+   "body_err": 0.040783850885442265,
+   "duration": 32.28
+  },
+  {
+   "seed": 1015,
+   "dr": {
+    "kp": 1.0044372793551002,
+    "mass": 1.0312510816075,
+    "friction": 1.1807227190375267,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1423979423247547,
+   "body_err": 0.04123924100278185,
+   "duration": 32.28
+  },
+  {
+   "seed": 1016,
+   "dr": {
+    "kp": 1.0211029621169905,
+    "mass": 1.0199052026980993,
+    "friction": 1.678419279339935,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1444249421206315,
+   "body_err": 0.04147440107976685,
+   "duration": 32.28
+  },
+  {
+   "seed": 1017,
+   "dr": {
+    "kp": 0.9893840406353587,
+    "mass": 1.049494519523954,
+    "friction": 0.6189440125566501,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.13868270901272894,
+   "body_err": 0.03772388599135465,
+   "duration": 32.28
+  },
+  {
+   "seed": 1018,
+   "dr": {
+    "kp": 0.9871687186875393,
+    "mass": 0.9691409978702191,
+    "friction": 0.5296269594612026,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1411483957019081,
+   "body_err": 0.039043974581933046,
+   "duration": 32.28
+  },
+  {
+   "seed": 1019,
+   "dr": {
+    "kp": 1.0192819728649225,
+    "mass": 0.9984078009819176,
+    "friction": 1.7265960492190036,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14406287899269973,
+   "body_err": 0.04070826334146785,
+   "duration": 32.28
+  },
+  {
+   "seed": 1020,
+   "dr": {
+    "kp": 1.0350441511376012,
+    "mass": 0.9342031898570885,
+    "friction": 1.7800658169411834,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1420851119379169,
+   "body_err": 0.040091989548463686,
+   "duration": 32.28
+  },
+  {
+   "seed": 1021,
+   "dr": {
+    "kp": 0.995441502523096,
+    "mass": 1.0239259208634108,
+    "friction": 1.5828704607754742,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14496059530350192,
+   "body_err": 0.04127109022369749,
+   "duration": 32.28
+  },
+  {
+   "seed": 1022,
+   "dr": {
+    "kp": 1.040917073137531,
+    "mass": 1.0060541309561324,
+    "friction": 1.8209154052429772,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14413807063579576,
+   "body_err": 0.040308995772075695,
+   "duration": 32.28
+  },
+  {
+   "seed": 1023,
+   "dr": {
+    "kp": 0.9951896807951633,
+    "mass": 1.00849902461457,
+    "friction": 1.1633922376570296,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1431578725360745,
+   "body_err": 0.039851144227855975,
+   "duration": 32.28
+  },
+  {
+   "seed": 1024,
+   "dr": {
+    "kp": 1.0205783465167564,
+    "mass": 1.004133470987719,
+    "friction": 0.895515563471234,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14364922579390305,
+   "body_err": 0.04239285252147382,
+   "duration": 32.28
+  },
+  {
+   "seed": 1025,
+   "dr": {
+    "kp": 0.979080065566019,
+    "mass": 0.9938356370376101,
+    "friction": 1.4632727665930527,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14202947840731175,
+   "body_err": 0.04141492164814574,
+   "duration": 32.28
+  },
+  {
+   "seed": 1026,
+   "dr": {
+    "kp": 0.964766867087653,
+    "mass": 0.9638611006495014,
+    "friction": 1.8910997724706131,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14241081570290887,
+   "body_err": 0.039956340086680565,
+   "duration": 32.28
+  },
+  {
+   "seed": 1027,
+   "dr": {
+    "kp": 0.9794001019371182,
+    "mass": 0.9861452219898352,
+    "friction": 1.6412115351839902,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14101994136863327,
+   "body_err": 0.039785559176554415,
+   "duration": 32.28
+  },
+  {
+   "seed": 1028,
+   "dr": {
+    "kp": 1.0278129038626445,
+    "mass": 1.0114211053124575,
+    "friction": 0.4417790954550307,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14148566912587468,
+   "body_err": 0.03991387999601651,
+   "duration": 32.28
+  },
+  {
+   "seed": 1029,
+   "dr": {
+    "kp": 1.0158190807805045,
+    "mass": 0.9590668030793795,
+    "friction": 1.8201990423961252,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14043140649207472,
+   "body_err": 0.04000954607614139,
+   "duration": 32.28
+  },
+  {
+   "seed": 1030,
+   "dr": {
+    "kp": 0.9738364707425121,
+    "mass": 1.0474900865539156,
+    "friction": 1.5273873478325972,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14416237286930433,
+   "body_err": 0.04285354498278268,
+   "duration": 32.28
+  },
+  {
+   "seed": 1031,
+   "dr": {
+    "kp": 0.9967693141011418,
+    "mass": 0.9804016840331903,
+    "friction": 1.664261828398374,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14288673732872442,
+   "body_err": 0.041088489045644355,
+   "duration": 32.28
+  },
+  {
+   "seed": 1032,
+   "dr": {
+    "kp": 1.0051142917731108,
+    "mass": 1.019094923939589,
+    "friction": 1.7711097220155054,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14164751881858456,
+   "body_err": 0.03980101834366485,
+   "duration": 32.28
+  },
+  {
+   "seed": 1033,
+   "dr": {
+    "kp": 1.0234795072323102,
+    "mass": 0.9667972727394277,
+    "friction": 1.6402225038299643,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1410863245233147,
+   "body_err": 0.038712459221756694,
+   "duration": 32.28
+  },
+  {
+   "seed": 1034,
+   "dr": {
+    "kp": 1.0092107539642583,
+    "mass": 0.974295846517856,
+    "friction": 0.3874617876593186,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14070020417967558,
+   "body_err": 0.04147665136141707,
+   "duration": 32.28
+  },
+  {
+   "seed": 1035,
+   "dr": {
+    "kp": 1.0189826583474408,
+    "mass": 0.997879049659343,
+    "friction": 1.9262669762588056,
+    "delay_ms": 10.0
+   },
+   "success": false,
+   "t_fail": 17.24,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.13930278946274466,
+   "body_err": 0.04609933501395686,
+   "duration": 32.28
+  },
+  {
+   "seed": 1036,
+   "dr": {
+    "kp": 0.9653672602257133,
+    "mass": 1.0368177844078004,
+    "friction": 0.33702963698516286,
+    "delay_ms": 0.0
+   },
+   "success": false,
+   "t_fail": 9.62,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.11790342207645163,
+   "body_err": 0.03459987788797261,
+   "duration": 32.28
+  },
+  {
+   "seed": 1037,
+   "dr": {
+    "kp": 1.0483930200184803,
+    "mass": 1.017642664164653,
+    "friction": 1.541223309304978,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14268167290986222,
+   "body_err": 0.040089114444767066,
+   "duration": 32.28
+  },
+  {
+   "seed": 1038,
+   "dr": {
+    "kp": 0.9917410512823244,
+    "mass": 1.0097490694550177,
+    "friction": 0.32846854702452893,
+    "delay_ms": 10.0
+   },
+   "success": false,
+   "t_fail": 21.58,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.14768548125629535,
+   "body_err": 0.04784905001526147,
+   "duration": 32.28
+  },
+  {
+   "seed": 1039,
+   "dr": {
+    "kp": 1.0340935007833816,
+    "mass": 1.0235398466728836,
+    "friction": 1.0798131528814106,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1402979748676649,
+   "body_err": 0.039148087652478375,
+   "duration": 32.28
+  },
+  {
+   "seed": 1040,
+   "dr": {
+    "kp": 1.0105954014047247,
+    "mass": 1.0175707565106602,
+    "friction": 0.989106683226646,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14254207895243876,
+   "body_err": 0.03979775524895626,
+   "duration": 32.28
+  },
+  {
+   "seed": 1041,
+   "dr": {
+    "kp": 1.0475270502197238,
+    "mass": 0.9315594646328533,
+    "friction": 0.7620070947859665,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14051123726182382,
+   "body_err": 0.03921997648704739,
+   "duration": 32.28
+  },
+  {
+   "seed": 1042,
+   "dr": {
+    "kp": 1.0054859250894144,
+    "mass": 0.9811452252814595,
+    "friction": 0.5498643836492422,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.13912918700504218,
+   "body_err": 0.03794478008570223,
+   "duration": 32.28
+  },
+  {
+   "seed": 1043,
+   "dr": {
+    "kp": 0.9960280299262025,
+    "mass": 0.9535314011122142,
+    "friction": 1.0121911247226687,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14027913382245502,
+   "body_err": 0.03779499240875695,
+   "duration": 32.28
+  },
+  {
+   "seed": 1044,
+   "dr": {
+    "kp": 0.9926121985469853,
+    "mass": 1.038380346034945,
+    "friction": 1.5378767534227202,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14354420387091218,
+   "body_err": 0.04071130291554111,
+   "duration": 32.28
+  },
+  {
+   "seed": 1045,
+   "dr": {
+    "kp": 0.9908400206672818,
+    "mass": 0.9665164561688699,
+    "friction": 1.5378263223176707,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14183780349772754,
+   "body_err": 0.040708594427489274,
+   "duration": 32.28
+  },
+  {
+   "seed": 1046,
+   "dr": {
+    "kp": 0.9804226309361171,
+    "mass": 0.9927943672602086,
+    "friction": 0.3194573990723865,
+    "delay_ms": 0.0
+   },
+   "success": false,
+   "t_fail": 8.66,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.11203701455061169,
+   "body_err": 0.033039229194174555,
+   "duration": 32.28
+  },
+  {
+   "seed": 1047,
+   "dr": {
+    "kp": 0.9888827719672432,
+    "mass": 1.0276643533884542,
+    "friction": 0.3943560805661337,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1412901071622652,
+   "body_err": 0.04056677088081523,
+   "duration": 32.28
+  },
+  {
+   "seed": 1048,
+   "dr": {
+    "kp": 0.9771258260589877,
+    "mass": 0.9979987433047122,
+    "friction": 1.1921905104240529,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14139411678177016,
+   "body_err": 0.039725010939870416,
+   "duration": 32.28
+  },
+  {
+   "seed": 1049,
+   "dr": {
+    "kp": 1.014288648364459,
+    "mass": 0.9909645579447394,
+    "friction": 1.5906757214585543,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14300682553670954,
+   "body_err": 0.04051713187691754,
+   "duration": 32.28
+  },
+  {
+   "seed": 1050,
+   "dr": {
+    "kp": 0.9728588755111316,
+    "mass": 1.017656006293513,
+    "friction": 1.0665444596672848,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14050004632995056,
+   "body_err": 0.038475950459631605,
+   "duration": 32.28
+  },
+  {
+   "seed": 1051,
+   "dr": {
+    "kp": 0.9779390986683609,
+    "mass": 1.002428217213493,
+    "friction": 0.5376970847990572,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1407900325967266,
+   "body_err": 0.039764558489053733,
+   "duration": 32.28
+  },
+  {
+   "seed": 1052,
+   "dr": {
+    "kp": 0.9751830852409449,
+    "mass": 1.0010735987220485,
+    "friction": 1.3465476733281023,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14209672188084022,
+   "body_err": 0.04037596233029772,
+   "duration": 32.28
+  },
+  {
+   "seed": 1053,
+   "dr": {
+    "kp": 1.0045092880671258,
+    "mass": 1.017372597311053,
+    "friction": 0.7504378470237802,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.141223553400182,
+   "body_err": 0.03938539823915556,
+   "duration": 32.28
+  },
+  {
+   "seed": 1054,
+   "dr": {
+    "kp": 1.0129562659015556,
+    "mass": 1.0288094043624378,
+    "friction": 0.4395375631577333,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14342931038753676,
+   "body_err": 0.04109978247170055,
+   "duration": 32.28
+  },
+  {
+   "seed": 1055,
+   "dr": {
+    "kp": 0.9777782929937612,
+    "mass": 1.0534472469104297,
+    "friction": 1.7841345657902263,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1436874752874747,
+   "body_err": 0.04410965545270237,
+   "duration": 32.28
+  },
+  {
+   "seed": 1056,
+   "dr": {
+    "kp": 1.0010356677472927,
+    "mass": 0.9746008832153995,
+    "friction": 0.5128648856821154,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14297221074708732,
+   "body_err": 0.03857743418535149,
+   "duration": 32.28
+  },
+  {
+   "seed": 1057,
+   "dr": {
+    "kp": 0.9630630896986119,
+    "mass": 0.9830687131720927,
+    "friction": 0.49537863760894907,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1413451843423199,
+   "body_err": 0.03837828262007673,
+   "duration": 32.28
+  },
+  {
+   "seed": 1058,
+   "dr": {
+    "kp": 0.9820117533209738,
+    "mass": 0.9975021251811103,
+    "friction": 1.3017138662991368,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1455404191089576,
+   "body_err": 0.04161455932466752,
+   "duration": 32.28
+  },
+  {
+   "seed": 1059,
+   "dr": {
+    "kp": 0.9789261909542095,
+    "mass": 0.9358378585572671,
+    "friction": 0.8515912657787894,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14281447224766985,
+   "body_err": 0.03844792220985324,
+   "duration": 32.28
+  },
+  {
+   "seed": 1060,
+   "dr": {
+    "kp": 1.0584947578530004,
+    "mass": 1.0358650431294536,
+    "friction": 0.32076114124418653,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14620040487449884,
+   "body_err": 0.04344916171182142,
+   "duration": 32.28
+  },
+  {
+   "seed": 1061,
+   "dr": {
+    "kp": 0.934727887421661,
+    "mass": 1.023550966977455,
+    "friction": 1.8561660264876283,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14390263849323617,
+   "body_err": 0.04232560858522073,
+   "duration": 32.28
+  },
+  {
+   "seed": 1062,
+   "dr": {
+    "kp": 0.9748298070793336,
+    "mass": 1.0348460527583532,
+    "friction": 1.2676439482441266,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1463261913029399,
+   "body_err": 0.042704682967466386,
+   "duration": 32.28
+  },
+  {
+   "seed": 1063,
+   "dr": {
+    "kp": 1.0046990824757105,
+    "mass": 0.9626007938278528,
+    "friction": 1.4224436162312977,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1410278575088815,
+   "body_err": 0.04021366095102384,
+   "duration": 32.28
+  },
+  {
+   "seed": 1064,
+   "dr": {
+    "kp": 0.964181331863951,
+    "mass": 0.9498832176739463,
+    "friction": 1.9344740788944903,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14075641377985723,
+   "body_err": 0.04137045721216932,
+   "duration": 32.28
+  },
+  {
+   "seed": 1065,
+   "dr": {
+    "kp": 1.0222514232478064,
+    "mass": 1.062348411244756,
+    "friction": 1.1948563159891403,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14324718012061774,
+   "body_err": 0.040142755344697446,
+   "duration": 32.28
+  },
+  {
+   "seed": 1066,
+   "dr": {
+    "kp": 1.0384139383466477,
+    "mass": 0.9888086842685685,
+    "friction": 0.7556917311434511,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14062698197871862,
+   "body_err": 0.037834843801650156,
+   "duration": 32.28
+  },
+  {
+   "seed": 1067,
+   "dr": {
+    "kp": 1.013997147334471,
+    "mass": 0.9573781049642418,
+    "friction": 0.7381024327783966,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1417892701693802,
+   "body_err": 0.0399042628674852,
+   "duration": 32.28
+  },
+  {
+   "seed": 1068,
+   "dr": {
+    "kp": 1.0658133682436663,
+    "mass": 1.0053493627579608,
+    "friction": 1.5578187497773088,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1439596728426914,
+   "body_err": 0.04149588585893784,
+   "duration": 32.28
+  },
+  {
+   "seed": 1069,
+   "dr": {
+    "kp": 1.0187354569828277,
+    "mass": 1.0454572485362565,
+    "friction": 1.0555525843065119,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1394891298910103,
+   "body_err": 0.03820448395242848,
+   "duration": 32.28
+  },
+  {
+   "seed": 1070,
+   "dr": {
+    "kp": 0.9988174584946388,
+    "mass": 0.9580913845837746,
+    "friction": 0.7746455127564575,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14529812923296026,
+   "body_err": 0.04070915682562159,
+   "duration": 32.28
+  },
+  {
+   "seed": 1071,
+   "dr": {
+    "kp": 1.0000500105126804,
+    "mass": 0.9470717378849751,
+    "friction": 1.2247216733013253,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14079240111338157,
+   "body_err": 0.03926375776608759,
+   "duration": 32.28
+  },
+  {
+   "seed": 1072,
+   "dr": {
+    "kp": 1.0341892726875406,
+    "mass": 0.9862973662221571,
+    "friction": 1.2214242795826982,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14073582419344025,
+   "body_err": 0.03937632945997907,
+   "duration": 32.28
+  },
+  {
+   "seed": 1073,
+   "dr": {
+    "kp": 1.003703167597927,
+    "mass": 0.9788650526894087,
+    "friction": 1.6051277507612909,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1402091242795846,
+   "body_err": 0.03895742006116084,
+   "duration": 32.28
+  },
+  {
+   "seed": 1074,
+   "dr": {
+    "kp": 1.002575302366864,
+    "mass": 1.0430696407369184,
+    "friction": 0.8511241908547806,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14135311709659457,
+   "body_err": 0.038488873385076394,
+   "duration": 32.28
+  },
+  {
+   "seed": 1075,
+   "dr": {
+    "kp": 1.0432495577708596,
+    "mass": 1.0467937797028477,
+    "friction": 1.4893756102338358,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1456362544616234,
+   "body_err": 0.041715084557639906,
+   "duration": 32.28
+  },
+  {
+   "seed": 1076,
+   "dr": {
+    "kp": 1.0374199700844224,
+    "mass": 0.9768669441909952,
+    "friction": 1.2032740488403344,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14150453371851085,
+   "body_err": 0.0390543815628124,
+   "duration": 32.28
+  },
+  {
+   "seed": 1077,
+   "dr": {
+    "kp": 1.0150550596444514,
+    "mass": 0.9874395979442349,
+    "friction": 0.7947585484363029,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14494582498249342,
+   "body_err": 0.04006866715612562,
+   "duration": 32.28
+  },
+  {
+   "seed": 1078,
+   "dr": {
+    "kp": 0.9787469724272261,
+    "mass": 1.002539301290183,
+    "friction": 1.3061800558102583,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14328071164275624,
+   "body_err": 0.03975792441849072,
+   "duration": 32.28
+  },
+  {
+   "seed": 1079,
+   "dr": {
+    "kp": 1.0608214478541131,
+    "mass": 1.0053301786524933,
+    "friction": 0.9434396891827967,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14163877377688394,
+   "body_err": 0.0391632569343669,
+   "duration": 32.28
+  },
+  {
+   "seed": 1080,
+   "dr": {
+    "kp": 1.0150954749891539,
+    "mass": 1.0426189178340197,
+    "friction": 1.4645059934400313,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1483641633858224,
+   "body_err": 0.043123805025026614,
+   "duration": 32.28
+  },
+  {
+   "seed": 1081,
+   "dr": {
+    "kp": 1.0313987311100123,
+    "mass": 1.013664262096193,
+    "friction": 0.4278843846831887,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14341851072721584,
+   "body_err": 0.04055429986606882,
+   "duration": 32.28
+  },
+  {
+   "seed": 1082,
+   "dr": {
+    "kp": 1.0069445254029168,
+    "mass": 1.0563367445386098,
+    "friction": 0.9971632650549751,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14459591200882055,
+   "body_err": 0.04038125243858245,
+   "duration": 32.28
+  },
+  {
+   "seed": 1083,
+   "dr": {
+    "kp": 0.9863594700679473,
+    "mass": 0.9335703280186941,
+    "friction": 1.1734211324223858,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14136164614802804,
+   "body_err": 0.03937555605440624,
+   "duration": 32.28
+  },
+  {
+   "seed": 1084,
+   "dr": {
+    "kp": 0.9828167538758895,
+    "mass": 0.9678138106167729,
+    "friction": 1.247249164397912,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14053064109093036,
+   "body_err": 0.039219894004511584,
+   "duration": 32.28
+  },
+  {
+   "seed": 1085,
+   "dr": {
+    "kp": 0.9973398876143069,
+    "mass": 0.9732243190462353,
+    "friction": 1.1395268886755041,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14270301034928087,
+   "body_err": 0.03957661557529917,
+   "duration": 32.28
+  },
+  {
+   "seed": 1086,
+   "dr": {
+    "kp": 0.9935342288696483,
+    "mass": 0.9676456720925439,
+    "friction": 1.1085382343751695,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14149864225617173,
+   "body_err": 0.03868414570437002,
+   "duration": 32.28
+  },
+  {
+   "seed": 1087,
+   "dr": {
+    "kp": 0.99915231427196,
+    "mass": 1.0261935857994842,
+    "friction": 0.5810071622976757,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14200911307258113,
+   "body_err": 0.03923037513326672,
+   "duration": 32.28
+  },
+  {
+   "seed": 1088,
+   "dr": {
+    "kp": 1.0061984997220976,
+    "mass": 0.9661686297871955,
+    "friction": 1.1520441222138695,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14277992557161212,
+   "body_err": 0.03969994493650707,
+   "duration": 32.28
+  },
+  {
+   "seed": 1089,
+   "dr": {
+    "kp": 1.0015954722805123,
+    "mass": 1.018402404886626,
+    "friction": 1.5530451963482175,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14296205073537502,
+   "body_err": 0.04147572913794358,
+   "duration": 32.28
+  },
+  {
+   "seed": 1090,
+   "dr": {
+    "kp": 1.030612456633161,
+    "mass": 0.9340411780356916,
+    "friction": 1.5517435074441888,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14217636182053028,
+   "body_err": 0.04018692487330485,
+   "duration": 32.28
+  },
+  {
+   "seed": 1091,
+   "dr": {
+    "kp": 0.9742461165195441,
+    "mass": 0.9836297552546251,
+    "friction": 0.34898614193915645,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14157709287167916,
+   "body_err": 0.039753023992161386,
+   "duration": 32.28
+  },
+  {
+   "seed": 1092,
+   "dr": {
+    "kp": 0.9875777579065257,
+    "mass": 1.0013556781470487,
+    "friction": 0.310388572502077,
+    "delay_ms": 0.0
+   },
+   "success": false,
+   "t_fail": 8.96,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.11549641567657187,
+   "body_err": 0.03323792503471163,
+   "duration": 32.28
+  },
+  {
+   "seed": 1093,
+   "dr": {
+    "kp": 1.0103706793395981,
+    "mass": 1.0213725479140048,
+    "friction": 0.7013638158300848,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14124226977992904,
+   "body_err": 0.03909314973862718,
+   "duration": 32.28
+  },
+  {
+   "seed": 1094,
+   "dr": {
+    "kp": 0.962827870443544,
+    "mass": 0.9629531081211397,
+    "friction": 1.5638271058268853,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14359727935559424,
+   "body_err": 0.0409054465287993,
+   "duration": 32.28
+  },
+  {
+   "seed": 1095,
+   "dr": {
+    "kp": 1.006371297226608,
+    "mass": 1.0160309550315927,
+    "friction": 1.9884714633644358,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1473767344887216,
+   "body_err": 0.043120590069880185,
+   "duration": 32.28
+  },
+  {
+   "seed": 1096,
+   "dr": {
+    "kp": 1.0103059497802223,
+    "mass": 0.9952393760780308,
+    "friction": 0.6279789297422078,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.13909458105651093,
+   "body_err": 0.038351679711529356,
+   "duration": 32.28
+  },
+  {
+   "seed": 1097,
+   "dr": {
+    "kp": 0.9773294769784989,
+    "mass": 0.9980012411575543,
+    "friction": 1.19128773829856,
+    "delay_ms": 10.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14377196011129617,
+   "body_err": 0.03978341310186905,
+   "duration": 32.28
+  },
+  {
+   "seed": 1098,
+   "dr": {
+    "kp": 0.9978994294906608,
+    "mass": 1.056689186725795,
+    "friction": 1.1712170632185017,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14547028090657144,
+   "body_err": 0.042273939051403364,
+   "duration": 32.28
+  },
+  {
+   "seed": 1099,
+   "dr": {
+    "kp": 0.9965498327601651,
+    "mass": 1.0379899801806711,
+    "friction": 0.7987820567099253,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14222246399534275,
+   "body_err": 0.041472186285863945,
+   "duration": 32.28
+  },
+  {
+   "seed": 1100,
+   "dr": {
+    "kp": 0.9433614276751234,
+    "mass": 0.8936107687921823,
+    "friction": 1.4644022629636864,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14089288647495954,
+   "body_err": 0.0381828171353956,
+   "duration": 32.28
+  },
+  {
+   "seed": 1101,
+   "dr": {
+    "kp": 0.9980425299843191,
+    "mass": 1.0278723027050998,
+    "friction": 1.8088880625282688,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1442656656403545,
+   "body_err": 0.042972358000590793,
+   "duration": 32.28
+  },
+  {
+   "seed": 1102,
+   "dr": {
+    "kp": 0.9886666979187433,
+    "mass": 1.0101749924004984,
+    "friction": 1.6769002281335597,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1446022780763261,
+   "body_err": 0.04112989859059528,
+   "duration": 32.28
+  },
+  {
+   "seed": 1103,
+   "dr": {
+    "kp": 1.0182818958513506,
+    "mass": 0.9678905981739115,
+    "friction": 1.2717125050626141,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14163199385991068,
+   "body_err": 0.03954579504685556,
+   "duration": 32.28
+  },
+  {
+   "seed": 1104,
+   "dr": {
+    "kp": 0.9961423409312612,
+    "mass": 1.0161416634241716,
+    "friction": 1.1377669422098688,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14492755935219778,
+   "body_err": 0.043078294449655934,
+   "duration": 32.28
+  },
+  {
+   "seed": 1105,
+   "dr": {
+    "kp": 0.9943506864004035,
+    "mass": 1.022994844948742,
+    "friction": 0.7214624207272431,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14053448901509852,
+   "body_err": 0.038999404102111494,
+   "duration": 32.28
+  },
+  {
+   "seed": 1106,
+   "dr": {
+    "kp": 1.047967183905367,
+    "mass": 1.0172829909914738,
+    "friction": 1.977716650922101,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14322148281108535,
+   "body_err": 0.041284429518122535,
+   "duration": 32.28
+  },
+  {
+   "seed": 1107,
+   "dr": {
+    "kp": 1.030613246145596,
+    "mass": 1.013782232169455,
+    "friction": 0.9094712958192868,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1436877187464703,
+   "body_err": 0.040038120707108375,
+   "duration": 32.28
+  },
+  {
+   "seed": 1108,
+   "dr": {
+    "kp": 0.9675067595584997,
+    "mass": 1.0794264259671373,
+    "friction": 0.506784944161316,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1416423811870272,
+   "body_err": 0.04135720732954999,
+   "duration": 32.28
+  },
+  {
+   "seed": 1109,
+   "dr": {
+    "kp": 1.0073426706815345,
+    "mass": 1.037358040734256,
+    "friction": 0.6250967372146392,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14138999134404912,
+   "body_err": 0.03859025734279336,
+   "duration": 32.28
+  },
+  {
+   "seed": 1110,
+   "dr": {
+    "kp": 1.018856975371566,
+    "mass": 0.9882724079750911,
+    "friction": 0.32686881949232627,
+    "delay_ms": 0.0
+   },
+   "success": false,
+   "t_fail": 10.56,
+   "cause": "ee_body_pos",
+   "joint_rmse": 0.12218425963266676,
+   "body_err": 0.03337521449942906,
+   "duration": 32.28
+  },
+  {
+   "seed": 1111,
+   "dr": {
+    "kp": 1.0211930410407761,
+    "mass": 0.9728788086998996,
+    "friction": 1.761605914900095,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14279417083824536,
+   "body_err": 0.03977250870124814,
+   "duration": 32.28
+  },
+  {
+   "seed": 1112,
+   "dr": {
+    "kp": 0.967311844261404,
+    "mass": 1.0026771700406893,
+    "friction": 1.0930874045065941,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14445755911365077,
+   "body_err": 0.0406274495374661,
+   "duration": 32.28
+  },
+  {
+   "seed": 1113,
+   "dr": {
+    "kp": 0.9699561362851942,
+    "mass": 0.9547943206307067,
+    "friction": 0.6364665926178548,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1423299880086159,
+   "body_err": 0.03932878133149086,
+   "duration": 32.28
+  },
+  {
+   "seed": 1114,
+   "dr": {
+    "kp": 0.9947958905660277,
+    "mass": 1.0270328175470598,
+    "friction": 1.2409885344825151,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14356018753834987,
+   "body_err": 0.041190488966238836,
+   "duration": 32.28
+  },
+  {
+   "seed": 1115,
+   "dr": {
+    "kp": 1.0232298912430888,
+    "mass": 0.9974537716655619,
+    "friction": 1.9022809217132073,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1438438662722335,
+   "body_err": 0.04137048655861928,
+   "duration": 32.28
+  },
+  {
+   "seed": 1116,
+   "dr": {
+    "kp": 1.0028946915360442,
+    "mass": 0.9654999278306967,
+    "friction": 1.1165768172401112,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14185525171524324,
+   "body_err": 0.03999431971279113,
+   "duration": 32.28
+  },
+  {
+   "seed": 1117,
+   "dr": {
+    "kp": 0.9593571496888685,
+    "mass": 0.9939877377202464,
+    "friction": 1.4145173561473963,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1437039195211118,
+   "body_err": 0.04177646975771773,
+   "duration": 32.28
+  },
+  {
+   "seed": 1118,
+   "dr": {
+    "kp": 0.9371950247562159,
+    "mass": 1.0264137684584982,
+    "friction": 0.9499423692226987,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14374731109771235,
+   "body_err": 0.041533045107590365,
+   "duration": 32.28
+  },
+  {
+   "seed": 1119,
+   "dr": {
+    "kp": 1.0175481098473138,
+    "mass": 1.0073841054593013,
+    "friction": 1.8944947313835505,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1406226178345302,
+   "body_err": 0.04080018610415829,
+   "duration": 32.28
+  },
+  {
+   "seed": 1120,
+   "dr": {
+    "kp": 0.9846011433008941,
+    "mass": 1.0235498631757252,
+    "friction": 0.7327564002248859,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14427321818361308,
+   "body_err": 0.03967428870914783,
+   "duration": 32.28
+  },
+  {
+   "seed": 1121,
+   "dr": {
+    "kp": 0.96867691412252,
+    "mass": 0.9932980625177612,
+    "friction": 1.1583557450986701,
+    "delay_ms": 20.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.1432605443749618,
+   "body_err": 0.0405934368570823,
+   "duration": 32.28
+  },
+  {
+   "seed": 1122,
+   "dr": {
+    "kp": 1.0359299755285742,
+    "mass": 0.9750310112238927,
+    "friction": 1.816429143242892,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14333841878539574,
+   "body_err": 0.04051215756764622,
+   "duration": 32.28
+  },
+  {
+   "seed": 1123,
+   "dr": {
+    "kp": 0.9836942181936305,
+    "mass": 1.0143164296235239,
+    "friction": 1.6902828998252166,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14267990148076215,
+   "body_err": 0.04243162154785617,
+   "duration": 32.28
+  },
+  {
+   "seed": 1124,
+   "dr": {
+    "kp": 1.019253510294161,
+    "mass": 1.0201918545021873,
+    "friction": 0.9681722072314847,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14167744459538437,
+   "body_err": 0.03816914588303913,
+   "duration": 32.28
+  },
+  {
+   "seed": 1125,
+   "dr": {
+    "kp": 0.9871353740862264,
+    "mass": 0.9578277090236468,
+    "friction": 1.828506021472213,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14039129496179498,
+   "body_err": 0.039752375302195504,
+   "duration": 32.28
+  },
+  {
+   "seed": 1126,
+   "dr": {
+    "kp": 1.0068124279076247,
+    "mass": 1.0042390627860547,
+    "friction": 0.6731890546330049,
+    "delay_ms": 5.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14365884799301307,
+   "body_err": 0.04027114611347506,
+   "duration": 32.28
+  },
+  {
+   "seed": 1127,
+   "dr": {
+    "kp": 0.953563076034908,
+    "mass": 1.0477824042306125,
+    "friction": 1.9034435831898735,
+    "delay_ms": 15.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14378910440282724,
+   "body_err": 0.04293931651767437,
+   "duration": 32.28
+  },
+  {
+   "seed": 1128,
+   "dr": {
+    "kp": 0.9496512428165552,
+    "mass": 1.031853564512823,
+    "friction": 0.47861971473190357,
+    "delay_ms": 0.0
+   },
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "joint_rmse": 0.14235857476611763,
+   "body_err": 0.04062854792768642,
+   "duration": 32.28
+  }
+ ]
+}
