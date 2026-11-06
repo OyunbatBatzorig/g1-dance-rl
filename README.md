@@ -35,10 +35,41 @@ get worse either.** The biggest factor was the **quality of the reference motion
   action policy could. Cleaning the reference (balance fix, `tools/balance_fix.py`) plus the full action raised the
   3-dance policy from 36% to 70% on Schuhplattler.
 
-**Limits:** one seed per policy, three dances, 3–10k iterations, 64 trials per test (about ±4%), simulation only
+**Limits (Policies 1–3):** one seed per policy, three dances, 3–10k iterations, 64 trials per test (about ±4%), simulation only
 (no hardware). Differences of a few percent between Policies 1–3 may flip with another seed.
 
 Full numbers: [`results/RESULTS.md`](results/RESULTS.md).
+
+## Update, November 2026: Schuhplattler v3s on the real G1
+
+* **v3s reference:**
+  * starts from the v2 reference
+  * hand and foot poses edited by hand in a reference editor (`tools/ref_edit.py`)
+  * one smooth tempo curve instead of local speed changes (`tools/tempo_smooth.py`)
+* **Policies:**
+  * `MimicAction-DRPlus-SchV3s`: 30k iterations with extra sim-to-real randomization (DR+)
+  * `MimicAction-DRFloor-SchV3s`: fine-tuned 5k iterations on mixed floors (flat, rough, stone-like, slope) and
+    friction 0.2–2.0
+* **MuJoCo, 512 runs:**
+  * 97.9% finish under the training randomization, with **0 real falls**
+  * the remaining terminations are a brief foot-height deviation in a heel slap, after which the robot keeps
+    dancing upright
+  * only very slippery floors (μ ≤ 0.3) make it fall
+* **Deploy:**
+  * ONNX export and a cleaned `deploy.yaml`, checked against the C++ deploy logic (Python copy, 512 runs) and
+    the real `g1_ctrl` in MuJoCo
+  * keyboard instead of a gamepad (`sim_cpp/`)
+* **Real robot:** on a gantry, the full dance ran **6/6 times** (Nov 2, 2026).
+
+Lessons for the deploy:
+* Start with a 2 s blend from the standing pose. Without it the arms jump to the first frame.
+* Never slow the dance down. At 0.5× speed the robot falls in about 100% of MuJoCo runs, because the dance relies
+  on its own dynamics on one leg.
+* End every played clip in the standing pose, so the Velocity policy takes over smoothly. Stopping a clip early
+  makes Velocity snap the arms down.
+
+Numbers: [`results/v3s/RESULTS_v3s.md`](results/v3s/RESULTS_v3s.md). Policy, ONNX package and motions are on
+Hugging Face.
 
 ## Method
 
@@ -70,7 +101,10 @@ scripts/robust/                 Isaac Lab Monte Carlo / sweep robustness tests a
 scripts/sim2sim/                MuJoCo sim-to-sim player and Monte Carlo test
 tools/                          reference-motion tools: GMR retarget, CSV export, grounding, ending, arm copy,
                                 balance fix (IK), motion and ZMP checks
-results/                        result tables (Isaac Lab) and MuJoCo JSON results
+scripts/deploy/                 ONNX export, Unitree deploy package, C++ deploy logic in MuJoCo, balance check
+sim_cpp/                        patches + scripts: unitree_mujoco with a keyboard gamepad, g1_ctrl with the
+                                Schuhplattler states; run_sim.sh (MuJoCo) and run_real.sh (real G1)
+results/                        result tables (Isaac Lab) and MuJoCo JSON results; results/v3s/ for the update
 ```
 
 ## Setup
@@ -124,6 +158,23 @@ python <repo>/scripts/sim2sim/sim2sim_dance.py --checkpoint <run>/model_9999.pt 
 | `MimicAction-DR-D102-Multi3Bal` | Policy 3 full (Schuhplattler v2) |
 | `MimicAction-DR-Sch` / `Residual-DR-Sch-Wide` | Schuhplattler only, full / residual |
 | `MimicAction-DR-SchBal2` | Schuhplattler v2 only, full |
+| `MimicAction-DRPlus-SchV3s` | Schuhplattler v3s, full, DR+ (30k) |
+| `MimicAction-DRFloor-SchV3s` | Schuhplattler v3s, full, DR+ and floor mix (+5k): **the real-robot policy** |
+
+### Sim-to-real (v3s)
+
+```bash
+# deploy package: ONNX + deploy.yaml + motion CSVs (or download it from Hugging Face: deploy/schuhplattler_v3s)
+python scripts/deploy/export_onnx.py export <run>/model_34998.pt <pkg>/exported/policy.onnx      # torch + onnx
+python scripts/deploy/build_deploy_pkg.py                                                         # mujoco + pyyaml
+python scripts/deploy/deploy_sim2sim.py --pkg <pkg> --start stand --csv schuhplattler_gmr_v3s_50hz_intro2.csv --runs 512
+
+# the real deploy code in MuJoCo, then on the robot
+bash sim_cpp/setup.sh <unitree_mujoco> <unitree_rl_lab> <pkg>
+bash sim_cpp/set_dance.sh part      # first 1.66 s + calm return; then: full
+bash sim_cpp/run_sim.sh             # keys in the MuJoCo window: 1 FixStand, 8 x5, 2 Velocity, 9, 3 arm test, 4 dance, 0 stop
+bash sim_cpp/run_real.sh enp5s0     # remote: L2+up, R1+X, L2(2 s)+up arm test, L2(2 s)+right dance, L2+B stop
+```
 
 ## Credits and licenses
 

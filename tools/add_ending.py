@@ -1,13 +1,12 @@
-"""Usage: python add_ending.py in_30hz.csv out.csv T_CUT T_BLEND T_HOLD   (e.g. 11.40 1.5 1.5)
+"""Append a calm ending to a 30 Hz G1 CSV: cut at a slow frame, blend (quintic, velocity-matched) to the
+Unitree default standing pose while the stance foot stays pinned, then hold.
 
-Append a calm ending to a 30 Hz G1 CSV: cut at a slow frame, blend (quintic, velocity-matched) to the
-Unitree default standing pose while the stance foot stays pinned, then hold."""
-import sys, numpy as np
-sys.path.insert(0,'/mnt/project-files/g1_pilot/tools')
+Usage: python add_ending.py in_30hz.csv out_30hz.csv T_CUT T_BLEND T_HOLD   (seconds)"""
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from motion_check import SDK, load_urdf, foot_sole, quat_xyzw, load_motion, axis_angle
-import os
-U=os.path.expanduser(os.environ.get("G1_URDF", "~/projects/unitree_ros/robots/g1_description/g1_29dof_rev_1_0.urdf"))
-J,L=load_urdf(U)
+J,L=load_urdf(next(p for p in [os.path.expanduser("~/projects/unitree_ros/robots/g1_description/g1_29dof_rev_1_0.urdf"),
+                               "/home/claude/unitree_ros/robots/g1_description/g1_29dof_rev_1_0.urdf"] if os.path.exists(p)))
 src,dst,t_cut,T_blend,T_hold=sys.argv[1],sys.argv[2],float(sys.argv[3]),float(sys.argv[4]),float(sys.argv[5])
 fps,rp,rq,q=load_motion(src,30)
 k=int(round(t_cut*fps))

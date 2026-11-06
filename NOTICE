@@ -9,6 +9,14 @@ It contains files derived from, and is meant to be used inside, unitree_rl_lab
   tasks/schuhplattler/__init__.py           modified from the Dance-102 mimic task registration
   tasks/schuhplattler/residual/*            new files that subclass unitree_rl_lab / Isaac Lab classes
 
+sim_cpp/ holds patches, not copies, plus scripts:
+  sim_cpp/unitree_mujoco_keyboard.patch  patch for unitree_mujoco (https://github.com/unitreerobotics/unitree_mujoco),
+                                         Copyright Unitree Robotics, BSD 3-Clause License: keyboard "gamepad" + scripted keys
+  sim_cpp/g1_ctrl.patch                  patch for unitree_rl_lab deploy/robots/g1_29dof (Apache License 2.0):
+                                         Schuhplattler FSM states, /opt SDK paths, remote-button log
+scripts/deploy/deploy_sim2sim.py re-implements the observation / action logic of unitree_rl_lab
+deploy/robots/g1_29dof/src/State_Mimic.cpp in Python (Apache License 2.0).
+
 Third-party projects used (not included here):
   Isaac Lab              BSD-3-Clause          https://github.com/isaac-sim/IsaacLab
   unitree_ros (G1 model) BSD-3-Clause          https://github.com/unitreerobotics/unitree_ros

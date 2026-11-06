@@ -37,6 +37,10 @@ parser.add_argument("--values", default=None, help="sweep: comma list (mass/gain
 parser.add_argument("--per_value", type=int, default=32, help="sweep: robots per value")
 parser.add_argument("--others", choices=("dr", "nominal"), default="dr", help="sweep: the other factors")
 parser.add_argument("--push", action="store_true", help="keep the task's random pushes on")
+parser.add_argument("--floor", choices=("flat", "rough", "stone", "slope"), default=None,
+                    help="every robot on this one floor type (apply_floor_mix params), friction back to DR v2 0.3-2.0")
+parser.add_argument("--no_ee_term", action="store_true",
+                    help="drop the ee_body_pos termination: counts only real falls (torso height / tilt)")
 parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--name", required=True, help="output folder name")
 parser.add_argument("--out", default=os.path.expanduser("~/projects/g1_pilot/robust"))
@@ -96,6 +100,28 @@ cfg.commands.motion.joint_position_range = (0.0, 0.0)
 cfg.episode_length_s = 3600.0  # never time out; the loop stops at the clip's last frame
 if not args.push and hasattr(cfg.events, "push_robot"):
     cfg.events.push_robot = None
+if args.floor:
+    from isaaclab.terrains import MeshPlaneTerrainCfg, TerrainGeneratorCfg  # noqa: E402
+    from isaaclab.terrains.height_field import HfPyramidSlopedTerrainCfg, HfRandomUniformTerrainCfg  # noqa: E402
+
+    sub = {
+        "flat": lambda: MeshPlaneTerrainCfg(proportion=1.0),
+        "rough": lambda: HfRandomUniformTerrainCfg(proportion=1.0, noise_range=(0.0, 0.01), noise_step=0.005,
+                                                   border_width=0.25),
+        "stone": lambda: HfRandomUniformTerrainCfg(proportion=1.0, noise_range=(0.0, 0.025), noise_step=0.005,
+                                                   border_width=0.25),
+        "slope": lambda: HfPyramidSlopedTerrainCfg(proportion=1.0, slope_range=(0.0, 0.05), platform_width=0.5,
+                                                   border_width=0.25),
+    }[args.floor]()
+    cfg.scene.terrain.terrain_type = "generator"
+    cfg.scene.terrain.terrain_generator = TerrainGeneratorCfg(
+        size=(8.0, 8.0), border_width=20.0, num_rows=10, num_cols=20, horizontal_scale=0.1, vertical_scale=0.005,
+        slope_threshold=0.75, use_cache=False, sub_terrains={args.floor: sub})
+    cfg.scene.terrain.max_init_terrain_level = None
+    cfg.events.physics_material.params["static_friction_range"] = (0.3, 2.0)
+    cfg.events.physics_material.params["dynamic_friction_range"] = (0.3, 1.6)
+if args.no_ee_term:
+    cfg.terminations.ee_body_pos = None
 act_cfg = cfg.actions.JointPositionAction
 assert hasattr(act_cfg, "delay_substeps_range"), "needs the residual action with latency (residual_action.py)"
 
@@ -257,7 +283,7 @@ motion_s = (T - 1) * step_dt
 
 res = {"task": args.task, "policy": ckpt, "clip": clip_name, "mode": args.mode, "widen": args.widen,
        "factor": args.factor if args.mode == "sweep" else None, "others": args.others if args.mode == "sweep" else None,
-       "push": args.push, "seed": args.seed, "num_envs": num_envs, "motion_s": round(motion_s, 2),
+       "push": args.push, "floor": args.floor, "no_ee_term": args.no_ee_term, "seed": args.seed, "num_envs": num_envs, "motion_s": round(motion_s, 2),
        "success_pct": round(100 * float(ok.mean()), 1),
        "completed_pct_mean": round(100 * float((fall_s / motion_s).mean()), 1),
        "joint_rmse_mean_rad": round(float(rmse.mean()), 4),

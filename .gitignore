@@ -5,3 +5,7 @@ __pycache__/
 *.npz
 *.mp4
 logs/
+sim_cpp/simulate/
+sim_cpp/deploy/
+sim_cpp/unitree_robots
+sim_cpp/logs/

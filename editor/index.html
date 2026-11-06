@@ -1,0 +1,614 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Schuhplattler Reference Editor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: stage + transport on the left, edit panel on the right (stacks on phones), full-width timeline lanes underneath. */
+:root{
+  --bg:#eef0f2; --panel:#ffffff; --fg:#1b2026; --muted:#5d6670; --line:#d4d9de;
+  --accent:#0d6e8a; --left:#0d6e8a; --right:#c2671b; --warn:#c0362c; --sel:rgba(13,110,138,.13);
+  --robot-dark:#3a4048; --robot-light:#c9ced4; --floor:#dfe3e7;
+  --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181c; --panel:#1c2126; --fg:#e4e8ec; --muted:#98a2ac; --line:#2e353c;
+  --accent:#4fb3d0; --left:#4fb3d0; --right:#e8a05c; --warn:#f07167; --sel:rgba(79,179,208,.16);
+  --robot-dark:#5a626c; --robot-light:#b8bec5; --floor:#1f252b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181c; --panel:#1c2126; --fg:#e4e8ec; --muted:#98a2ac; --line:#2e353c;
+  --accent:#4fb3d0; --left:#4fb3d0; --right:#e8a05c; --warn:#f07167; --sel:rgba(79,179,208,.16);
+  --robot-dark:#5a626c; --robot-light:#b8bec5; --floor:#1f252b; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 32px;display:grid;gap:14px}
+header h1{font-size:1.3rem;margin:0;text-wrap:balance;font-weight:600}
+header p{margin:.3rem 0 0;color:var(--muted);max-width:80ch;line-height:1.5}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px}
+@media (max-width:900px){.main{grid-template-columns:minmax(0,1fr)}}
+.view{display:grid;gap:10px;min-width:0;align-content:start}
+.screens{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.screens.withvid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:640px){.screens.withvid{grid-template-columns:minmax(0,1fr)}}
+.stage{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;aspect-ratio:4/3;max-width:100%}
+.stage canvas{display:block;width:100%;height:100%}
+.vid{background:#000;border-radius:6px;overflow:hidden;display:grid;place-items:center;aspect-ratio:4/3;max-width:100%}
+.vid video{width:100%;height:100%;object-fit:contain}
+.hud{position:absolute;left:10px;top:8px;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;pointer-events:none}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--mono);font-size:13px}
+button,select,input,textarea{font:inherit;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:4px}
+button,select{padding:5px 10px;cursor:pointer}
+input[type=number]{width:5.2em;padding:4px 6px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+button:hover{border-color:var(--muted)}
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.primary{background:var(--accent);color:var(--panel);border-color:var(--accent)}
+#play{min-width:5.5em}
+#scrub{flex:1 1 200px;accent-color:var(--accent)}
+.time{font-variant-numeric:tabular-nums;color:var(--muted)}
+label.chk{display:inline-flex;gap:5px;align-items:center;cursor:pointer;color:var(--muted)}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px;display:grid;gap:12px;align-content:start;min-width:0}
+h2{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.row .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.ops{display:grid;gap:8px}
+.op{border:1px solid var(--line);border-radius:5px;padding:8px;display:grid;gap:6px}
+.op .head{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.op b{font-weight:600;font-size:13px}
+.op p{margin:0;font-size:12px;color:var(--muted);line-height:1.4}
+.op .row label{color:var(--muted);font-size:12px}
+.list{display:grid;gap:4px;font-family:var(--mono);font-size:12px}
+.item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px;align-items:center;padding:4px 6px;border:1px solid var(--line);border-radius:4px}
+.item.bad{border-color:var(--warn)}
+.item .msg{color:var(--warn);grid-column:2/4}
+.item .txt{overflow-wrap:anywhere}
+.item button{padding:1px 7px}
+.empty{color:var(--muted);font-size:12px;margin:0}
+textarea{width:100%;min-height:70px;padding:6px;font-family:var(--mono);font-size:11px;box-sizing:border-box}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+.tl{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px;display:grid;gap:10px;min-width:0}
+#lanes{width:100%;height:270px;display:block;touch-action:none;cursor:crosshair}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:3px;margin-right:5px;vertical-align:3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:pointer}
+.chip.hot{border-color:var(--warn)}
+.stats{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.6;overflow-wrap:anywhere}
+.stats b{color:var(--fg);font-weight:500}
+.toast{font-size:12px;color:var(--accent);min-height:1em}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Schuhplattler reference засварлагч</h1>
+    <p>Timeline дээр чирж хэсэг сонгоод баруун талын үйлдлээр засна. Засвар бүр жагсаалтад нэмэгдэж, хуучин reference-ээс эхлэн дахин тооцогдоно. Дуусаад “Засваруудыг хуулах” дарж JSON-ийг <code>tools/ref_edit.py</code>-д өгнө. Цайвар робот = хуучин. Видеог өөрийн компьютерээс нээж болно, хаашаа ч илгээгдэхгүй.</p>
+  </header>
+
+  <div class="main">
+    <section class="view">
+      <div class="screens" id="screens">
+        <div class="stage" id="stage"><div class="loading" id="loading">Загвар ачаалж байна…</div><div class="hud" id="hud"></div></div>
+        <div class="vid" id="vidbox" hidden><video id="video" muted playsinline></video></div>
+      </div>
+      <div class="controls">
+        <button id="play" class="primary" type="button">Play</button>
+        <button id="back" type="button" aria-label="Өмнөх frame">◀</button>
+        <button id="fwd" type="button" aria-label="Дараагийн frame">▶</button>
+        <input id="scrub" type="range" min="0" max="1" step="1" value="0" aria-label="Цаг">
+        <span class="time" id="time">0.00 / 0.00 s</span>
+        <select id="speed" aria-label="Тоглуулах хурд"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option></select>
+        <label class="chk"><input id="loopsel" type="checkbox"> сонголтыг давтах</label>
+        <label class="chk"><input id="ghost" type="checkbox" checked> хуучин</label>
+        <label class="chk"><input id="follow" type="checkbox" checked> камер дагах</label>
+      </div>
+      <div class="controls">
+        <label class="chk">Видео: <input id="vfile" type="file" accept="video/*" style="max-width:220px"></label>
+        <label class="chk">зөрүү <input id="voff" type="number" step="0.03" value="0"> s</label>
+        <span class="note">schuhplattler_30fps.mp4-ийн frame = reference-ийн frame (0–11.23 s). Удаашруулсан хэсэгт видео ч удааширна.</span>
+      </div>
+    </section>
+
+    <aside>
+      <h2>Сонгосон хэсэг</h2>
+      <div class="row">
+        <input id="t0" type="number" step="0.033" min="0" value="3.50" aria-label="Эхлэх (s)"> –
+        <input id="t1" type="number" step="0.033" min="0" value="4.20" aria-label="Дуусах (s)"> s
+        <button id="setA" type="button" title="Эхлэлийг одоогийн цагт ( [ )">[</button>
+        <button id="setB" type="button" title="Төгсгөлийг одоогийн цагт ( ] )">]</button>
+        <span class="mono" id="dur"></span>
+      </div>
+      <div class="row">
+        <label for="part" style="color:var(--muted);font-size:12px">Биеийн хэсэг</label>
+        <select id="part">
+          <option value="arms">2 гар</option><option value="left_arm">зүүн гар</option><option value="right_arm" selected>баруун гар</option>
+          <option value="legs">2 хөл</option><option value="left_leg">зүүн хөл</option><option value="right_leg">баруун хөл</option>
+          <option value="waist">бэлхүүс</option><option value="joints">бүх үе</option><option value="root">аарцаг (root)</option><option value="everything">бүгд (үе + root)</option>
+        </select>
+      </div>
+
+      <div class="ops">
+        <div class="op">
+          <div class="head"><b>Гар, хөлийг зөөх</b><button class="primary" id="ikAdd" type="button" disabled>Нэмэх</button></div>
+          <p>Одоогийн frame дээр гар эсвэл хөлийн өнгөт сумыг чирж хүссэн газраа аваачна. Үеүдийг IK тооцоолно. Хөлийн ул налуу хэвээр үлдэнэ. Олдсон үений зөрүү сонгосон хэсэг бүхэлдээ нэмэгдэнэ. Хэрэв frame сонголтын гадна байвал зөвхөн тэр агшинд нэмэгдэж, ramp-аар зөөлөн орж гарна.</p>
+          <div class="row">
+            <select id="ikEff" aria-label="Биеийн цэг"><option value="right_hand">баруун гар</option><option value="left_hand">зүүн гар</option><option value="right_foot">баруун хөл</option><option value="left_foot">зүүн хөл</option></select>
+            <button id="ikStart" type="button">Чирж эхлэх</button><button id="ikCancel" type="button" hidden>Болих</button>
+          </div>
+          <div class="row"><label>ramp <input id="p_iramp" type="number" step="0.05" min="0" value="0.3"> s</label><span class="mono" id="ikInfo"></span></div>
+        </div>
+        <div class="op">
+          <div class="head"><b>Удаашруулах</b><button class="primary" data-op="speed" type="button">Нэмэх</button></div>
+          <p>Сонгосон хэсгийг бүх биеэр удаан тоглуулна. Бүжиг уртасна. 0.8 = хурдасгана.</p>
+          <div class="row"><label>× <input id="p_factor" type="number" step="0.1" min="0.3" max="4" value="1.5"></label><label>ramp <input id="p_sramp" type="number" step="0.05" min="0" value="0.25"> s</label></div>
+        </div>
+        <div class="op">
+          <div class="head"><b>Зөөлрүүлэх</b><button class="primary" data-op="smooth" type="button">Нэмэх</button></div>
+          <p>Сонгосон биеийн хэсгийн жижиг чичиргээ, огцом эргэлтийг арилгана. Хөдөлгөөний ерөнхий хэлбэр үлдэнэ.</p>
+          <div class="row"><label>хүч σ <input id="p_sigma" type="number" step="0.02" min="0.02" max="0.5" value="0.08"> s</label></div>
+        </div>
+        <div class="op">
+          <div class="head"><b>Хөдөлгөөн багасгах</b><button class="primary" data-op="reduce" type="button">Нэмэх</button></div>
+          <p>Эхлэл ба төгсгөлийн поз хооронд гөлгөр замаар явуулна. 100% = завсрын илүү хөдөлгөөнийг бүр мөсөн арилгана.</p>
+          <div class="row"><label>хэмжээ <input id="p_amount" type="number" step="10" min="0" max="100" value="100"> %</label></div>
+        </div>
+        <div class="op">
+          <div class="head"><b>Үеийг хазайлгах</b><button class="primary" data-op="offset" type="button">Нэмэх</button></div>
+          <p>Нэг үеийг тогтмол өнцгөөр нэмж хасна (жишээ нь өшиглөлтийг намсгах, гараа доошлуулах).</p>
+          <div class="row"><select id="p_joint" aria-label="Үе" style="max-width:100%"></select></div>
+          <div class="row"><label>Δ <input id="p_delta" type="number" step="1" value="-10"> °</label><label>ramp <input id="p_oramp" type="number" step="0.05" min="0" value="0.3"> s</label></div>
+        </div>
+        <div class="op">
+          <div class="head"><b>Хасах</b><button class="primary" data-op="cut" type="button">Нэмэх</button></div>
+          <p>Сонгосон хэсгийг устгаж, хоёр талыг гөлгөр холбоно. Хөл гулсаж магадгүй, доорх улаан тэмдгийг шалга.</p>
+          <div class="row"><label>ramp <input id="p_cramp" type="number" step="0.05" min="0" value="0.2"> s</label></div>
+        </div>
+      </div>
+
+      <h2>Засварууд</h2>
+      <div class="list" id="list"></div>
+      <div class="row">
+        <button id="undo" type="button">Сүүлийнхийг буцаах</button>
+        <button id="reset" type="button">Бүгдийг арилгах</button>
+      </div>
+      <div class="row">
+        <button id="copyJ" class="primary" type="button">Засваруудыг хуулах</button>
+        <button id="copyC" type="button">CSV хуулах</button>
+      </div>
+      <div class="toast" id="toast" role="status"></div>
+      <textarea id="io" placeholder="Хуулсан засваруудын JSON-ийг энд буулгаад “Ачаалах” дарна" aria-label="Засваруудын JSON"></textarea>
+      <div class="row"><button id="load" type="button">Ачаалах</button> <button id="loadv3s" type="button">v3s ачаалах (сургалтын ref)</button></div>
+      <p class="note">Засварууд энэ browser-т хадгалагдана. Цаг бүр тухайн засвар хийх үеийн timeline-аар бичигдэнэ (өмнөх удаашруулалтын дараах цаг).</p>
+    </aside>
+  </div>
+
+  <section class="tl">
+    <div class="controls">
+      <select id="metric" aria-label="Дээд мөр">
+        <option value="hand" selected>Гарын хурд (м/с)</option><option value="foot">Хөлийн хурд (м/с)</option><option value="jspeed">Сонгосон хэсгийн үений хурд max (rad/s)</option>
+      </select>
+      <label class="chk">босго <input id="thr" type="number" step="0.25" min="0" value="3.5"></label>
+      <select id="jsel" aria-label="Үений өнцөг"></select>
+    </div>
+    <canvas id="lanes"></canvas>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--left)"></i>зүүн</span>
+      <span><i class="sw" style="background:var(--right)"></i>баруун</span>
+      <span><i class="sw" style="background:var(--muted);height:1px"></i>хуучин (ижил бүжгийн агшинд)</span>
+      <span><i class="sw" style="background:var(--warn)"></i>тулгуур хөл гулсах &gt;30 см/с эсвэл шалан доор &gt;1.5 см</span>
+    </div>
+    <h2>Босгоос хурдан хэсгүүд (дарвал сонгоно)</h2>
+    <div class="chips" id="chips"></div>
+    <div class="stats" id="stats"></div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/TransformControls.js"></script>
+<script src="edit_core.js"></script>
+<script>
+(async function(){
+  const $ = id => document.getElementById(id);
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const D = await (await fetch('data.json')).json();
+  const b64 = (s, T) => { const bin = atob(s); const u = new Uint8Array(bin.length); for (let i=0;i<bin.length;i++) u[i]=bin.charCodeAt(i); return new T(u.buffer); };
+  const E = RefEdit, W = E.W, fps = D.fps;
+  const raw = b64(D.motion, Float64Array), N0 = raw.length / W;
+  const BASE = { fps, n: N0, data: Float64Array.from(raw), src: Float64Array.from({length:N0}, (_,f)=>f/fps) };
+  const SOLE = [[0.12,0.025,-0.035],[0.12,-0.025,-0.035],[-0.05,0.025,-0.035],[-0.05,-0.025,-0.035]];
+  const PART_TXT = {arms:'2 гар',left_arm:'зүүн гар',right_arm:'баруун гар',legs:'2 хөл',left_leg:'зүүн хөл',right_leg:'баруун хөл',waist:'бэлхүүс',joints:'бүх үе',root:'аарцаг',everything:'бүгд'};
+
+  // ---------- scene ----------
+  const stage = $('stage');
+  const renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  stage.prepend(renderer.domElement);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 4/3, 0.05, 50);
+  camera.position.set(2.6, 1.4, 1.6);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.target.set(0, 0.75, 0); controls.enableDamping = true;
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 0.9));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.8); sun.position.set(2,4,3); scene.add(sun);
+  const floorMat = new THREE.MeshBasicMaterial();
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(14,14), floorMat); floor.rotation.x = -Math.PI/2; scene.add(floor);
+  let grid;
+  const mk2 = () => ({dark:new THREE.MeshStandardMaterial({roughness:.6,metalness:.2}), white:new THREE.MeshStandardMaterial({roughness:.5,metalness:.1})});
+  const MAT = mk2(), GMAT = mk2();
+  for (const m of Object.values(GMAT)){ m.transparent = true; m.opacity = 0.28; m.depthWrite = false; }
+  function applyTheme(){
+    scene.background = new THREE.Color(css('--panel'));
+    floorMat.color.set(css('--floor'));
+    MAT.dark.color.set(css('--robot-dark')); MAT.white.color.set(css('--robot-light')).lerp(new THREE.Color(css('--accent')), .25);
+    GMAT.dark.color.set(css('--muted')); GMAT.white.color.set(css('--muted'));
+    if (grid) scene.remove(grid);
+    grid = new THREE.GridHelper(14, 28, new THREE.Color(css('--line')), new THREE.Color(css('--line'))); grid.position.y = 0.001; scene.add(grid);
+    drawLanes();
+  }
+  const geo = {};
+  for (const [n,L] of Object.entries(D.links)){ const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(b64(L.V, Float32Array),3));
+    g.setIndex(new THREE.BufferAttribute(b64(L.F, Uint16Array),1)); g.computeVertexNormals(); geo[n] = g; }
+  // URDF z-up; the shown robots sit in a group rotated to three's y-up, the probe used for metrics stays z-up
+  function robot(mats, show){
+    const world = new THREE.Group(); if (show){ world.rotation.x = -Math.PI/2; scene.add(world); }
+    const link = {}, joint = {}, axis = {};
+    const mk = name => { const o = new THREE.Group(); const L = D.links[name];
+      if (L && mats){ const m = new THREE.Mesh(geo[name], mats[L.col] || mats.white);
+        m.position.fromArray(L.xyz); m.rotation.set(L.rpy[0],L.rpy[1],L.rpy[2],'ZYX'); o.add(m); }
+      return o; };
+    link.pelvis = mk('pelvis'); world.add(link.pelvis);
+    let pending = D.joints.slice();
+    while (pending.length){ const rest = [];
+      for (const j of pending){ const p = link[j.parent]; if (!p){ rest.push(j); continue; }
+        const frame = new THREE.Group(); frame.position.fromArray(j.xyz); frame.rotation.set(j.rpy[0],j.rpy[1],j.rpy[2],'ZYX');
+        const rot = new THREE.Group(); frame.add(rot); p.add(frame);
+        const c = mk(j.child); rot.add(c); link[j.child] = c;
+        if (j.type === 'revolute'){ joint[j.name] = rot; axis[j.name] = new THREE.Vector3().fromArray(j.axis).normalize(); } }
+      if (rest.length === pending.length) break; pending = rest; }
+    return {world, link, joint, axis};
+  }
+  const R = robot(MAT, true), G = robot(GMAT, true), P = robot(null, false);
+  $('loading').hidden = true;
+  const qtmp = new THREE.Quaternion();
+  function pose(r, M, f){ const d = M.data, o = f*W;
+    r.link.pelvis.position.set(d[o],d[o+1],d[o+2]);
+    r.link.pelvis.quaternion.set(d[o+3],d[o+4],d[o+5],d[o+6]);
+    D.names.forEach((n,i)=>{ const j = r.joint[n]; if (j) j.quaternion.copy(qtmp.setFromAxisAngle(r.axis[n], d[o+7+i])); }); }
+
+  // ---------- metrics (forward kinematics on the probe robot) ----------
+  const v3 = new THREE.Vector3();
+  function metrics(M){
+    const n = M.n, hand = [new Float32Array(n*3), new Float32Array(n*3)], sole = [new Float32Array(n*3), new Float32Array(n*3)], low = [new Float32Array(n), new Float32Array(n)];
+    const HL = ['left_rubber_hand','right_rubber_hand'], FL = ['left_ankle_roll_link','right_ankle_roll_link'];
+    for (let f=0; f<n; f++){
+      pose(P, M, f); P.world.updateMatrixWorld(true);
+      for (let s=0; s<2; s++){
+        P.link[HL[s]].getWorldPosition(v3); hand[s].set([v3.x,v3.y,v3.z], f*3);
+        let cx=0, cy=0, cz=0, mz=Infinity;
+        for (const p of SOLE){ v3.fromArray(p); P.link[FL[s]].localToWorld(v3); cx+=v3.x/4; cy+=v3.y/4; cz+=v3.z/4; mz=Math.min(mz,v3.z); }
+        sole[s].set([cx,cy,cz], f*3); low[s][f] = mz;
+      }
+    }
+    const spd = (A, f, dims) => { const a = Math.max(0,f-1), b = Math.min(n-1,f+1); let s2 = 0; for (let k=0;k<dims;k++){ const d = A[b*3+k]-A[a*3+k]; s2 += d*d; } return Math.sqrt(s2)/(b-a)*fps; };
+    const out = { n, hand:[[],[]], foot:[[],[]], on:[[],[]], bad:[[],[]], low, jmax:{} };
+    for (let s=0; s<2; s++) for (let f=0; f<n; f++){
+      out.hand[s].push(spd(hand[s], f, 3)); out.foot[s].push(spd(sole[s], f, 3));
+      const on = low[s][f] < 0.025; out.on[s].push(on);
+    }
+    for (let s=0; s<2; s++) for (let f=0; f<n; f++){
+      const both = out.on[s][f] && out.on[s][Math.min(n-1,f+1)] && f < n-1;
+      let slide = 0; if (both){ const dx = sole[s][(f+1)*3]-sole[s][f*3], dy = sole[s][(f+1)*3+1]-sole[s][f*3+1]; slide = Math.hypot(dx,dy)*fps; }
+      out.bad[s].push(slide > 0.3 || low[s][f] < -0.015);
+    }
+    for (const [part, cols] of Object.entries(E.PARTS)){ const js = cols.filter(c => c >= 7), arr = new Float32Array(n);
+      for (let f=0; f<n; f++){ const a = Math.max(0,f-1), b = Math.min(n-1,f+1); let m = 0; for (const c of js) m = Math.max(m, Math.abs(M.data[b*W+c]-M.data[a*W+c])/(b-a)*fps); arr[f] = m; }
+      out.jmax[part] = arr; }
+    return out;
+  }
+  const M0 = metrics(BASE);
+
+  // ---------- state ----------
+  const KEY = 'sch_ref_edits_v1';
+  let ops = [];
+  try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (Array.isArray(s)) ops = s; } catch(e) {}
+  let CUR = BASE, MC = M0, ERR = [];
+  let t = 0, playing = false, playSpeed = 1;
+  function recompute(){
+    const r = E.apply(BASE, ops); CUR = r.motion; ERR = r.errors; MC = metrics(CUR);
+    try { localStorage.setItem(KEY, JSON.stringify(ops)); } catch(e) {}
+    $('scrub').max = CUR.n - 1; t = Math.min(t, (CUR.n-1)/fps);
+    renderList(); renderChips(); renderStats(); drawLanes();
+  }
+
+  // ---------- controls ----------
+  E.SDK.forEach((n,i)=>{ for (const id of ['p_joint','jsel']){ const o = document.createElement('option'); o.value = n; o.textContent = n.replace('_joint',''); $(id).append(o); } });
+  $('p_joint').value = 'right_hip_pitch_joint'; $('jsel').value = 'right_shoulder_pitch_joint';
+  const num = id => parseFloat($(id).value);
+  const sel = () => { let a = num('t0'), b = num('t1'); if (b < a) [a,b] = [b,a]; return [Math.max(0,a), Math.min((CUR.n-1)/fps, b)]; };
+  const r2 = x => Math.round(x*100)/100;
+  function setSel(a, b){ $('t0').value = r2(a).toFixed(2); $('t1').value = r2(b).toFixed(2); showDur(); drawLanes(); }
+  function showDur(){ const [a,b] = sel(); $('dur').textContent = (b-a).toFixed(2)+' s'; }
+  $('t0').oninput = $('t1').oninput = () => { showDur(); drawLanes(); };
+  $('setA').onclick = () => setSel(t, Math.max(t, sel()[1]));
+  $('setB').onclick = () => setSel(Math.min(t, sel()[0]), t);
+  document.querySelectorAll('[data-op]').forEach(b => b.onclick = () => {
+    const [a, c] = sel(), kind = b.dataset.op, op = {op:kind, t0:r2(a), t1:r2(c)};
+    if (kind === 'speed'){ op.factor = num('p_factor'); op.ramp = num('p_sramp'); }
+    if (kind === 'smooth'){ op.part = $('part').value; op.sigma = num('p_sigma'); op.ramp = 0.2; }
+    if (kind === 'reduce'){ op.part = $('part').value; op.amount = Math.max(0, Math.min(1, num('p_amount')/100)); }
+    if (kind === 'offset'){ op.joint = $('p_joint').value; op.delta = Math.round(num('p_delta')*Math.PI/180*10000)/10000; op.ramp = num('p_oramp'); }
+    if (kind === 'cut'){ op.ramp = num('p_cramp'); }
+    if (Object.values(op).some(v => typeof v === 'number' && !isFinite(v))) return toast('Тоон утгаа шалгана уу.');
+    ops.push(op); recompute();
+    if (kind === 'speed' || kind === 'cut'){ toast('Timeline-ийн урт өөрчлөгдлөө: ' + ((CUR.n-1)/fps).toFixed(2) + ' s'); }
+  });
+  function describe(op){
+    if (op.op === 'tempo') return `гөлгөр хэмнэл: гар ≤ ${op.vmax} м/с, хамгийн удаан ×${Math.max(...op.knots.map(k => k[1])).toFixed(2)}`;
+    const r = `${op.t0.toFixed(2)}–${op.t1.toFixed(2)} s`;
+    if (op.op === 'speed') return `${r} удаашруулах ×${op.factor}`;
+    if (op.op === 'smooth') return `${r} ${PART_TXT[op.part]} зөөлрүүлэх σ ${op.sigma} s`;
+    if (op.op === 'reduce') return `${r} ${PART_TXT[op.part]} хөдөлгөөн −${Math.round(op.amount*100)}%`;
+    if (op.op === 'offset') return `${r} ${op.joint.replace('_joint','')} ${op.delta>=0?'+':''}${(op.delta*180/Math.PI).toFixed(0)}°`;
+    if (op.op === 'cut') return `${r} хасах`;
+    if (op.op === 'pose') return `${r} ${EFF_TXT[op.eff] || 'поз'} зөөх${op.cm ? ' ' + op.cm + ' см' : ''}`;
+    return JSON.stringify(op);
+  }
+  function renderList(){
+    const L = $('list'); L.textContent = '';
+    if (!ops.length){ const p = document.createElement('p'); p.className = 'empty'; p.textContent = 'Одоогоор засвар алга. Хэсэг сонгоод дээрх “Нэмэх”-ийг дарна уу.'; L.append(p); return; }
+    ops.forEach((op, i) => {
+      const e = ERR.find(x => x.i === i), d = document.createElement('div'); d.className = 'item' + (e ? ' bad' : '');
+      const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !op.off; cb.title = 'идэвхтэй'; cb.setAttribute('aria-label', 'Засвар '+(i+1)+' идэвхтэй');
+      cb.onchange = () => { if (cb.checked) delete op.off; else op.off = true; recompute(); };
+      const tx = document.createElement('span'); tx.className = 'txt'; tx.textContent = (i+1) + '. ' + describe(op);
+      tx.style.cursor = 'pointer'; tx.title = 'Энэ хэсгийг сонгох'; tx.onclick = () => { if (op.t0 === undefined) return; setSel(op.t0, op.t1); seek(op.t0); };
+      const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', 'Засвар '+(i+1)+' устгах');
+      x.onclick = () => { ops.splice(i,1); recompute(); };
+      d.append(cb, tx, x);
+      if (e){ const m = document.createElement('span'); m.className = 'msg'; m.textContent = 'алгасав: ' + e.msg; d.append(m); }
+      L.append(d);
+    });
+  }
+  $('undo').onclick = () => { ops.pop(); recompute(); };
+  let resetArm = false;
+  $('reset').onclick = () => { if (!ops.length) return; if (!resetArm){ resetArm = true; $('reset').textContent = 'Дахин дарж баталгаажуулна'; setTimeout(()=>{ resetArm = false; $('reset').textContent = 'Бүгдийг арилгах'; }, 3000); return; }
+    resetArm = false; $('reset').textContent = 'Бүгдийг арилгах'; ops = []; recompute(); toast('Бүх засвар арилсан.'); };
+  let tt; function toast(s){ $('toast').textContent = s; clearTimeout(tt); tt = setTimeout(()=>$('toast').textContent = '', 5000); }
+  function copy(text, what){
+    const done = () => toast(what + ' хуулагдлаа.');
+    const fallback = () => { $('io').value = text; $('io').select(); toast(what + ' доорх талбарт байна. Ctrl+C дарж хуулна уу.'); };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch(e){ fallback(); }
+  }
+  $('copyJ').onclick = () => copy(JSON.stringify({base: D.base, ops}, null, 1), 'Засварууд (JSON)');
+  $('copyC').onclick = () => copy(E.toCSV(CUR), 'CSV (' + CUR.n + ' мөр)');
+  const V3S_OPS = [{"op":"pose","t0":0,"t1":0,"ramp":0.3,"eff":"right_hand","cm":3,"deltas":{"right_shoulder_pitch_joint":0.03134,"right_shoulder_roll_joint":0.04113,"right_shoulder_yaw_joint":0.04554,"right_elbow_joint":0.13418}},{"op":"pose","t0":0.63,"t1":0.63,"ramp":0.3,"eff":"right_hand","cm":4,"deltas":{"right_shoulder_pitch_joint":0.00187,"right_shoulder_roll_joint":0.13486,"right_shoulder_yaw_joint":0.04988,"right_elbow_joint":0.20759}},{"op":"pose","t0":0.47,"t1":0.47,"ramp":0.3,"eff":"right_hand","cm":2,"deltas":{"right_shoulder_pitch_joint":-0.00272,"right_shoulder_roll_joint":0.07396,"right_shoulder_yaw_joint":0.02641,"right_elbow_joint":0.11961}},{"op":"pose","t0":0.5,"t1":0.5,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-1e-05,"right_shoulder_roll_joint":-0.00269,"right_shoulder_yaw_joint":-0.00102,"right_elbow_joint":-0.00487}},{"op":"pose","t0":0.03,"t1":0.03,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00203,"right_shoulder_roll_joint":0.02744,"right_shoulder_yaw_joint":0.00834,"right_elbow_joint":0.04066}},{"op":"pose","t0":0.07,"t1":0.07,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.0009,"right_shoulder_roll_joint":0.01417,"right_shoulder_yaw_joint":0.00438,"right_elbow_joint":0.02138}},{"op":"pose","t0":0.1,"t1":0.1,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00061,"right_shoulder_roll_joint":0.00997,"right_shoulder_yaw_joint":0.00317,"right_elbow_joint":0.0152}},{"op":"pose","t0":0.13,"t1":0.13,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00225,"right_shoulder_roll_joint":0.03194,"right_shoulder_yaw_joint":0.01016,"right_elbow_joint":0.0489}},{"op":"pose","t0":0.17,"t1":0.17,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00162,"right_shoulder_roll_joint":0.02335,"right_shoulder_yaw_joint":0.00767,"right_elbow_joint":0.03639}},{"op":"pose","t0":0.2,"t1":0.2,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00288,"right_shoulder_roll_joint":0.04052,"right_shoulder_yaw_joint":0.01351,"right_elbow_joint":0.06429}},{"op":"pose","t0":0.23,"t1":0.23,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.0016,"right_shoulder_roll_joint":0.02252,"right_shoulder_yaw_joint":0.00753,"right_elbow_joint":0.03638}},{"op":"pose","t0":0.27,"t1":0.27,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00152,"right_shoulder_roll_joint":0.02137,"right_shoulder_yaw_joint":0.00715,"right_elbow_joint":0.03485}},{"op":"pose","t0":0.3,"t1":0.3,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00177,"right_shoulder_roll_joint":0.02453,"right_shoulder_yaw_joint":0.00806,"right_elbow_joint":0.04035}},{"op":"pose","t0":0.33,"t1":0.33,"ramp":0.3,"eff":"right_hand","cm":1,"deltas":{"right_shoulder_pitch_joint":-0.00173,"right_shoulder_roll_joint":0.02294,"right_shoulder_yaw_joint":0.00735,"right_elbow_joint":0.03805}},{"op":"pose","t0":0.37,"t1":0.37,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00108,"right_shoulder_roll_joint":0.01608,"right_shoulder_yaw_joint":0.00525,"right_elbow_joint":0.02729}},{"op":"pose","t0":0.4,"t1":0.4,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00041,"right_shoulder_roll_joint":0.00612,"right_shoulder_yaw_joint":0.00193,"right_elbow_joint":0.01042}},{"op":"pose","t0":11.87,"t1":11.87,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.0635,"left_shoulder_roll_joint":-0.01914,"left_shoulder_yaw_joint":0.00595,"left_elbow_joint":0.09238}},{"op":"pose","t0":11.9,"t1":11.9,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.05292,"left_shoulder_roll_joint":-0.01779,"left_shoulder_yaw_joint":0.00445,"left_elbow_joint":0.08262}},{"op":"pose","t0":11.93,"t1":11.93,"ramp":0.6,"eff":"left_hand","cm":0,"deltas":{"left_shoulder_pitch_joint":-0.0041,"left_shoulder_roll_joint":-0.00102,"left_shoulder_yaw_joint":0.00039,"left_elbow_joint":0.00552}},{"op":"pose","t0":11.97,"t1":11.97,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.07233,"left_shoulder_roll_joint":-0.02765,"left_shoulder_yaw_joint":0.00611,"left_elbow_joint":0.12245}},{"op":"pose","t0":12.27,"t1":12.27,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.06498,"left_shoulder_roll_joint":-0.01133,"left_shoulder_yaw_joint":0.00559,"left_elbow_joint":0.08601}},{"op":"pose","t0":12.3,"t1":12.3,"ramp":0.6,"eff":"left_hand","cm":0,"deltas":{"left_shoulder_pitch_joint":-0.02352,"left_shoulder_roll_joint":-0.00348,"left_shoulder_yaw_joint":0.00197,"left_elbow_joint":0.03057}},{"op":"pose","t0":12.33,"t1":12.33,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.0419,"left_shoulder_roll_joint":-0.0054,"left_shoulder_yaw_joint":0.00347,"left_elbow_joint":0.05444}},{"op":"pose","t0":12.37,"t1":12.37,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.03456,"left_shoulder_roll_joint":-0.0058,"left_shoulder_yaw_joint":0.00206,"left_elbow_joint":0.04351}},{"op":"pose","t0":12.4,"t1":12.4,"ramp":0.6,"eff":"left_hand","cm":0,"deltas":{"left_shoulder_pitch_joint":-0.02162,"left_shoulder_roll_joint":-0.00172,"left_shoulder_yaw_joint":0.00175,"left_elbow_joint":0.02702}},{"op":"pose","t0":12.43,"t1":12.43,"ramp":0.6,"eff":"left_hand","cm":0,"deltas":{"left_shoulder_pitch_joint":-0.01441,"left_shoulder_roll_joint":-0.00048,"left_shoulder_yaw_joint":0.0012,"left_elbow_joint":0.01569}},{"op":"pose","t0":12.47,"t1":12.47,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":-0.04125,"left_shoulder_roll_joint":-0.00172,"left_shoulder_yaw_joint":0.00326,"left_elbow_joint":0.05073}},{"op":"pose","t0":12.5,"t1":12.5,"ramp":0.6,"eff":"left_hand","cm":0,"deltas":{"left_shoulder_pitch_joint":-0.01201,"left_shoulder_roll_joint":-0.0002,"left_shoulder_yaw_joint":0.00092,"left_elbow_joint":0.01379}},{"op":"pose","t0":11.93,"t1":11.93,"ramp":0.6,"eff":"left_hand","cm":2,"deltas":{"left_shoulder_pitch_joint":0.1842,"left_shoulder_roll_joint":0.08572,"left_shoulder_yaw_joint":-0.01161,"left_elbow_joint":-0.30179}},{"op":"pose","t0":11.9,"t1":11.9,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":0.00062,"left_shoulder_roll_joint":0.01352,"left_shoulder_yaw_joint":0.00423,"left_elbow_joint":0.01015}},{"op":"pose","t0":11.3,"t1":11.3,"ramp":0.6,"eff":"left_hand","cm":2,"deltas":{"left_shoulder_pitch_joint":0.04855,"left_shoulder_roll_joint":0.04978,"left_shoulder_yaw_joint":0.00683,"left_elbow_joint":-0.04445}},{"op":"pose","t0":11.27,"t1":11.27,"ramp":0.6,"eff":"left_hand","cm":0,"deltas":{"left_shoulder_pitch_joint":-0.00228,"left_shoulder_roll_joint":0.00655,"left_shoulder_yaw_joint":0.00305,"left_elbow_joint":0.00968}},{"op":"pose","t0":12.4,"t1":12.4,"ramp":0.6,"eff":"left_hand","cm":1,"deltas":{"left_shoulder_pitch_joint":0.03579,"left_shoulder_roll_joint":0.01534,"left_shoulder_yaw_joint":0.0012,"left_elbow_joint":-0.03974}},{"op":"pose","t0":0.27,"t1":0.27,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":7e-05,"right_shoulder_roll_joint":-0.0017,"right_shoulder_yaw_joint":-0.00059,"right_elbow_joint":-0.00306}},{"op":"pose","t0":0.3,"t1":0.3,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00043,"right_shoulder_roll_joint":0.00502,"right_shoulder_yaw_joint":0.00153,"right_elbow_joint":0.00861}},{"op":"pose","t0":0.37,"t1":0.37,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00062,"right_shoulder_roll_joint":0.00809,"right_shoulder_yaw_joint":0.00253,"right_elbow_joint":0.01388}},{"op":"pose","t0":0.4,"t1":0.4,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-5e-05,"right_shoulder_roll_joint":0.00257,"right_shoulder_yaw_joint":0.00091,"right_elbow_joint":0.00462}},{"op":"pose","t0":0.43,"t1":0.43,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-4e-05,"right_shoulder_roll_joint":0.00252,"right_shoulder_yaw_joint":0.00089,"right_elbow_joint":0.00458}},{"op":"pose","t0":0.47,"t1":0.47,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00037,"right_shoulder_roll_joint":0.0049,"right_shoulder_yaw_joint":0.00148,"right_elbow_joint":0.0085}},{"op":"pose","t0":0.5,"t1":0.5,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-5e-05,"right_shoulder_roll_joint":0.00257,"right_shoulder_yaw_joint":0.00089,"right_elbow_joint":0.00472}},{"op":"pose","t0":0.53,"t1":0.53,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00034,"right_shoulder_roll_joint":0.00459,"right_shoulder_yaw_joint":0.00139,"right_elbow_joint":0.00808}},{"op":"pose","t0":0.57,"t1":0.57,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":-0.00035,"right_shoulder_roll_joint":0.00556,"right_shoulder_yaw_joint":0.00169,"right_elbow_joint":0.00974}},{"op":"pose","t0":0.6,"t1":0.6,"ramp":0.3,"eff":"right_hand","cm":0,"deltas":{"right_shoulder_pitch_joint":2e-05,"right_shoulder_roll_joint":0.00155,"right_shoulder_yaw_joint":0.00055,"right_elbow_joint":0.00281}},{"op":"tempo","vmax":3.5,"sigma":0.4,"knots":[[0.0,1.0],[0.1,1.0],[0.2,1.0],[0.3,1.0],[0.4,1.0],[0.5,1.0],[0.6,1.0],[0.7,1.0],[0.8,1.0],[0.9,1.0],[1.0,1.0],[1.1,1.0],[1.2,1.0],[1.3,1.0],[1.4,1.0],[1.5,1.0],[1.6,1.0],[1.7,1.0],[1.8,1.0],[1.9,1.0],[2.0,1.0],[2.1,1.0],[2.2,1.0],[2.3,1.0],[2.4,1.0],[2.5,1.0001],[2.6,1.0009],[2.7,1.0026],[2.8,1.0058],[2.9,1.0113],[3.0,1.0198],[3.1,1.0327],[3.2,1.051],[3.3,1.0751],[3.4,1.1048],[3.5,1.1385],[3.6,1.1733],[3.7,1.206],[3.8,1.2329],[3.9,1.251],[4.0,1.2585],[4.1,1.255],[4.2,1.2418],[4.3,1.221],[4.4,1.1952],[4.5,1.1671],[4.6,1.1387],[4.7,1.112],[4.8,1.0881],[4.9,1.0679],[5.0,1.0519],[5.1,1.0408],[5.2,1.0348],[5.3,1.0337],[5.4,1.0369],[5.5,1.0436],[5.6,1.0521],[5.7,1.0612],[5.8,1.0693],[5.9,1.0755],[6.0,1.0792],[6.1,1.0805],[6.2,1.0804],[6.3,1.0802],[6.4,1.0811],[6.5,1.0842],[6.6,1.0896],[6.7,1.0969],[6.8,1.1053],[6.9,1.1136],[7.0,1.121],[7.1,1.1266],[7.2,1.1303],[7.3,1.1317],[7.4,1.1305],[7.5,1.1268],[7.6,1.1203],[7.7,1.1109],[7.8,1.099],[7.9,1.0854],[8.0,1.0707],[8.1,1.056],[8.2,1.0425],[8.3,1.0307],[8.4,1.0212],[8.5,1.0139],[8.6,1.0086],[8.7,1.005],[8.8,1.0027],[8.9,1.0013],[9.0,1.0006],[9.1,1.0002],[9.2,1.0],[9.3,1.0],[9.4,1.0],[9.5,1.0],[9.6,1.0],[9.7,1.0001],[9.8,1.0003],[9.9,1.0006],[10.0,1.0011],[10.1,1.0019],[10.2,1.0031],[10.3,1.0049],[10.4,1.0072],[10.5,1.01],[10.6,1.0131],[10.7,1.0164],[10.8,1.0195],[10.9,1.0219],[11.0,1.0235],[11.1,1.0239],[11.2,1.0231],[11.3,1.0213],[11.4,1.0186],[11.5,1.0155],[11.6,1.0122],[11.7,1.0092],[11.8,1.0066],[11.9,1.0045],[12.0,1.0029],[12.1,1.0017],[12.2,1.001],[12.3,1.0005],[12.4,1.0002],[12.5,1.0001],[12.6,1.0],[12.7,1.0],[12.8,1.0],[12.9,1.0],[13.0,1.0],[13.1,1.0],[13.2,1.0],[13.3,1.0],[13.4,1.0],[13.5,1.0],[13.6,1.0],[13.7,1.0],[13.8,1.0],[13.9,1.0],[14.0,1.0],[14.1,1.0],[14.2,1.0],[14.3,1.0]]}];
+  $('loadv3s').onclick = () => { ops = JSON.parse(JSON.stringify(V3S_OPS)); recompute(); toast('v3s: ' + ops.length + ' засвар ачааллаа (сургалтад орж буй ref).'); };
+  $('load').onclick = () => { try { const s = JSON.parse($('io').value); const o = Array.isArray(s) ? s : s.ops; if (!Array.isArray(o)) throw 0; ops = o; recompute(); toast(o.length + ' засвар ачааллаа.'); } catch(e){ toast('JSON уншиж чадсангүй. “Засваруудыг хуулах”-аар авсан текстийг бүтнээр нь буулгана уу.'); } };
+
+  // ---------- transport ----------
+  const scrub = $('scrub');
+  function seek(s){ t = Math.max(0, Math.min((CUR.n-1)/fps, s)); scrub.value = Math.round(t*fps); }
+  function setPlay(p){ playing = p; $('play').textContent = playing ? 'Pause' : 'Play'; if (!playing && vid.src) vid.pause(); }
+  $('play').onclick = () => setPlay(!playing);
+  $('back').onclick = () => { setPlay(false); seek(Math.round(t*fps)/fps - 1/fps); };
+  $('fwd').onclick = () => { setPlay(false); seek(Math.round(t*fps)/fps + 1/fps); };
+  scrub.oninput = () => { t = +scrub.value / fps; };
+  $('speed').onchange = e => playSpeed = +e.target.value;
+  addEventListener('keydown', e => {
+    if (/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName) && document.activeElement.type !== 'range' && document.activeElement.type !== 'checkbox') return;
+    if (e.key === ' '){ e.preventDefault(); setPlay(!playing); }
+    else if (e.key === 'ArrowLeft'){ e.preventDefault(); $('back').click(); }
+    else if (e.key === 'ArrowRight'){ e.preventDefault(); $('fwd').click(); }
+    else if (e.key === '['){ $('setA').click(); }
+    else if (e.key === ']'){ $('setB').click(); }
+  });
+
+  // ---------- video ----------
+  const vid = $('video');
+  $('vfile').onchange = e => { const f = e.target.files[0]; if (!f) return; vid.src = URL.createObjectURL(f); $('vidbox').hidden = false; $('screens').classList.add('withvid'); resize(); };
+  function syncVideo(f, srcRate){
+    if (!vid.src || !vid.readyState) return;
+    const want = CUR.src[f] + (parseFloat($('voff').value) || 0);
+    if (playing){
+      vid.playbackRate = Math.max(0.0625, Math.min(4, srcRate * playSpeed));
+      if (vid.paused) vid.play().catch(()=>{});
+      if (Math.abs(vid.currentTime - want) > 0.15) vid.currentTime = Math.max(0, want);
+    } else if (Math.abs(vid.currentTime - want) > 0.02 && !vid.seeking){ vid.currentTime = Math.max(0, want); }
+  }
+
+  // ---------- timeline lanes ----------
+  const cv = $('lanes'), cx = cv.getContext('2d');
+  const LAYOUT = { pad:34, top:8, h1:118, gap:18, h2:72, h3:26 };
+  const xOf = (s, w) => LAYOUT.pad + s / ((CUR.n-1)/fps) * (w - LAYOUT.pad - 8);
+  const tOf = (x, w) => (x - LAYOUT.pad) / (w - LAYOUT.pad - 8) * ((CUR.n-1)/fps);
+  const origAt = f => Math.max(0, Math.min(N0-1, Math.round(CUR.src[f]*fps)));
+  function laneSeries(M, f, s){ const m = $('metric').value;
+    if (m === 'hand') return M.hand[s][f]; if (m === 'foot') return M.foot[s][f];
+    return s === 0 ? M.jmax[$('part').value][f] : NaN; }
+  function drawLanes(){
+    if (!CUR) return;
+    const dpr = Math.min(devicePixelRatio, 2), r = cv.getBoundingClientRect();
+    if (cv.width !== Math.round(r.width*dpr) || cv.height !== Math.round(r.height*dpr)){ cv.width = Math.round(r.width*dpr); cv.height = Math.round(r.height*dpr); }
+    cx.setTransform(dpr,0,0,dpr,0,0);
+    const w = r.width, n = CUR.n, L = LAYOUT, dur = (n-1)/fps;
+    cx.clearRect(0,0,w,r.height);
+    cx.font = '11px "IBM Plex Mono", ui-monospace, monospace'; cx.textBaseline = 'middle';
+    const y1 = L.top, y2 = y1 + L.h1 + L.gap, y3 = y2 + L.h2 + L.gap;
+    // selection
+    const [sa, sb] = sel(); cx.fillStyle = css('--sel'); cx.fillRect(xOf(sa,w), y1, Math.max(1, xOf(sb,w)-xOf(sa,w)), y3 + L.h3 + 6 - y1);
+    // lane 1
+    const m = $('metric').value, thr = parseFloat($('thr').value) || 0;
+    let hi = thr * 1.2; for (let f=0; f<n; f++) for (let s=0; s<2; s++){ const v = laneSeries(MC,f,s); if (v > hi) hi = v; const o = laneSeries(M0,origAt(f),s); if (o > hi) hi = o; }
+    hi = Math.ceil(hi);
+    const Y1 = v => y1 + L.h1 - v / hi * L.h1;
+    cx.strokeStyle = css('--line'); cx.lineWidth = 1; cx.fillStyle = css('--muted'); cx.textAlign = 'right';
+    for (let k = 0; k <= hi; k += Math.max(1, Math.round(hi/4))){ cx.beginPath(); cx.moveTo(L.pad, Y1(k)); cx.lineTo(w-8, Y1(k)); cx.stroke(); cx.fillText(String(k), L.pad-5, Y1(k)); }
+    if (thr > 0){ cx.setLineDash([4,4]); cx.strokeStyle = css('--warn'); cx.beginPath(); cx.moveTo(L.pad, Y1(thr)); cx.lineTo(w-8, Y1(thr)); cx.stroke(); cx.setLineDash([]); }
+    const line = (fn, color, lw, dash) => { cx.strokeStyle = color; cx.lineWidth = lw; cx.setLineDash(dash || []); cx.beginPath(); let pen = false;
+      for (let f=0; f<n; f++){ const v = fn(f); if (!isFinite(v)){ pen = false; continue; } const X = xOf(f/fps,w); pen ? cx.lineTo(X, v) : cx.moveTo(X, v); pen = true; } cx.stroke(); cx.setLineDash([]); };
+    const sides = m === 'jspeed' ? [0] : [0,1];
+    for (const s of sides) line(f => Y1(laneSeries(M0, origAt(f), s)), css('--muted'), 1, [2,3]);
+    for (const s of sides) line(f => Y1(laneSeries(MC, f, s)), m === 'jspeed' ? css('--accent') : css(s ? '--right' : '--left'), 1.5);
+    cx.textAlign = 'left'; cx.fillStyle = css('--muted'); cx.fillText($('metric').selectedOptions[0].textContent, L.pad + 4, y1 + 7);
+    // lane 2: one joint angle
+    const ji = 7 + E.SDK.indexOf($('jsel').value); let lo = Infinity, h2 = -Infinity;
+    for (let f=0; f<n; f++){ const a = CUR.data[f*W+ji], b = BASE.data[origAt(f)*W+ji]; lo = Math.min(lo,a,b); h2 = Math.max(h2,a,b); }
+    const pd = (h2-lo)*0.08 || 0.05; lo -= pd; h2 += pd;
+    const Y2 = v => y2 + L.h2 - (v-lo)/(h2-lo)*L.h2;
+    cx.strokeStyle = css('--line'); cx.lineWidth = 1; cx.strokeRect(L.pad, y2, w-8-L.pad, L.h2);
+    line(f => Y2(BASE.data[origAt(f)*W+ji]), css('--muted'), 1, [2,3]);
+    line(f => Y2(CUR.data[f*W+ji]), css('--accent'), 1.5);
+    cx.fillStyle = css('--muted'); cx.textAlign = 'left'; cx.fillText($('jsel').value.replace('_joint','') + ' (rad)', L.pad + 4, y2 + 8);
+    cx.textAlign = 'right'; cx.fillText(h2.toFixed(1), L.pad-5, y2+6); cx.fillText(lo.toFixed(1), L.pad-5, y2+L.h2-6);
+    // lane 3: contacts
+    const rh = L.h3/2 - 1;
+    for (let s=0; s<2; s++){ const yy = y3 + s*(rh+2);
+      cx.fillStyle = css('--muted'); cx.textAlign = 'right'; cx.fillText(s ? 'R' : 'L', L.pad-5, yy + rh/2);
+      for (let f=0; f<n; f++){ const X = xOf(f/fps,w), X2 = xOf((f+1)/fps,w);
+        if (MC.on[s][f]){ cx.fillStyle = css(s ? '--right' : '--left'); cx.globalAlpha = .45; cx.fillRect(X, yy, X2-X+.5, rh); cx.globalAlpha = 1; }
+        if (MC.bad[s][f]){ cx.fillStyle = css('--warn'); cx.fillRect(X, yy, Math.max(2, X2-X), rh); } } }
+    // time axis
+    cx.fillStyle = css('--muted'); cx.textAlign = 'center';
+    for (let k = 0; k <= dur; k += 1){ const X = xOf(k,w); cx.fillText(String(k), X, y3 + L.h3 + 10); cx.strokeStyle = css('--line'); cx.beginPath(); cx.moveTo(X, y3 + L.h3 + 1); cx.lineTo(X, y3 + L.h3 + 4); cx.stroke(); }
+    // playhead
+    cx.strokeStyle = css('--fg'); cx.lineWidth = 1; cx.beginPath(); cx.moveTo(xOf(t,w), y1); cx.lineTo(xOf(t,w), y3 + L.h3); cx.stroke();
+  }
+  let drag = null;
+  cv.addEventListener('pointerdown', e => { const r = cv.getBoundingClientRect(); drag = {x: e.clientX - r.left, moved:false}; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', e => { if (!drag) return; const r = cv.getBoundingClientRect(), x = e.clientX - r.left;
+    if (Math.abs(x - drag.x) > 4) drag.moved = true;
+    if (drag.moved){ const a = tOf(Math.min(drag.x,x), r.width), b = tOf(Math.max(drag.x,x), r.width); setSel(Math.max(0,a), Math.min((CUR.n-1)/fps,b)); } });
+  cv.addEventListener('pointerup', e => { if (!drag) return; const r = cv.getBoundingClientRect();
+    if (!drag.moved){ setPlay(false); seek(tOf(e.clientX - r.left, r.width)); }
+    drag = null; });
+  ['metric','jsel','thr','part'].forEach(id => $(id).addEventListener('input', () => { drawLanes(); renderChips(); }));
+
+  function renderChips(){
+    const m = $('metric').value, thr = parseFloat($('thr').value) || 0, n = CUR.n, C = $('chips'); C.textContent = '';
+    const segs = []; let cur = null;
+    for (let f=0; f<n; f++){
+      const vals = (m === 'jspeed' ? [0] : [0,1]).map(s => laneSeries(MC, f, s)), v = Math.max(...vals);
+      if (v > thr){ const side = vals.indexOf(v);
+        if (cur && f - cur.b <= 3){ cur.b = f; if (v > cur.v){ cur.v = v; cur.s = side; } } else { cur = {a:f, b:f, v, s:side}; segs.push(cur); } } }
+    if (!segs.length){ const p = document.createElement('p'); p.className = 'empty'; p.textContent = 'Босгоос хурдан хэсэг алга.'; C.append(p); return; }
+    const name = m === 'hand' ? ['зүүн гар','баруун гар'] : m === 'foot' ? ['зүүн хөл','баруун хөл'] : [PART_TXT[$('part').value]];
+    const unit = m === 'jspeed' ? 'rad/s' : 'м/с';
+    for (const g of segs){ const b = document.createElement('button'); b.type = 'button'; b.className = 'chip hot';
+      b.textContent = `${(g.a/fps).toFixed(2)}–${(g.b/fps).toFixed(2)} s · ${name[g.s]} ${g.v.toFixed(1)} ${unit}`;
+      b.onclick = () => { setSel(Math.max(0, g.a/fps - 0.1), Math.min((n-1)/fps, g.b/fps + 0.1)); seek(g.a/fps - 0.1); };
+      C.append(b); }
+  }
+  function summary(M, Mx){ const hv = [Math.max(...Mx.hand[0]), Math.max(...Mx.hand[1])];
+    let jm = 0; for (const v of Mx.jmax.joints) jm = Math.max(jm, v);
+    let low = Infinity; for (const s of [0,1]) for (const v of Mx.low[s]) low = Math.min(low, v);
+    let nb = 0; for (const s of [0,1]) for (const b of Mx.bad[s]) nb += b;
+    return `<b>${((M.n-1)/fps).toFixed(2)} s</b> (${M.n} frame) · гарын хурд max L <b>${hv[0].toFixed(2)}</b> R <b>${hv[1].toFixed(2)}</b> м/с · үений хурд max <b>${jm.toFixed(1)}</b> rad/s · хамгийн доод ул <b>${(low*100).toFixed(1)}</b> см · улаан frame <b>${nb}</b>`; }
+  function renderStats(){ $('stats').innerHTML = 'Одоо: ' + summary(CUR, MC) + '<br>Хуучин: ' + summary(BASE, M0); }
+
+  // ---------- drag a hand or foot (IK on the probe robot) ----------
+  const EFF = {
+    left_hand:  {link:'left_rubber_hand',  ori:false, chain:['left_shoulder_pitch_joint','left_shoulder_roll_joint','left_shoulder_yaw_joint','left_elbow_joint']},
+    right_hand: {link:'right_rubber_hand', ori:false, chain:['right_shoulder_pitch_joint','right_shoulder_roll_joint','right_shoulder_yaw_joint','right_elbow_joint']},
+    left_foot:  {link:'left_ankle_roll_link',  ori:true, chain:['left_hip_pitch_joint','left_hip_roll_joint','left_hip_yaw_joint','left_knee_joint','left_ankle_pitch_joint','left_ankle_roll_joint']},
+    right_foot: {link:'right_ankle_roll_link', ori:true, chain:['right_hip_pitch_joint','right_hip_roll_joint','right_hip_yaw_joint','right_knee_joint','right_ankle_pitch_joint','right_ankle_roll_joint']},
+  };
+  const EFF_TXT = {left_hand:'зүүн гар', right_hand:'баруун гар', left_foot:'зүүн хөл', right_foot:'баруун хөл'};
+  const LIM = Object.fromEntries(D.joints.filter(j => j.lim).map(j => [j.name, j.lim]));
+  const gizmo = new THREE.TransformControls(camera, renderer.domElement);
+  gizmo.setMode('translate'); gizmo.setSize(0.75); scene.add(gizmo);
+  const target = new THREE.Object3D(); scene.add(target);
+  gizmo.addEventListener('dragging-changed', e => { controls.enabled = !e.value; });
+  let ik = null;
+  function effState(row, e){
+    pose(P, {data:row}, 0); P.world.updateMatrixWorld(true);
+    const L = P.link[e.link], p = new THREE.Vector3(), q = new THREE.Quaternion();
+    L.getWorldPosition(p); L.getWorldQuaternion(q); return {p, q};
+  }
+  const OW = 0.3; // weight of foot orientation error (rad) vs position (m)
+  function rotErr(qa, qb){ // rotation vector taking qb to qa, world frame
+    const d = qa.clone().multiply(qb.clone().invert()); const sg = d.w < 0 ? -1 : 1;
+    const s = Math.sqrt(Math.max(0, 1 - d.w*d.w)), ang = 2*Math.acos(Math.min(1, Math.abs(d.w)));
+    return s < 1e-9 ? [2*d.x*sg, 2*d.y*sg, 2*d.z*sg] : [d.x*sg/s*ang, d.y*sg/s*ang, d.z*sg/s*ang];
+  }
+  function solveLin(A, b){ // Gaussian elimination, A small and SPD
+    const n = b.length, M = A.map((r,i) => [...r, b[i]]);
+    for (let i=0;i<n;i++){ let p = i; for (let k=i+1;k<n;k++) if (Math.abs(M[k][i]) > Math.abs(M[p][i])) p = k; [M[i],M[p]] = [M[p],M[i]];
+      for (let k=i+1;k<n;k++){ const f = M[k][i]/M[i][i]; for (let j=i;j<=n;j++) M[k][j] -= f*M[i][j]; } }
+    const x = new Array(n).fill(0); for (let i=n-1;i>=0;i--){ let s = M[i][n]; for (let j=i+1;j<n;j++) s -= M[i][j]*x[j]; x[i] = s/M[i][i]; } return x;
+  }
+  function solveIK(){
+    const e = EFF[ik.eff], row = Float64Array.from(ik.row), cols = e.chain.map(n => 7 + E.SDK.indexOf(n)), eps = 1e-4;
+    for (let it=0; it<80; it++){
+      const s = effState(row, e), err = [ik.goal.x-s.p.x, ik.goal.y-s.p.y, ik.goal.z-s.p.z];
+      if (e.ori) err.push(...rotErr(ik.q0, s.q).map(v => v*OW));
+      if (Math.hypot(...err) < 2e-4) break;
+      const J = cols.map(c => { row[c] += eps; const s2 = effState(row, e); row[c] -= eps;
+        const col = [(s2.p.x-s.p.x)/eps, (s2.p.y-s.p.y)/eps, (s2.p.z-s.p.z)/eps];
+        if (e.ori) col.push(...rotErr(s2.q, s.q).map(v => v*OW/eps)); return col; });
+      const m = err.length, A = Array.from({length:m}, (_,i) => Array.from({length:m}, (_,k) => J.reduce((a,c) => a + c[i]*c[k], 0) + (i===k ? 0.004 : 0)));
+      const y = solveLin(A, err); let dq = J.map(c => c.reduce((a,v,i) => a + v*y[i], 0));
+      const nrm = Math.hypot(...dq); if (nrm > 0.2) dq = dq.map(v => v*0.2/nrm);
+      cols.forEach((c,j) => { const L = LIM[e.chain[j]]; row[c] += dq[j]; if (L) row[c] = Math.max(L[0], Math.min(L[1], row[c])); });
+    }
+    const s = effState(row, e);
+    return {row, miss: s.p.distanceTo(ik.goal)};
+  }
+  function endIK(){ ik = null; gizmo.detach(); $('ikAdd').disabled = true; $('ikCancel').hidden = true; $('ikStart').hidden = false; $('ikInfo').textContent = ''; }
+  $('ikStart').onclick = () => {
+    setPlay(false); const f = Math.max(0, Math.min(CUR.n-1, Math.round(t*fps))), e = EFF[$('ikEff').value];
+    const row = CUR.data.slice(f*W, f*W+W), s0 = effState(row, e);
+    ik = {eff:$('ikEff').value, f, row, sol:row, q0:s0.q, p0:s0.p.clone(), goal:s0.p.clone(), miss:0};
+    pose(R, CUR, f); R.world.updateMatrixWorld(true); R.link[e.link].getWorldPosition(target.position);
+    gizmo.attach(target); $('ikStart').hidden = true; $('ikCancel').hidden = false; $('ikAdd').disabled = false;
+    $('ikInfo').textContent = `frame ${f}: сумыг чирнэ үү`;
+  };
+  $('ikCancel').onclick = endIK;
+  let ikBusy = false;
+  gizmo.addEventListener('objectChange', () => { if (!ik || ikBusy) return; ikBusy = true;
+    requestAnimationFrame(() => { ikBusy = false; if (!ik) return;
+      ik.goal = R.world.worldToLocal(target.position.clone());
+      const r = solveIK(); ik.sol = r.row; ik.miss = r.miss;
+      $('ikInfo').textContent = `${(ik.goal.distanceTo(ik.p0)*100).toFixed(1)} см зөөсөн` + (r.miss > 0.01 ? ` · хүрэхгүй ${(r.miss*100).toFixed(1)} см` : ''); }); });
+  $('ikAdd').onclick = () => {
+    if (!ik) return;
+    const e = EFF[ik.eff], deltas = {};
+    for (const n of e.chain){ const c = 7 + E.SDK.indexOf(n), d = ik.sol[c] - ik.row[c]; if (Math.abs(d) > 1e-5) deltas[n] = Math.round(d*1e5)/1e5; }
+    if (!Object.keys(deltas).length){ toast('Сумыг эхлээд чирнэ үү.'); return; }
+    let [a, b] = sel(); const tf = ik.f/fps;
+    const inside = tf >= a - 1e-6 && tf <= b + 1e-6; if (!inside){ a = b = tf; }
+    ops.push({op:'pose', t0:r2(a), t1:r2(b), ramp:num('p_iramp'), eff:ik.eff, cm:Math.round(ik.goal.distanceTo(ik.p0)*100), deltas});
+    endIK(); recompute();
+    toast(inside ? 'Сонгосон хэсэг бүхэлдээ зөөгдлөө.' : 'Зөвхөн ' + tf.toFixed(2) + ' s агшинд нэмэгдлээ.');
+  };
+
+  // ---------- loop ----------
+  function resize(){ const r = stage.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); camera.aspect = r.width/r.height; camera.updateProjectionMatrix(); drawLanes(); }
+  new ResizeObserver(resize).observe(stage); new ResizeObserver(drawLanes).observe(cv);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+  new MutationObserver(applyTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  applyTheme(); recompute(); setSel(3.5, 4.2); resize();
+  let last = performance.now(), lastF = -1;
+  const tmp = new THREE.Vector3();
+  function loop(now){
+    const dt = Math.max(0, Math.min((now-last)/1000, 0.1)); last = now;
+    const dur = (CUR.n-1)/fps;
+    if (playing){ t += dt*playSpeed;
+      if ($('loopsel').checked){ const [a,b] = sel(); if (t > b || t < a) t = a; } else if (t > dur) t = 0;
+      scrub.value = Math.round(t*fps); }
+    const f = Math.max(0, Math.min(CUR.n-1, Math.round(t*fps)));
+    if (ik && f !== ik.f) endIK();
+    if (ik) pose(R, {data:ik.sol}, 0); else pose(R, CUR, f); G.world.visible = $('ghost').checked; if (G.world.visible) pose(G, BASE, origAt(f));
+    const fa = Math.max(0,f-1), fb = Math.min(CUR.n-1,f+1);
+    syncVideo(f, fb > fa ? (CUR.src[fb]-CUR.src[fa])/((fb-fa)/fps) : 1);
+    $('time').textContent = (f/fps).toFixed(2)+' / '+dur.toFixed(2)+' s';
+    $('hud').textContent = `frame ${f}/${CUR.n-1} · анхны ${CUR.src[f].toFixed(2)} s`;
+    if ($('follow').checked){ R.link.pelvis.getWorldPosition(tmp); const d = tmp.clone().sub(controls.target); d.y = 0; controls.target.add(d); camera.position.add(d); }
+    controls.update(); renderer.render(scene, camera);
+    if (f !== lastF || drag){ drawLanes(); lastF = f; }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})().catch(e => { const l = document.getElementById('loading'); l.hidden = false; l.textContent = 'Ачаалж чадсангүй: ' + e.message; console.error(e); });
+</script>
+
+</body></html>

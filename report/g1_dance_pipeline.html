@@ -1,0 +1,413 @@
+<title>G1 бүжгийн pipeline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~72ch) with a sticky contents rail on wide screens; tables and code scroll in place. */
+:root {
+  --bg: #f6f7f4;
+  --paper: #ffffff;
+  --ink: #1d2320;
+  --muted: #5d6762;
+  --line: #d9ded8;
+  --accent: #1f6b4f;      /* alpine green */
+  --accent-soft: #e3efe8;
+  --warn: #9a5b12;
+  --warn-soft: #f6ead8;
+  --code-bg: #eef1ec;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141816; --paper: #1b201d; --ink: #e6ebe7; --muted: #9aa59f; --line: #2f3833;
+    --accent: #6cc39a; --accent-soft: #1f3329; --warn: #e2a65a; --warn-soft: #3a2b18; --code-bg: #222925;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141816; --paper: #1b201d; --ink: #e6ebe7; --muted: #9aa59f; --line: #2f3833;
+  --accent: #6cc39a; --accent-soft: #1f3329; --warn: #e2a65a; --warn-soft: #3a2b18; --code-bg: #222925;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+@media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } nav.toc { position: static !important; } }
+nav.toc { position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); align-self: start; font-size: 14px; }
+nav.toc ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+nav.toc a { color: var(--muted); text-decoration: none; }
+nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); }
+nav.toc .label { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+main { min-width: 0; }
+header.top { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 8px; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+h1 { font-family: var(--display); font-size: clamp(30px, 5vw, 44px); line-height: 1.12; margin: 8px 0 12px; text-wrap: balance; }
+h2 { font-family: var(--display); font-size: 28px; line-height: 1.2; margin: 56px 0 12px; text-wrap: balance; scroll-margin-top: 16px; }
+h3 { font-size: 18px; margin: 32px 0 8px; text-wrap: balance; }
+p, li { max-width: 72ch; }
+.lede { font-size: 18px; color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: .88em; }
+:not(pre) > code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin: 10px 0 18px; }
+pre code { background: none; padding: 0; }
+.scroll { overflow-x: auto; margin: 12px 0 20px; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+tr.hl td { background: var(--accent-soft); }
+.callout { background: var(--accent-soft); border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+.callout.warn { background: var(--warn-soft); }
+.callout p { margin: 6px 0; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 20px 0; }
+.kpi { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+.kpi .v { font-family: var(--display); font-size: 28px; font-variant-numeric: tabular-nums; }
+.kpi .k { font-size: 13px; color: var(--muted); }
+ol.timeline { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 0; }
+ol.timeline > li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); max-width: none; }
+ol.timeline .when { font-family: var(--mono); font-size: 13px; color: var(--accent); padding-top: 2px; }
+ol.timeline h4 { margin: 0 0 4px; font-size: 16px; }
+ol.timeline p { margin: 4px 0; }
+@media (max-width: 520px) { ol.timeline > li { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+dl.gloss { display: grid; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr); gap: 0; margin: 12px 0 24px; }
+dl.gloss dt, dl.gloss dd { padding: 10px 0; border-top: 1px solid var(--line); margin: 0; }
+dl.gloss dt { font-family: var(--mono); font-size: 14px; font-weight: 500; padding-right: 16px; overflow-wrap: anywhere; }
+dl.gloss dd { max-width: 72ch; }
+dl.gloss dd .en { color: var(--muted); font-size: 14px; display: block; }
+@media (max-width: 600px) { dl.gloss { grid-template-columns: minmax(0, 1fr); } dl.gloss dd { border-top: none; padding-top: 0; } }
+.name-anatomy { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; font-family: var(--mono); }
+.name-anatomy span { border: 1px solid var(--line); background: var(--paper); border-radius: 6px; padding: 6px 10px; }
+.name-anatomy b { color: var(--accent); }
+figure { margin: 18px 0 24px; }
+figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.pipeline { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 14px; margin: 12px 0 18px; }
+.pipeline span { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px; }
+.pipeline i { color: var(--muted); font-style: normal; }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+<div class="wrap">
+<nav class="toc" aria-label="Агуулга">
+  <div class="label">Агуулга</div>
+  <ol>
+    <li><a href="#overview">0. Тойм</a></li>
+    <li><a href="#s1">1. Видео бэлтгэх</a></li>
+    <li><a href="#s2">2. Видео → 3D хүн (GVHMR)</a></li>
+    <li><a href="#s3">3. Хүн → G1 (GMR)</a></li>
+    <li><a href="#s4">4. Лавлагааг цэвэрлэх</a></li>
+    <li><a href="#s5">5. Гараар засах (editor)</a></li>
+    <li><a href="#s6">6. CSV → NPZ</a></li>
+    <li><a href="#s7">7. Task бүртгэх</a></li>
+    <li><a href="#s8">8. Сургалт</a></li>
+    <li><a href="#s9">9. Isaac үнэлгээ</a></li>
+    <li><a href="#s10">10. MuJoCo sim2sim</a></li>
+    <li><a href="#s11">11. Deploy багц</a></li>
+    <li><a href="#s12">12. C++ sim</a></li>
+    <li><a href="#s13">13. Бодит G1</a></li>
+    <li><a href="#future">14. Нээлттэй ажлууд</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <div class="eyebrow">Unitree G1 · Pipeline · 2026-11-02</div>
+  <h1>Бичлэгээс бүжиглэж буй робот хүртэл</h1>
+  <p class="lede">Видео бичлэгээс эхлээд бодит G1 робот Schuhplattler бүжиглэх хүртэлх алхам бүрийн тушаал, оролт гаралт, шалгах зүйлс. Шинэ бүжиг нэмэхэд яг энэ дарааллыг давтана.</p>
+  <div class="meta"><span>Workspace: <code>~/projects/g1_pilot</code></span><span>Батлагдсан: бодит G1 дээр бүтэн бүжиг 6/6 (2026-11-02)</span></div>
+</header>
+
+<section id="overview">
+<h2>0. Тойм</h2>
+<div class="pipeline">
+  <span>1 видео</span><i>→</i><span>2 GVHMR</span><i>→</i><span>3 GMR</span><i>→</i><span>4 цэвэрлэх</span><i>→</i><span>5 editor</span><i>→</i><span>6 NPZ</span><i>→</i><span>7 task</span><i>→</i><span>8 сургалт</span><i>→</i><span>9 Isaac тест</span><i>→</i><span>10 MuJoCo</span><i>→</i><span>11 deploy багц</span><i>→</i><span>12 C++ sim</span><i>→</i><span>13 робот</span>
+</div>
+<div class="scroll"><table>
+<thead><tr><th>Алхам</th><th>Conda орчин</th><th>Хавтас</th><th>Гаралт</th><th class="num">Хугацаа</th></tr></thead>
+<tbody>
+<tr><td>1 Видео</td><td>base (ffmpeg)</td><td>g1_pilot</td><td><code>*_30fps.mp4</code></td><td class="num">мин</td></tr>
+<tr><td>2 GVHMR</td><td><code>gvhmr</code></td><td>~/projects/GVHMR</td><td><code>hmr4d_results.pt</code></td><td class="num">~5 мин</td></tr>
+<tr><td>3 GMR</td><td><code>gmr</code></td><td>g1_pilot</td><td><code>*.pkl</code> → <code>*_30hz.csv</code></td><td class="num">~1 мин</td></tr>
+<tr><td>4–5 Цэвэрлэх, засах</td><td><code>gmr</code> + browser</td><td>g1_pilot/tools</td><td><code>*_v3s_30hz.csv</code></td><td class="num">цаг, өдөр</td></tr>
+<tr><td>6 NPZ</td><td><code>env_isaaclab</code></td><td>unitree_rl_lab</td><td><code>*.npz</code> (50 Hz)</td><td class="num">1 мин</td></tr>
+<tr><td>8 Сургалт</td><td><code>env_isaaclab</code></td><td>unitree_rl_lab</td><td><code>model_N.pt</code></td><td class="num">17 + 3 цаг</td></tr>
+<tr><td>9–10 Тест</td><td><code>env_isaaclab</code>, <code>gmr</code></td><td>g1_pilot</td><td><code>robust/</code>, <code>sim2sim/results/</code></td><td class="num">~1 цаг</td></tr>
+<tr><td>11 Deploy багц</td><td><code>env_isaaclab</code>, <code>s2s</code>, <code>unitree_sim_env</code></td><td>g1_pilot/deploy</td><td><code>schuhplattler_v3s/</code></td><td class="num">10 мин</td></tr>
+<tr><td>12–13 C++ / робот</td><td>conda хэрэггүй</td><td>g1_pilot/sim_cpp</td><td>лог</td><td class="num"></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s1">
+<h2>1. Видео бэлтгэх</h2>
+<p>Нэг хүн бүтэн биеэрээ харагддаг, камер хөдөлгөөнгүй байх хэсгийг сонгоно. GVHMR-т 30 fps тохиромжтой.</p>
+<pre><code>cd ~/projects/g1_pilot
+ffmpeg -ss 00:00:05.0 -to 00:00:16.9 -i source.mp4 -r 30 -an day2/schuhplattler_30fps.mp4</code></pre>
+<div class="callout"><p>Бүжгийн хэсэг бүрийн эхлэх, дуусах цагийг тэмдэглэж ав. Энэ нь дараа нь хөгжимтэй тааруулахад хэрэгтэй болно (14.2-ыг үз).</p></div>
+</section>
+
+<section id="s2">
+<h2>2. Видео → 3D хүний хөдөлгөөн (GVHMR)</h2>
+<pre><code>conda activate gvhmr
+cd ~/projects/GVHMR
+python tools/demo/demo.py --video ~/projects/g1_pilot/day2/schuhplattler_30fps.mp4 -s
+# -s = камер хөдөлгөөнгүй. Гаралт: outputs/demo/schuhplattler_30fps/hmr4d_results.pt (+ 1_incam.mp4, 2_global.mp4)</code></pre>
+<p><b>Шалгах:</b> <code>2_global.mp4</code>-д хүний хөдөлгөөн видеотой таарч байгаа, хөл газарт хөвөөгүй байгааг харна.</p>
+</section>
+
+<section id="s3">
+<h2>3. Хүн → G1 joint өнцөг (GMR retarget)</h2>
+<pre><code>conda activate gmr
+cd ~/projects/g1_pilot
+python tools/gmr_retarget.py --gvhmr_pred_file ~/projects/GVHMR/outputs/demo/schuhplattler_30fps/hmr4d_results.pt \
+    --save_path day2/schuhplattler_gmr_v2.pkl --ik_config tools/smplx_to_g1_arms.json
+python tools/gmr_to_csv.py day2/schuhplattler_gmr_v2.pkl day2/schuhplattler_gmr_v2_30hz.csv   # fps-ийг хэвлэнэ</code></pre>
+<ul>
+<li><code>smplx_to_g1_arms.json</code>: гарын IK жинг 10-аас 50 болгосон. Ингэснээр алгадах үеийн гарын байрлал хүнтэй ойртсон (зөрүү 6.2-оос 2.7 cm).</li>
+<li>CSV-ийн мөр бүр: root байрлал (3), root quaternion xyzw (4), 29 joint (SDK дарааллаар).</li>
+</ul>
+</section>
+
+<section id="s4">
+<h2>4. Лавлагааг цэвэрлэх</h2>
+<pre><code>conda activate gmr
+cd ~/projects/g1_pilot/tools
+python ground_fix.py ../day2/x_30hz.csv ../day2/x_ground_30hz.csv --fps 30          # тулгуур хөлийг газарт буулгах (GVHMR-ийн 0→20 cm drift)
+python add_ending.py ../day2/x_ground_30hz.csv ../day2/x_end_30hz.csv T_CUT 1.0 1.0  # T_CUT сек-ээс зогсох байрлал руу 1 сек шилжиж, 1 сек барина
+python balance_fix.py ../day2/x_end_30hz.csv ../day2/x_end_bal_30hz.csv --report bal.txt   # нэг хөл дээр массын төвийг тулгуур хөлийн дээр гаргах
+python motion_check.py ../day2/x_end_bal_30hz.csv --fps 30                          # PASS/WARN хүснэгт + зураг</code></pre>
+<ul>
+<li><code>add_ending.py</code>-ийн <code>T_CUT</code>: хөдөлгөөн удаан байх мөчийг сонгоно. Төгсгөл зогсох байрлалаар дуусах нь <b>Velocity руу зөөлөн шилжих нөхцөл</b> (13-ыг үз).</li>
+<li><code>balance_fix.py</code>-д <code>--warp</code> (хөл буух хугацааг өөрчлөх), <code>--pin</code> (хөлийг тогтоох) сонголт бий. v2-ийн <code>bal2</code> хувилбарыг эдгээрээр гаргасан.</li>
+<li><code>motion_check</code>-ийн гол шалгуурууд: тулгуур хөлийн өндөр &lt; 2 cm, хөлийн гулсалт, joint-ийн огцом үсрэлт.</li>
+</ul>
+</section>
+
+<section id="s5">
+<h2>5. Гараар засах (Reference Editor)</h2>
+<p>Editor: <a href="../editor/index.html">Schuhplattler Reference Editor</a>. Timeline дээр хэсэг сонгоод дараах үйлдлүүдийг хийнэ:</p>
+<ul>
+<li>гар, хөлийг IK-аар чирж зөөх</li>
+<li>удаашруулах</li>
+<li>зөөлрүүлэх</li>
+<li>хөдөлгөөн багасгах</li>
+<li>joint-ийг өнцгөөр хазайлгах</li>
+<li>хэсэг хасах</li>
+</ul>
+<p>"Засваруудыг хуулах" товчоор засваруудыг JSON-оор авна.</p>
+<pre><code>cd ~/projects/g1_pilot
+# JSON-ийг day2/sch_edits.json болгож хадгалаад:
+python tools/ref_edit.py day2/sch_edits.json day2/schuhplattler_gmr_v2_end_bal2_30hz.csv day2/schuhplattler_gmr_v3_30hz.csv
+# хэсэг хэсгийн хурдны засварыг нэг гөлгөр хэмнэлийн муруйгаар солих (v3 → v3s); гарын хурд ≤ 3.5 m/s
+python tools/tempo_smooth.py day2/sch_edits.json day2/schuhplattler_gmr_v2_end_bal2_30hz.csv \
+    day2/sch_edits_smooth.json day2/schuhplattler_gmr_v3s_30hz.csv --vmax 3.5 --sigma 0.4</code></pre>
+<div class="callout warn"><p>Editor одоогоор Schuhplattler v2 хөдөлгөөнийг дотроо агуулдаг (data.json). Шинэ бүжгийг засахын тулд өөрийн CSV-ээ ачаалдаг болгох шаардлагатай (14.3-ыг үз).</p></div>
+</section>
+
+<section id="s6">
+<h2>6. CSV (30 Hz) → NPZ (50 Hz, сургалтын формат)</h2>
+<pre><code>conda activate env_isaaclab
+cd ~/projects/unitree_rl_lab
+python scripts/mimic/csv_to_npz.py -f ~/projects/g1_pilot/day2/schuhplattler_gmr_v3s_30hz.csv --input_fps 30 \
+    --output_name ~/projects/g1_pilot/day2/schuhplattler_gmr_v3s.npz --headless
+# "saved" гарсны дараа Ctrl+C (script давтаад байдаг)</code></pre>
+</section>
+
+<section id="s7">
+<h2>7. Isaac task бүртгэх</h2>
+<p>Файл: <code>unitree_rl_lab/source/unitree_rl_lab/unitree_rl_lab/tasks/mimic/robots/g1_29dof/schuhplattler/residual/residual_env_cfg.py</code> болон <code>__init__.py</code>. Шинэ бүжгийн хувьд тогтмол болон class нэмнэ (v3s-ийн жишээгээр):</p>
+<pre><code># residual_env_cfg.py
+SCH_NEW = os.path.expanduser("~/projects/g1_pilot/day2/schuhplattler_new.npz")
+
+class MimicSchNewDRFloorEnvCfg(ResidualEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_NEW])
+        apply_dr_plus(self)
+        apply_floor_mix(self)
+        use_mimic_action(self)
+# (+ ижил хэлбэрийн ...PlayEnvCfg)
+
+# __init__.py, жагсаалтад:
+    ("Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRFloor-SchNew", "MimicSchNewDRFloor",
+     f"{__name__}.rsl_rl_ppo_cfg:MimicPPORunnerCfg"),</code></pre>
+<p>Smoke test (5 it, 64 робот):</p>
+<pre><code>python scripts/rsl_rl/train.py --headless --task Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRFloor-SchNew \
+    --num_envs 64 --max_iterations 5 --run_name smoke_new</code></pre>
+</section>
+
+<section id="s8">
+<h2>8. Сургалт</h2>
+<pre><code>conda activate env_isaaclab
+cd ~/projects/unitree_rl_lab
+# A. DR+ дээр шинээр (v3s: 30 000 it, ~17 цаг, RTX 3090)
+python scripts/rsl_rl/train.py --headless --task Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRPlus-SchV3s \
+    --max_iterations 30000 --run_name sch_v3s_plus 2>&1 | tee ~/projects/g1_pilot/sch_v3s_plus.log
+# B. олон төрлийн шал дээр +5000 it fine-tune (~3 цаг)
+python scripts/rsl_rl/train.py --headless --task Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRFloor-SchV3s \
+    --max_iterations 5000 --run_name sch_v3s_floor --resume \
+    --load_run 2026-10-30_20-26-10_sch_v3s_plus --checkpoint model_29999.pt 2>&1 | tee ~/projects/g1_pilot/sch_v3s_floor.log</code></pre>
+<p><b>Явцыг хянах:</b> <code>tail -n 60 ~/projects/g1_pilot/sch_v3s_plus.log</code>. Гол үзүүлэлтүүд:</p>
+<ul>
+<li><code>Mean episode length</code>: ~1200-аас дээш байх</li>
+<li><code>Episode_Termination/time_out</code>: ~0.7</li>
+<li><code>Metrics/motion/error_body_pos</code>: ~0.08</li>
+</ul>
+<p>Нэг удаад зөвхөн нэг сургалт ажиллуулна.</p>
+</section>
+
+<section id="s9">
+<h2>9. Isaac Lab үнэлгээ</h2>
+<pre><code>cd ~/projects/unitree_rl_lab
+CK=logs/rsl_rl/g1_schuhplattler_residual/2026-10-31_22-40-36_sch_v3s_floor/model_34998.pt
+T=Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRFloor-SchV3s
+python ~/projects/g1_pilot/day4_eval.py --task $T --checkpoint $CK --run watch                    # цонхонд харах
+python ~/projects/g1_pilot/robust/robust_eval.py --task $T --checkpoint $CK --mode mc --num_envs 512 --name new_mc --headless
+python ~/projects/g1_pilot/robust/robust_eval.py --task $T --checkpoint $CK --mode mc --num_envs 512 \
+    --floor stone --no_ee_term --name new_stone --headless                                         # шал тус бүрээр, бодит уналт</code></pre>
+</section>
+
+<section id="s10">
+<h2>10. MuJoCo sim2sim (PyTorch)</h2>
+<pre><code>cd ~/projects/g1_pilot
+CK_ABS=~/projects/unitree_rl_lab/logs/rsl_rl/g1_schuhplattler_residual/2026-10-31_22-40-36_sch_v3s_floor/model_34998.pt
+S="conda run --no-capture-output -n gmr python sim2sim/sim2sim_dance.py --checkpoint $CK_ABS --motion day2/schuhplattler_gmr_v3s.npz --action mimic"
+$S --viewer                                   # Space = эхлүүлэх, Enter = эхнээс нь
+$S --runs 512 --procs 22 --name new_flat_n512 # Monte Carlo
+$S --runs 512 --procs 22 --friction 0.25 --name new_f025_n512
+conda run -n gmr python sim2sim/classify_falls.py   # бодит уналт ба зөрөлтийг ангилах</code></pre>
+<p><b>Шалгуур (v3s_floor):</b> хавтгай шалан дээр бодит уналт 0%. Хэрэв 8.5 сек орчим "уналт" гарвал энэ нь өсгий алгадах хөдөлгөөний зөрөлт бөгөөд бодит уналт биш.</p>
+</section>
+
+<section id="s11">
+<h2>11. Deploy багц (ONNX, deploy.yaml, CSV)</h2>
+<pre><code>cd ~/projects/g1_pilot
+conda run -n env_isaaclab python deploy/export_onnx.py export $CK_ABS deploy/schuhplattler_v3s/exported/policy.onnx
+conda run -n s2s python deploy/export_onnx.py check $CK_ABS deploy/schuhplattler_v3s/exported/policy.onnx
+conda run -n unitree_sim_env python deploy/build_deploy_pkg.py       # yaml цэвэрлэх, joint дараалал, CSV-ууд (intro, arm test, part)
+bash deploy/run_checks.sh ref; bash deploy/run_checks.sh stand      # C++ логикийг Python-оор, 512 run</code></pre>
+<div class="callout warn"><p><code>build_deploy_pkg.py</code>-д run хавтас, npz болон CSV-ийн нэрс v3s-д тогтмолоор бичигдсэн байна (<code>RUN</code>, <code>NPZ</code>, <code>OUT</code>). Шинэ бүжигт эдгээрийг өөрчилнө эсвэл аргумент болгоно.</p></div>
+<p><b>Гол дүгнэлтүүд:</b></p>
+<ul>
+<li>Бүжгийн эхэнд 2 сек intro (зогсох байрлалаас эхний frame руу) хэрэгтэй.</li>
+<li>Тоглуулах хурдыг <b>бүү багасга</b>: 0.5× хурдаар тоглуулахад робот бараг үргэлж унасан.</li>
+<li>Бүжгийг зөвхөн зогсох байрлалаар төгсгөнө (full эсвэл part).</li>
+</ul>
+</section>
+
+<section id="s12">
+<h2>12. C++ deploy код MuJoCo дээр (keyboard gamepad)</h2>
+<pre><code># багцыг C++ хуулбарт хуулах (шинэ policy болгонд)
+cp -r ~/projects/g1_pilot/deploy/schuhplattler_v3s ~/projects/g1_pilot/sim_cpp/deploy/robots/g1_29dof/config/policy/mimic/
+bash ~/projects/g1_pilot/sim_cpp/set_dance.sh part      # эсвэл full
+bash ~/projects/g1_pilot/sim_cpp/run_sim.sh             # cонгосон хувилбар; "auto" = автоматаар</code></pre>
+<div class="scroll"><table>
+<thead><tr><th>Keyboard (MuJoCo цонх)</th><th>Unitree remote</th><th>Шилжилт</th></tr></thead>
+<tbody>
+<tr><td><code>1</code></td><td>L2 + up</td><td>Passive → FixStand</td></tr>
+<tr><td><code>8</code> ×5</td><td>(gantry буулгах)</td><td>хөл шалан дээр</td></tr>
+<tr><td><code>2</code></td><td>R1 + X</td><td>FixStand → Velocity</td></tr>
+<tr><td><code>9</code></td><td>(gantry сулруулах)</td><td>elastic band унтраах</td></tr>
+<tr><td><code>3</code></td><td>L2-г 2 сек барих + up</td><td>Velocity → ArmTest (7 сек)</td></tr>
+<tr><td><code>4</code></td><td>L2-г 2 сек барих + right</td><td>Velocity → Schuhplattler (part 6.66 / full 16.96 сек)</td></tr>
+<tr class="hl"><td><code>0</code></td><td><b>L2 + B</b></td><td><b>→ Passive (яаралтай зогсоолт)</b></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s13">
+<h2>13. Бодит G1</h2>
+<pre><code>sudo ip link set enp5s0 up
+sudo ip addr add 192.168.123.99/24 dev enp5s0      # "already assigned" гарвал хэвийн
+ping -c 3 192.168.123.161
+# робот gantry дээр, роботын өөрийн удирдлага унтарсан (debug mode)
+bash ~/projects/g1_pilot/sim_cpp/set_dance.sh part   # эхлээд part, дараа нь full
+bash ~/projects/g1_pilot/sim_cpp/run_real.sh enp5s0  # checklist → yes; терминалд "[pad] ..." remote лог</code></pre>
+<p><b>Дараалал:</b></p>
+<ol>
+<li>FixStand (хөл агаарт)</li>
+<li>Velocity (хөл шалан дээр)</li>
+<li>ArmTest</li>
+<li>part</li>
+<li>full</li>
+</ol>
+<p>Комбо дарахдаа терминалд "[pad] L2 held 2 s" мөр гарсны <b>дараа</b> up/right дарна.</p>
+<div class="callout warn">
+<p><b>Аюулгүй байдал:</b></p>
+<ul>
+<li>L2 + B-г туршилт бүрийн өмнө нэг удаа турш.</li>
+<li>Ethernet кабелийг бэхэл. Кабель тасарвал Passive команд роботод хүрэхгүй.</li>
+<li>Шал хуурай байх (μ ≥ 0.4).</li>
+<li>Бүжгийн хооронд моторыг 10–15 мин амраа.</li>
+<li><code>run_real.sh</code> зөвхөн part/full тохиргоог хүлээж авна.</li>
+<li>Sim болон бодит роботыг зэрэг бүү ажиллуул.</li>
+</ul>
+</div>
+<p>Лог: <code>sim_cpp/logs/real_*.log</code>. Дэлгэрэнгүй: <code>deploy/sim2real_runbook.md</code>.</p>
+</section>
+
+<section id="future">
+<h2>14. Нээлттэй ажлууд</h2>
+
+<h3>14.1 Кабельгүйгээр, гадаа бүжиглүүлэх (remote-ын комбогоор)</h3>
+<p><b>Одоогийн байдал:</b> g1_ctrl энэ PC дээр ажиллаж, Ethernet-ээр роботтой холбогддог. Remote-ын комбо аль хэдийн ажилладаг. Тиймээс асуудал зөвхөн кабельд байна.</p>
+<p><b>Шийдэл:</b> g1_ctrl-ийг роботын дотоод хөгжүүлэлтийн компьютер (PC2, Jetson, aarch64) дээр ажиллуулна. Ингэвэл gamepad биш, роботын өөрийн remote л хангалттай болно.</p>
+<ol>
+<li>PC2 дээр <code>unitree_sdk2</code>, yaml-cpp, boost, fmt, spdlog, eigen-ийг суулгана. onnxruntime-ийн <b>aarch64</b> хувилбар хэрэгтэй. Одоо <code>thirdparty</code>-д зөвхөн x64 хувилбар байгаа.</li>
+<li><code>sim_cpp/deploy</code>-г PC2 руу хуулж (багцтай хамт) build хийнэ. <code>./g1_ctrl --network eth0</code> (PC2-ийн дотоод сүлжээ).</li>
+<li>Систем асахад g1_ctrl автоматаар эхлэх <b>systemd service</b> үүсгэнэ. Програм Passive горимд хүлээж байна.</li>
+<li><b>Гадаа ажиллуулах дараалал:</b>
+  <ol>
+  <li>Роботыг асаана.</li>
+  <li>Debug mode-д оруулна (Unitree-ийн комбо).</li>
+  <li>L2 + up → FixStand.</li>
+  <li>R1 + X → Velocity. Энэ горимд stick-ээр алхуулж зөөж болно.</li>
+  <li>L2(2s) + right → бүжиг эхэлнэ.</li>
+  </ol>
+</li>
+<li><b>Эрсдэл:</b> gantry байхгүй тул энэ бол сүүлийн шат. Шал тэгш, хуурай байх (өвс, хайрга дээр шалгаагүй). L2 + B дарахад робот унадаг. Эхлээд дотор, gantry-тай PC2 хувилбарыг шалгана.</li>
+</ol>
+
+<h3>14.2 Бүжигтэй зэрэг хөгжим тоглуулах</h3>
+<ul>
+<li><b>Хаанаас тоглуулах:</b> G1-ийн чанга яригч (<code>unitree_sdk2</code>-ийн G1 AudioClient: PCM stream) эсвэл bluetooth чанга яригч. Хоёуланд нь g1_ctrl-ийн <code>State_Mimic::enter()</code>-ээс эхлүүлж, <code>exit()</code>-д зогсооно.</li>
+<li><b>Синк:</b> бүжиг wall clock-оор 50 Hz-ээр тоглодог. Хөгжмийг intro-гийн дараа (2 сек) эхлүүлж, audio-ны хоцрогдлыг нэг удаа хэмжиж offset болгоно.</li>
+<li class="callout warn" style="list-style:none"><b>Анхааруулга:</b> v3s-ийн хэмнэлийг <code>tempo_smooth</code> хэсэг хэсгээр нь 26% хүртэл удаашруулсан (3.5–8.5 сек). Тиймээс анхны видеоны хөгжим <b>таарахгүй</b>. Хоёр шийдэл бий:
+  <ol>
+  <li>Хөгжмийг ижил tempo муруйгаар time-stretch хийх (rubberband, librosa). Ингэвэл хөгжим нэг хэмнэлгүй болно.</li>
+  <li>Дараагийн бүжигт хэмнэлийг <b>өөрчлөхгүй</b>, хурдан хэсгийг зөвхөн поз засварлах эсвэл гарын хурдыг бууруулах замаар шийдэх. Хөгжимд хамгийн тохиромжтой нь энэ.</li>
+  </ol></li>
+<li>Хөгжмийн зохиогчийн эрх: нийтэд гаргахад эрхтэй эсвэл чөлөөтэй хөгжим ашиглана.</li>
+</ul>
+
+<h3>14.3 Урт бүжиг (~2 мин) ба reference засварлах pipeline</h3>
+<p>Pipeline ижил хэвээр. Ялгаа нь урттайгаа холбоотой:</p>
+<div class="scroll"><table>
+<thead><tr><th>Алхам</th><th>2 мин бүжигт өөрчлөгдөх зүйл</th></tr></thead>
+<tbody>
+<tr><td>2 GVHMR</td><td>Камер хөдөлгөөнгүй, 30 fps. GPU санах ой хүрэлцэхгүй бол 30–40 сек-ийн хэсгүүдэд хуваана. Хэсгүүдийг давхардуулж (overlap) ажиллуулаад холбоно.</td></tr>
+<tr><td>4 Цэвэрлэх</td><td>ground_fix ба balance_fix өөрчлөлтгүй ажиллана. add_ending нь зөвхөн бүжгийн төгсгөлд хэрэглэгдэнэ.</td></tr>
+<tr><td>5 Editor</td><td><b>Шинэ ажил:</b> editor-ийг дурын CSV ачаалдаг болгох (файл сонгох, хуучин хувилбартай харьцуулах). Мөн "хэмнэл хадгалах" горим нэмнэ: удаашруулалгүйгээр хурдан хэсгийн далайцыг багасгана. Ингэвэл хөгжимтэй таарна.</td></tr>
+<tr><td>8 Сургалт</td><td>Клип 8 дахин урт. Adaptive sampling нь хэцүү хэсгүүдийг өөрөө олдог. Ойролцоогоор 60–100k iteration (30–50 цаг) хэрэгтэй гэж таамаглаж байна. 30k дээр явцыг шалгаж шийднэ.</td></tr>
+<tr><td>11–13 Deploy</td><td>Аюулгүй "part" цэгүүд олон болно: хоёр хөл шалан дээр, хөдөлгөөн тайван байх мөчүүдийг <code>deploy/balance_check.py</code>-тай төстэй скриптээр олно. Тус бүрд зөөлөн буцалттай part CSV үүсгэнэ.</td></tr>
+</tbody></table></div>
+<p><b>Санал болгох дараалал:</b></p>
+<ol>
+<li>Editor-ийг ерөнхий (generic) болгох.</li>
+<li>Видео сонгож, хөгжмийн хэмнэлийг (BPM) тэмдэглэх.</li>
+<li>2 → 6-р алхам.</li>
+<li>Эхний 30 сек-ийг тусад нь сургаж pipeline-ийг шалгах.</li>
+<li>Бүтэн 2 минутаар сургах.</li>
+<li>Хөгжимтэй хамт deploy хийх.</li>
+</ol>
+</section>
+
+<footer>Энэ баримтыг <code>~/projects/g1_pilot</code>-ийн скрипт, runbook, лог, бодит туршилтын үр дүн (2026-11-02) дээр үндэслэн бичсэн. Холбоотой: <a href="https://claude.ai/artifact/CekuWb74oXTZ2CJccKFUZu">G1 Schuhplattler тайлан</a>, <a href="https://claude.ai/artifact/U6hgxv96UjdKLnRk2kLkNc">бичлэгүүд</a>.</footer>
+</main>
+</div>

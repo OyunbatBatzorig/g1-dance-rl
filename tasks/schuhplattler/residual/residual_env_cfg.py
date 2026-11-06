@@ -530,3 +530,142 @@ class MimicSchBal2DRPlayEnvCfg(ResidualPlayEnvCfg):
         super().__post_init__()
         apply_dr_v2(self, [SCH_BAL2])
         use_mimic_action(self)
+
+
+# -- v3s reference (Oyunbat's own edits + smooth tempo, 15.0 s) --
+SCH_V3S = os.path.join(DATA_DIR, "day2/schuhplattler_gmr_v3s.npz")
+FLOOR_BUMP_M = 0.01  # DR+ floor height noise (m)
+
+
+def apply_dr_plus(cfg):
+    """DR v2 plus sim2real extras for the real G1 (call after apply_dr_v2).
+
+    Latency stays 0-20 ms: residual_action holds the old target for at most one env step (4 sub-steps).
+    """
+    # joint zero / encoder calibration offset (original task: +-0.01 rad)
+    cfg.events.add_joint_default_pos.params["pos_distribution_params"] = (-0.03, 0.03)
+    # torso CoM shift: battery, cables, payload (original: x +-0.025)
+    cfg.events.base_com.params["com_range"] = {"x": (-0.05, 0.05), "y": (-0.05, 0.05), "z": (-0.05, 0.05)}
+    # motor rotor inertia (armature) x0.8-1.2, fixed per robot
+    cfg.events.joint_armature = EventTerm(
+        func=mdp.randomize_joint_parameters,
+        mode="startup",
+        params={
+            "asset_cfg": SceneEntityCfg("robot", joint_names=".*"),
+            "armature_distribution_params": (0.8, 1.2),
+            "operation": "scale",
+            "distribution": "uniform",
+        },
+    )
+    # IMU orientation drift (original: +-0.05)
+    cfg.observations.policy.motion_anchor_ori_b.noise = Unoise(n_min=-0.08, n_max=0.08)
+    # floor: friction is already 0.3-2.0 (apply_dr_v2); add a slightly uneven floor (0-1 cm bumps, 10 cm grid)
+    from isaaclab.terrains import TerrainGeneratorCfg
+    from isaaclab.terrains.height_field import HfRandomUniformTerrainCfg
+
+    cfg.scene.terrain.terrain_type = "generator"
+    cfg.scene.terrain.terrain_generator = TerrainGeneratorCfg(
+        size=(8.0, 8.0),
+        border_width=20.0,
+        num_rows=10,
+        num_cols=20,
+        horizontal_scale=0.1,
+        vertical_scale=0.005,
+        slope_threshold=0.75,
+        use_cache=False,
+        sub_terrains={
+            "rough": HfRandomUniformTerrainCfg(
+                proportion=1.0, noise_range=(0.0, FLOOR_BUMP_M), noise_step=0.005, border_width=0.25
+            )
+        },
+    )
+    cfg.scene.terrain.max_init_terrain_level = None
+
+
+# Schuhplattler v3s alone, full policy, DR v2: same setup as sch_bal2_full (v2 ref) -> shows what the new ref changes.
+class MimicSchV3sDREnvCfg(ResidualEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_V3S])
+        use_mimic_action(self)
+
+
+class MimicSchV3sDRPlayEnvCfg(ResidualPlayEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_V3S])
+        use_mimic_action(self)
+
+
+# Same, with the sim2real extras (apply_dr_plus): the candidate for MuJoCo -> real G1.
+class MimicSchV3sDRPlusEnvCfg(ResidualEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_V3S])
+        apply_dr_plus(self)
+        use_mimic_action(self)
+
+
+class MimicSchV3sDRPlusPlayEnvCfg(ResidualPlayEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_V3S])
+        apply_dr_plus(self)
+        use_mimic_action(self)
+
+
+# -- floor mix for sim2real: wood / smooth / stone / slightly sloped floors (call after apply_dr_plus) --
+def apply_floor_mix(cfg):
+    """Each robot gets one floor tile: flat, rough 0-1 cm, stone-like 0-2.5 cm, or a gentle slope (<= ~3 deg).
+
+    Floor type = geometry here; slipperiness (smooth tile vs wood vs stone) comes from the friction range below.
+    """
+    from isaaclab.terrains import MeshPlaneTerrainCfg, TerrainGeneratorCfg
+    from isaaclab.terrains.height_field import HfPyramidSlopedTerrainCfg, HfRandomUniformTerrainCfg
+
+    cfg.scene.terrain.terrain_type = "generator"
+    cfg.scene.terrain.terrain_generator = TerrainGeneratorCfg(
+        size=(8.0, 8.0),
+        border_width=20.0,
+        num_rows=10,
+        num_cols=20,
+        horizontal_scale=0.1,
+        vertical_scale=0.005,
+        slope_threshold=0.75,
+        use_cache=False,
+        sub_terrains={
+            "flat": MeshPlaneTerrainCfg(proportion=0.3),
+            "rough": HfRandomUniformTerrainCfg(
+                proportion=0.3, noise_range=(0.0, 0.01), noise_step=0.005, border_width=0.25
+            ),
+            "stone": HfRandomUniformTerrainCfg(
+                proportion=0.2, noise_range=(0.0, 0.025), noise_step=0.005, border_width=0.25
+            ),
+            "slope": HfPyramidSlopedTerrainCfg(
+                proportion=0.2, slope_range=(0.0, 0.05), platform_width=0.5, border_width=0.25
+            ),
+        },
+    )
+    cfg.scene.terrain.max_init_terrain_level = None
+    # slippery polished floor (0.2) up to grippy rubber mat (2.0); combine mode is multiply with ground 1.0
+    cfg.events.physics_material.params["static_friction_range"] = (0.2, 2.0)
+    cfg.events.physics_material.params["dynamic_friction_range"] = (0.15, 1.6)
+
+
+# Same as DRPlus-SchV3s on the floor mix: fine-tune from sch_v3s_plus (same motion, same action).
+class MimicSchV3sDRFloorEnvCfg(ResidualEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_V3S])
+        apply_dr_plus(self)
+        apply_floor_mix(self)
+        use_mimic_action(self)
+
+
+class MimicSchV3sDRFloorPlayEnvCfg(ResidualPlayEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        apply_dr_v2(self, [SCH_V3S])
+        apply_dr_plus(self)
+        apply_floor_mix(self)
+        use_mimic_action(self)

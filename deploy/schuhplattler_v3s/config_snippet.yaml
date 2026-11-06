@@ -1,0 +1,32 @@
+# Paste into deploy/robots/g1_29dof/config/config.yaml (copy this folder to config/policy/mimic/schuhplattler_v3s first).
+# Keep fps at 50: playing the dance slower (lower fps) made the robot fall in MuJoCo (0.75x: 23%, 0.5x: ~100%).
+# 1) under FSM._ (enabled fsms):
+    Mimic_Schuhplattler:
+      id: 103
+      type: Mimic
+    Mimic_Schuhplattler_ArmTest:
+      id: 104
+      type: Mimic
+# 2) in FSM.Velocity.transitions, add button combos that are still free, e.g.:
+      Mimic_Schuhplattler: LT(2s) + right.on_pressed
+      Mimic_Schuhplattler_ArmTest: LT(2s) + up.on_pressed
+# 3) the states themselves, next to Mimic_Dance_102.
+#    First hardware run: the arm test (same policy, only the arms go up to the dance's first pose and back down).
+  Mimic_Schuhplattler_ArmTest:
+    transitions:
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 50
+    motion_file: config/policy/mimic/schuhplattler_v3s/params/schuhplattler_v3s_arm_test_50hz.csv
+    policy_dir: config/policy/mimic/schuhplattler_v3s/
+    time_start: 0.0
+    time_end: 6.98
+  Mimic_Schuhplattler:
+    transitions:
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 50
+    motion_file: config/policy/mimic/schuhplattler_v3s/params/schuhplattler_gmr_v3s_50hz_intro2.csv
+    policy_dir: config/policy/mimic/schuhplattler_v3s/
+    time_start: 0.0
+    time_end: 16.96    # first tests: 3.66 then 13.04 (both feet on the floor there), see sim2real_runbook.md

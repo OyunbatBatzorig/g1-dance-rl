@@ -1,0 +1,8212 @@
+{
+ "nominal": {
+  "seed": 0,
+  "success": true,
+  "t_fail": null,
+  "cause": null,
+  "dr": {
+   "friction": 1.0,
+   "delay_ms": 0
+  },
+  "real_fall": false,
+  "min_pelvis_z": 0.751,
+  "max_tilt_deg": 12.3,
+  "joint_rmse": 0.17990504138714603,
+  "body_err": 0.04323500267128122,
+  "duration": 14.96
+ },
+ "runs": [
+  {
+   "seed": 1,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5350051375310299,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.17962291489808052,
+   "body_err": 0.04349210772666964,
+   "duration": 14.96
+  },
+  {
+   "seed": 2,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3552819437626946,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1796181391356021,
+   "body_err": 0.042414746176257345,
+   "duration": 14.96
+  },
+  {
+   "seed": 3,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5648107841412178,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.18214774781872145,
+   "body_err": 0.044674569849872246,
+   "duration": 14.96
+  },
+  {
+   "seed": 4,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7425262248175761,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.1804361856934485,
+   "body_err": 0.04176079101084971,
+   "duration": 14.96
+  },
+  {
+   "seed": 5,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6492126971897154,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.17830707383018082,
+   "body_err": 0.04152021170257446,
+   "duration": 14.96
+  },
+  {
+   "seed": 6,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7413410515643482,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.1794524667481465,
+   "body_err": 0.044870877378014075,
+   "duration": 14.96
+  },
+  {
+   "seed": 7,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.648140218766658,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.1769964950501613,
+   "body_err": 0.042221842003148734,
+   "duration": 14.96
+  },
+  {
+   "seed": 8,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9286985505682004,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.17676687240762617,
+   "body_err": 0.04257683452307706,
+   "duration": 14.96
+  },
+  {
+   "seed": 9,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.743454158487255,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17983217140055743,
+   "body_err": 0.04165499015478953,
+   "duration": 14.96
+  },
+  {
+   "seed": 10,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.920825344610296,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 15.3,
+   "joint_rmse": 0.18339499196804274,
+   "body_err": 0.04648069281704316,
+   "duration": 14.96
+  },
+  {
+   "seed": 11,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2439464584543758,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 10.2,
+   "joint_rmse": 0.1801448957406127,
+   "body_err": 0.04323653103781562,
+   "duration": 14.96
+  },
+  {
+   "seed": 12,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.45390266326803796,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.724,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18102609953455354,
+   "body_err": 0.04560092095729174,
+   "duration": 14.96
+  },
+  {
+   "seed": 13,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2063391366734604,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17786351302538303,
+   "body_err": 0.04291019944638882,
+   "duration": 14.96
+  },
+  {
+   "seed": 14,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.42901467330211107,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.18181361832165727,
+   "body_err": 0.04419845718935382,
+   "duration": 14.96
+  },
+  {
+   "seed": 15,
+   "success": false,
+   "t_fail": 6.82,
+   "cause": "ee_body_pos",
+   "dr": {
+    "friction": 0.3286142368427182,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.607,
+   "max_tilt_deg": 17.9,
+   "joint_rmse": 0.19993085624681114,
+   "body_err": 0.05378354593552816,
+   "duration": 14.96
+  },
+  {
+   "seed": 16,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3745243127059892,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 16.0,
+   "joint_rmse": 0.17805628622351163,
+   "body_err": 0.0439519756417956,
+   "duration": 14.96
+  },
+  {
+   "seed": 17,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7600285523670185,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18082662931305118,
+   "body_err": 0.04364361883368331,
+   "duration": 14.96
+  },
+  {
+   "seed": 18,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6446878315221127,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.18319416037599465,
+   "body_err": 0.04661931341522923,
+   "duration": 14.96
+  },
+  {
+   "seed": 19,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6773217810516576,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.17891494538870542,
+   "body_err": 0.041829715843692356,
+   "duration": 14.96
+  },
+  {
+   "seed": 20,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7111413135637714,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 15.8,
+   "joint_rmse": 0.18005537757875967,
+   "body_err": 0.04378479675124266,
+   "duration": 14.96
+  },
+  {
+   "seed": 21,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6181481901532392,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17871909809658623,
+   "body_err": 0.043501343759459604,
+   "duration": 14.96
+  },
+  {
+   "seed": 22,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5109920168468198,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18105189423416143,
+   "body_err": 0.04549024576430025,
+   "duration": 14.96
+  },
+  {
+   "seed": 23,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8421391016038327,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.17853511529469054,
+   "body_err": 0.043560128486664414,
+   "duration": 14.96
+  },
+  {
+   "seed": 24,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7000346205994425,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.1792487764536556,
+   "body_err": 0.043850170915496714,
+   "duration": 14.96
+  },
+  {
+   "seed": 25,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7597417453108903,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 10.8,
+   "joint_rmse": 0.1825873348043655,
+   "body_err": 0.046160569213261886,
+   "duration": 14.96
+  },
+  {
+   "seed": 26,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6323561081157238,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18200570452964224,
+   "body_err": 0.044185622220866395,
+   "duration": 14.96
+  },
+  {
+   "seed": 27,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2776558847421717,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.17808348282108816,
+   "body_err": 0.04209633911905995,
+   "duration": 14.96
+  },
+  {
+   "seed": 28,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.41292221979201915,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.1783448923250041,
+   "body_err": 0.044321946305906364,
+   "duration": 14.96
+  },
+  {
+   "seed": 29,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4100945416384954,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.8,
+   "joint_rmse": 0.17742071582162702,
+   "body_err": 0.044477554977905474,
+   "duration": 14.96
+  },
+  {
+   "seed": 30,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9928105641447069,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.17988848329129312,
+   "body_err": 0.04338112197764951,
+   "duration": 14.96
+  },
+  {
+   "seed": 31,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5464405595830512,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 16.0,
+   "joint_rmse": 0.18034461639690028,
+   "body_err": 0.045857431771493144,
+   "duration": 14.96
+  },
+  {
+   "seed": 32,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4090572621352885,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.18114390836835534,
+   "body_err": 0.04475629859030741,
+   "duration": 14.96
+  },
+  {
+   "seed": 33,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6374393368834126,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18196288997324464,
+   "body_err": 0.04488126338595501,
+   "duration": 14.96
+  },
+  {
+   "seed": 34,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8357012142829787,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.731,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.18153758607016582,
+   "body_err": 0.043969855618634056,
+   "duration": 14.96
+  },
+  {
+   "seed": 35,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0640340570972093,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.18285477585756804,
+   "body_err": 0.04602700152165059,
+   "duration": 14.96
+  },
+  {
+   "seed": 36,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9460686511274528,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.0,
+   "joint_rmse": 0.1821851021427649,
+   "body_err": 0.04563757325385203,
+   "duration": 14.96
+  },
+  {
+   "seed": 37,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5661710326861285,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.17819526277207948,
+   "body_err": 0.042117521422622574,
+   "duration": 14.96
+  },
+  {
+   "seed": 38,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9823524933412615,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 19.7,
+   "joint_rmse": 0.1831458831187188,
+   "body_err": 0.044847108889175105,
+   "duration": 14.96
+  },
+  {
+   "seed": 39,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9369310719425297,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.17765405010931595,
+   "body_err": 0.041740427061277736,
+   "duration": 14.96
+  },
+  {
+   "seed": 40,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.500992943990042,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.18043916230749582,
+   "body_err": 0.04460323854167386,
+   "duration": 14.96
+  },
+  {
+   "seed": 41,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9744054756619835,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 23.2,
+   "joint_rmse": 0.1869834221518025,
+   "body_err": 0.04483406459685532,
+   "duration": 14.96
+  },
+  {
+   "seed": 42,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.44355534593781143,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.3,
+   "joint_rmse": 0.17992031413947726,
+   "body_err": 0.043401134360460225,
+   "duration": 14.96
+  },
+  {
+   "seed": 43,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4536160208916176,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.1826713194048614,
+   "body_err": 0.0443273388532465,
+   "duration": 14.96
+  },
+  {
+   "seed": 44,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6396081458081951,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.1796327829651967,
+   "body_err": 0.04240248769272073,
+   "duration": 14.96
+  },
+  {
+   "seed": 45,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3054830809569955,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.17989345625408584,
+   "body_err": 0.041580104569423265,
+   "duration": 14.96
+  },
+  {
+   "seed": 46,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6819002350093287,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 16.0,
+   "joint_rmse": 0.17911227487751016,
+   "body_err": 0.04548226042144246,
+   "duration": 14.96
+  },
+  {
+   "seed": 47,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9201578512280362,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.17971117170813747,
+   "body_err": 0.046138397951310035,
+   "duration": 14.96
+  },
+  {
+   "seed": 48,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2889436410316686,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.17888147075553804,
+   "body_err": 0.04269701550927215,
+   "duration": 14.96
+  },
+  {
+   "seed": 49,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2042536803359187,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.8,
+   "joint_rmse": 0.17973058790020421,
+   "body_err": 0.04441732156073969,
+   "duration": 14.96
+  },
+  {
+   "seed": 50,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6238251181722277,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.2,
+   "joint_rmse": 0.1797101175646343,
+   "body_err": 0.04233263380043367,
+   "duration": 14.96
+  },
+  {
+   "seed": 51,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.46371001400687084,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.17853715917214688,
+   "body_err": 0.043649497661170496,
+   "duration": 14.96
+  },
+  {
+   "seed": 52,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9428705543555131,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.714,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18357407080007698,
+   "body_err": 0.04451191930340201,
+   "duration": 14.96
+  },
+  {
+   "seed": 53,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6130055521466771,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17767163556203142,
+   "body_err": 0.0432594979393249,
+   "duration": 14.96
+  },
+  {
+   "seed": 54,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6870011246202257,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.1823296445251676,
+   "body_err": 0.044390372915763414,
+   "duration": 14.96
+  },
+  {
+   "seed": 55,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6877143332615747,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.18053618497104823,
+   "body_err": 0.04497402328049966,
+   "duration": 14.96
+  },
+  {
+   "seed": 56,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2761190067896357,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18255036034433136,
+   "body_err": 0.0453958354225651,
+   "duration": 14.96
+  },
+  {
+   "seed": 57,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5820096364282231,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.17751775985255352,
+   "body_err": 0.043259595664318445,
+   "duration": 14.96
+  },
+  {
+   "seed": 58,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.490001889973492,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 15.3,
+   "joint_rmse": 0.17870516229352781,
+   "body_err": 0.04333826636057523,
+   "duration": 14.96
+  },
+  {
+   "seed": 59,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7322179613347564,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.1782066546269507,
+   "body_err": 0.04297529965963742,
+   "duration": 14.96
+  },
+  {
+   "seed": 60,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3880141074207328,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.18157103978901207,
+   "body_err": 0.045091153400072345,
+   "duration": 14.96
+  },
+  {
+   "seed": 61,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4170310911549298,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18239966110586747,
+   "body_err": 0.044432963407971635,
+   "duration": 14.96
+  },
+  {
+   "seed": 62,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8759248799863446,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.18299328097217454,
+   "body_err": 0.04487224622959456,
+   "duration": 14.96
+  },
+  {
+   "seed": 63,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4322256878538846,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.18177830369200604,
+   "body_err": 0.04556975926902556,
+   "duration": 14.96
+  },
+  {
+   "seed": 64,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4595029582828392,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 16.1,
+   "joint_rmse": 0.18013361382158977,
+   "body_err": 0.04461700209779825,
+   "duration": 14.96
+  },
+  {
+   "seed": 65,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8925157134225952,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.625,
+   "max_tilt_deg": 23.6,
+   "joint_rmse": 0.1913125646969643,
+   "body_err": 0.04963522180751051,
+   "duration": 14.96
+  },
+  {
+   "seed": 66,
+   "success": false,
+   "t_fail": 6.86,
+   "cause": "ee_body_pos",
+   "dr": {
+    "friction": 0.30388548974790297,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.638,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.20393815790514905,
+   "body_err": 0.056567321114823495,
+   "duration": 14.96
+  },
+  {
+   "seed": 67,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.50584506608427,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18014513291434367,
+   "body_err": 0.04369287649871249,
+   "duration": 14.96
+  },
+  {
+   "seed": 68,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1189125379737532,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.18193428527809463,
+   "body_err": 0.045702449162539634,
+   "duration": 14.96
+  },
+  {
+   "seed": 69,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6772225334149382,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.718,
+   "max_tilt_deg": 16.8,
+   "joint_rmse": 0.18162474485703609,
+   "body_err": 0.041754988203853066,
+   "duration": 14.96
+  },
+  {
+   "seed": 70,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.826252767040039,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.708,
+   "max_tilt_deg": 17.0,
+   "joint_rmse": 0.18893427391809442,
+   "body_err": 0.04663561505350398,
+   "duration": 14.96
+  },
+  {
+   "seed": 71,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.650386853681513,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.18016648511777467,
+   "body_err": 0.04262383326590282,
+   "duration": 14.96
+  },
+  {
+   "seed": 72,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5041821130971633,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 15.6,
+   "joint_rmse": 0.17742171107258464,
+   "body_err": 0.0420719738215212,
+   "duration": 14.96
+  },
+  {
+   "seed": 73,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7230721725177554,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.729,
+   "max_tilt_deg": 14.2,
+   "joint_rmse": 0.18222344353615016,
+   "body_err": 0.0456056912637409,
+   "duration": 14.96
+  },
+  {
+   "seed": 74,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1861283302404246,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.754,
+   "max_tilt_deg": 11.0,
+   "joint_rmse": 0.18088494353737977,
+   "body_err": 0.043956388756489426,
+   "duration": 14.96
+  },
+  {
+   "seed": 75,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5719241870959051,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18022856094026687,
+   "body_err": 0.043060062666413504,
+   "duration": 14.96
+  },
+  {
+   "seed": 76,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4575790123782688,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.1848947710359102,
+   "body_err": 0.04681746328919623,
+   "duration": 14.96
+  },
+  {
+   "seed": 77,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.939658664387359,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.17883599136124168,
+   "body_err": 0.04221423611403453,
+   "duration": 14.96
+  },
+  {
+   "seed": 78,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2686237125896456,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.17570363220183305,
+   "body_err": 0.040615111550804994,
+   "duration": 14.96
+  },
+  {
+   "seed": 79,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9884840340927412,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.706,
+   "max_tilt_deg": 20.6,
+   "joint_rmse": 0.19050454187105256,
+   "body_err": 0.05009345033655181,
+   "duration": 14.96
+  },
+  {
+   "seed": 80,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5200124352861464,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 19.4,
+   "joint_rmse": 0.17769966713394397,
+   "body_err": 0.042261006278088646,
+   "duration": 14.96
+  },
+  {
+   "seed": 81,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5102875955838027,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18000202708432197,
+   "body_err": 0.041656589867790965,
+   "duration": 14.96
+  },
+  {
+   "seed": 82,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.876185963681858,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.18043286438466608,
+   "body_err": 0.04351239128606145,
+   "duration": 14.96
+  },
+  {
+   "seed": 83,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4299831924766635,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.17999609082400078,
+   "body_err": 0.044123663042080194,
+   "duration": 14.96
+  },
+  {
+   "seed": 84,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9043803060469824,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.18127863480598222,
+   "body_err": 0.04342422291068548,
+   "duration": 14.96
+  },
+  {
+   "seed": 85,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5832719781362403,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.18013093801017288,
+   "body_err": 0.046030534052045526,
+   "duration": 14.96
+  },
+  {
+   "seed": 86,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.903724275111649,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17892984754684302,
+   "body_err": 0.042341468924376076,
+   "duration": 14.96
+  },
+  {
+   "seed": 87,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.47577850347007933,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.6,
+   "joint_rmse": 0.1824372076113771,
+   "body_err": 0.04649146138716752,
+   "duration": 14.96
+  },
+  {
+   "seed": 88,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2292509110017507,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 15.9,
+   "joint_rmse": 0.1778520431329706,
+   "body_err": 0.04337944366407233,
+   "duration": 14.96
+  },
+  {
+   "seed": 89,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.212282678890769,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.0,
+   "joint_rmse": 0.17807806941434642,
+   "body_err": 0.0423588297733429,
+   "duration": 14.96
+  },
+  {
+   "seed": 90,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.411764686227155,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.6,
+   "joint_rmse": 0.1772060892530246,
+   "body_err": 0.042049381442663944,
+   "duration": 14.96
+  },
+  {
+   "seed": 91,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9096162688432838,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.180882082914375,
+   "body_err": 0.04441972028919793,
+   "duration": 14.96
+  },
+  {
+   "seed": 92,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.623206837768839,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.729,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17995114576169177,
+   "body_err": 0.04238431548035288,
+   "duration": 14.96
+  },
+  {
+   "seed": 93,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9001900434106804,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 17.3,
+   "joint_rmse": 0.18075077455312977,
+   "body_err": 0.04276422087128919,
+   "duration": 14.96
+  },
+  {
+   "seed": 94,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.32061510520866293,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.705,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.18765374312282257,
+   "body_err": 0.049837037562551485,
+   "duration": 14.96
+  },
+  {
+   "seed": 95,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7528016088593223,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.18112681402976036,
+   "body_err": 0.046004079205107684,
+   "duration": 14.96
+  },
+  {
+   "seed": 96,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8250404663245539,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 10.7,
+   "joint_rmse": 0.17762182068270924,
+   "body_err": 0.043431009601041945,
+   "duration": 14.96
+  },
+  {
+   "seed": 97,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1862993583015762,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 10.7,
+   "joint_rmse": 0.1805246702599228,
+   "body_err": 0.043805380604309344,
+   "duration": 14.96
+  },
+  {
+   "seed": 98,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.47859853683923315,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.176389570606105,
+   "body_err": 0.04137731435745672,
+   "duration": 14.96
+  },
+  {
+   "seed": 99,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.115087803621793,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.17815023686332077,
+   "body_err": 0.04181282820404127,
+   "duration": 14.96
+  },
+  {
+   "seed": 100,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4659656052569752,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.5,
+   "joint_rmse": 0.18035410398255963,
+   "body_err": 0.04348676913633126,
+   "duration": 14.96
+  },
+  {
+   "seed": 101,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9162435086786713,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.1,
+   "joint_rmse": 0.17744698962977232,
+   "body_err": 0.04257530785742465,
+   "duration": 14.96
+  },
+  {
+   "seed": 102,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.40805664275547116,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 14.5,
+   "joint_rmse": 0.17624407022148467,
+   "body_err": 0.0426754445688185,
+   "duration": 14.96
+  },
+  {
+   "seed": 103,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4370652995847957,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18089006221105042,
+   "body_err": 0.044976747908851665,
+   "duration": 14.96
+  },
+  {
+   "seed": 104,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4833361798545566,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.18261563330225558,
+   "body_err": 0.045341161794476656,
+   "duration": 14.96
+  },
+  {
+   "seed": 105,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6292188599721287,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 19.3,
+   "joint_rmse": 0.1784167033014778,
+   "body_err": 0.04169815138301979,
+   "duration": 14.96
+  },
+  {
+   "seed": 106,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2306528136080908,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 15.7,
+   "joint_rmse": 0.1815451670304025,
+   "body_err": 0.04542836228134795,
+   "duration": 14.96
+  },
+  {
+   "seed": 107,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3139102528814002,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.696,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.1906114132204148,
+   "body_err": 0.049339493524172794,
+   "duration": 14.96
+  },
+  {
+   "seed": 108,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.652296179572505,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.1790599884208077,
+   "body_err": 0.04517645125289956,
+   "duration": 14.96
+  },
+  {
+   "seed": 109,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5166458501750617,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 15.4,
+   "joint_rmse": 0.1777873451689437,
+   "body_err": 0.043114169139455705,
+   "duration": 14.96
+  },
+  {
+   "seed": 110,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8374129180432288,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.17882053692878155,
+   "body_err": 0.04271557182373518,
+   "duration": 14.96
+  },
+  {
+   "seed": 111,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5067461519911547,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.17908174517630704,
+   "body_err": 0.04321248681283441,
+   "duration": 14.96
+  },
+  {
+   "seed": 112,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.425022459143373,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 10.1,
+   "joint_rmse": 0.18210437549916295,
+   "body_err": 0.04536106025724613,
+   "duration": 14.96
+  },
+  {
+   "seed": 113,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8107358722091813,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.17723590380500395,
+   "body_err": 0.040725571279050535,
+   "duration": 14.96
+  },
+  {
+   "seed": 114,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6964652610574196,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.705,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18496322900791382,
+   "body_err": 0.045372300658277846,
+   "duration": 14.96
+  },
+  {
+   "seed": 115,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.362717614168853,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18381969487615865,
+   "body_err": 0.04584518276118566,
+   "duration": 14.96
+  },
+  {
+   "seed": 116,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4411926235038206,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.18100165019115597,
+   "body_err": 0.04412367110695654,
+   "duration": 14.96
+  },
+  {
+   "seed": 117,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.808578339994853,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17847916174398426,
+   "body_err": 0.04173447657799729,
+   "duration": 14.96
+  },
+  {
+   "seed": 118,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.32718210758592314,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.732,
+   "max_tilt_deg": 14.6,
+   "joint_rmse": 0.18357566864846186,
+   "body_err": 0.04662426058576753,
+   "duration": 14.96
+  },
+  {
+   "seed": 119,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9361871585689454,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.17886829366910628,
+   "body_err": 0.043263068964232765,
+   "duration": 14.96
+  },
+  {
+   "seed": 120,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8218616734708981,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.17905217157997122,
+   "body_err": 0.04451176385424336,
+   "duration": 14.96
+  },
+  {
+   "seed": 121,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8766752931897859,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.731,
+   "max_tilt_deg": 17.0,
+   "joint_rmse": 0.18658327010117823,
+   "body_err": 0.0446513649746102,
+   "duration": 14.96
+  },
+  {
+   "seed": 122,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7549763967978111,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.726,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.18145762304483387,
+   "body_err": 0.04557036824782185,
+   "duration": 14.96
+  },
+  {
+   "seed": 123,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4550210522961797,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.17818516219850886,
+   "body_err": 0.04144674859483629,
+   "duration": 14.96
+  },
+  {
+   "seed": 124,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6698051295066805,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.17999531397792473,
+   "body_err": 0.04402650016211342,
+   "duration": 14.96
+  },
+  {
+   "seed": 125,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0177743604520926,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.5,
+   "joint_rmse": 0.18088851510004847,
+   "body_err": 0.044179668488261103,
+   "duration": 14.96
+  },
+  {
+   "seed": 126,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5090149437241528,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18447681462416,
+   "body_err": 0.046614548434083705,
+   "duration": 14.96
+  },
+  {
+   "seed": 127,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.46437366466808705,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18002216656162787,
+   "body_err": 0.04363214079329806,
+   "duration": 14.96
+  },
+  {
+   "seed": 128,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4826846190482167,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.18639718307850556,
+   "body_err": 0.04586517338497773,
+   "duration": 14.96
+  },
+  {
+   "seed": 129,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1368858413710352,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.17826432672769849,
+   "body_err": 0.04189946884664674,
+   "duration": 14.96
+  },
+  {
+   "seed": 130,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2506135331772217,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.17831413984349195,
+   "body_err": 0.04254184447489103,
+   "duration": 14.96
+  },
+  {
+   "seed": 131,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1906125205191458,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 9.7,
+   "joint_rmse": 0.18278744069268357,
+   "body_err": 0.0455343728820697,
+   "duration": 14.96
+  },
+  {
+   "seed": 132,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.318155902086682,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.18088928817454103,
+   "body_err": 0.044010968989956975,
+   "duration": 14.96
+  },
+  {
+   "seed": 133,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.473667353957763,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.724,
+   "max_tilt_deg": 22.1,
+   "joint_rmse": 0.17871647469802435,
+   "body_err": 0.04276941767398703,
+   "duration": 14.96
+  },
+  {
+   "seed": 134,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3360048068623585,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 10.7,
+   "joint_rmse": 0.18146767254097726,
+   "body_err": 0.04461701322200266,
+   "duration": 14.96
+  },
+  {
+   "seed": 135,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4761608644980446,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 14.1,
+   "joint_rmse": 0.1815596274458268,
+   "body_err": 0.0441165504763791,
+   "duration": 14.96
+  },
+  {
+   "seed": 136,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.41410024435768383,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.18060472304525657,
+   "body_err": 0.04445421459722418,
+   "duration": 14.96
+  },
+  {
+   "seed": 137,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5035494916244915,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.8,
+   "joint_rmse": 0.18266610066015243,
+   "body_err": 0.044940576259373026,
+   "duration": 14.96
+  },
+  {
+   "seed": 138,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2304079043059275,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.1784259138901701,
+   "body_err": 0.04395180789618371,
+   "duration": 14.96
+  },
+  {
+   "seed": 139,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1644421935849347,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 16.1,
+   "joint_rmse": 0.18123353769890124,
+   "body_err": 0.045784183064378085,
+   "duration": 14.96
+  },
+  {
+   "seed": 140,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5485616301865195,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.1837277631272279,
+   "body_err": 0.04673360974107748,
+   "duration": 14.96
+  },
+  {
+   "seed": 141,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4240048447231675,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.17928058300501923,
+   "body_err": 0.044043980206531455,
+   "duration": 14.96
+  },
+  {
+   "seed": 142,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3075988784140027,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18601370797189828,
+   "body_err": 0.04743830585928908,
+   "duration": 14.96
+  },
+  {
+   "seed": 143,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.510356537876883,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.17522120177327774,
+   "body_err": 0.039005580929636796,
+   "duration": 14.96
+  },
+  {
+   "seed": 144,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6971655349380748,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.736,
+   "max_tilt_deg": 15.2,
+   "joint_rmse": 0.18010136824582396,
+   "body_err": 0.04486785747859115,
+   "duration": 14.96
+  },
+  {
+   "seed": 145,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9804317906915347,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.665,
+   "max_tilt_deg": 17.2,
+   "joint_rmse": 0.18994275954293305,
+   "body_err": 0.04827281984735094,
+   "duration": 14.96
+  },
+  {
+   "seed": 146,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3154785836028646,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 15.0,
+   "joint_rmse": 0.17539354666083762,
+   "body_err": 0.04118477102513884,
+   "duration": 14.96
+  },
+  {
+   "seed": 147,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8131431325426688,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.724,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.18169381257188344,
+   "body_err": 0.04749555045963657,
+   "duration": 14.96
+  },
+  {
+   "seed": 148,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3725419897231097,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.17819596577602953,
+   "body_err": 0.04202186106520479,
+   "duration": 14.96
+  },
+  {
+   "seed": 149,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2132904617774702,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.18083872209245588,
+   "body_err": 0.04441258059285014,
+   "duration": 14.96
+  },
+  {
+   "seed": 150,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8588424242982846,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.182305942680689,
+   "body_err": 0.043552155479228215,
+   "duration": 14.96
+  },
+  {
+   "seed": 151,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4741499277738155,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.17955587802829034,
+   "body_err": 0.044301721792493635,
+   "duration": 14.96
+  },
+  {
+   "seed": 152,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4972110071458635,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.17702485920562117,
+   "body_err": 0.0404905241028806,
+   "duration": 14.96
+  },
+  {
+   "seed": 153,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3690917373808695,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.17814388406287118,
+   "body_err": 0.04157832223173899,
+   "duration": 14.96
+  },
+  {
+   "seed": 154,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0765984316314252,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 15.2,
+   "joint_rmse": 0.18441151906896522,
+   "body_err": 0.04652929117120486,
+   "duration": 14.96
+  },
+  {
+   "seed": 155,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5990362973752972,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 10.6,
+   "joint_rmse": 0.1836608318562694,
+   "body_err": 0.045970961688191106,
+   "duration": 14.96
+  },
+  {
+   "seed": 156,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.39323640417218986,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.18163378472198471,
+   "body_err": 0.04617843269844666,
+   "duration": 14.96
+  },
+  {
+   "seed": 157,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.602829570905409,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.17898623923692103,
+   "body_err": 0.04415926962314638,
+   "duration": 14.96
+  },
+  {
+   "seed": 158,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1179584900570056,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17776153533910904,
+   "body_err": 0.04461711707520729,
+   "duration": 14.96
+  },
+  {
+   "seed": 159,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1075790756206279,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18005761324977793,
+   "body_err": 0.04352819855801876,
+   "duration": 14.96
+  },
+  {
+   "seed": 160,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1455779203817968,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.18059343087381668,
+   "body_err": 0.043714568396682404,
+   "duration": 14.96
+  },
+  {
+   "seed": 161,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5365980569718665,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 15.0,
+   "joint_rmse": 0.18314025709120973,
+   "body_err": 0.04452975979747821,
+   "duration": 14.96
+  },
+  {
+   "seed": 162,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3480185420904311,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.638,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.18941985270877684,
+   "body_err": 0.04959989739155431,
+   "duration": 14.96
+  },
+  {
+   "seed": 163,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8873084189590188,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.17878869874123002,
+   "body_err": 0.04263985934414112,
+   "duration": 14.96
+  },
+  {
+   "seed": 164,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7449524831248402,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.731,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.1820197041832387,
+   "body_err": 0.0435216676192436,
+   "duration": 14.96
+  },
+  {
+   "seed": 165,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3790305791588274,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.17973149734373084,
+   "body_err": 0.04492363756769812,
+   "duration": 14.96
+  },
+  {
+   "seed": 166,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4116355346517153,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.1797890639643352,
+   "body_err": 0.04529297465134113,
+   "duration": 14.96
+  },
+  {
+   "seed": 167,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.571463747053541,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.722,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18085081714649243,
+   "body_err": 0.04673209090761488,
+   "duration": 14.96
+  },
+  {
+   "seed": 168,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0284108720136844,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.18085927714178893,
+   "body_err": 0.04578002802188292,
+   "duration": 14.96
+  },
+  {
+   "seed": 169,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7525683405448467,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 15.3,
+   "joint_rmse": 0.17684356314099642,
+   "body_err": 0.0413195419029161,
+   "duration": 14.96
+  },
+  {
+   "seed": 170,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4994009865445344,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.2,
+   "joint_rmse": 0.17821749643868645,
+   "body_err": 0.04135413450474819,
+   "duration": 14.96
+  },
+  {
+   "seed": 171,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3648432495378805,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.7,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.18893540996097952,
+   "body_err": 0.05018997979600526,
+   "duration": 14.96
+  },
+  {
+   "seed": 172,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5143847945048123,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.18064583495429598,
+   "body_err": 0.04382867721992003,
+   "duration": 14.96
+  },
+  {
+   "seed": 173,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3014021987791264,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.0,
+   "joint_rmse": 0.1837214789489494,
+   "body_err": 0.04481496738075025,
+   "duration": 14.96
+  },
+  {
+   "seed": 174,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1807362209638697,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17981506604304387,
+   "body_err": 0.04386761137683508,
+   "duration": 14.96
+  },
+  {
+   "seed": 175,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0545216645909397,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.8,
+   "joint_rmse": 0.17662299208513071,
+   "body_err": 0.0425823830685282,
+   "duration": 14.96
+  },
+  {
+   "seed": 176,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0270296434470787,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.17837994264520848,
+   "body_err": 0.04194653422320541,
+   "duration": 14.96
+  },
+  {
+   "seed": 177,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.37289264713518677,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 14.5,
+   "joint_rmse": 0.18583377751022248,
+   "body_err": 0.04776646583311097,
+   "duration": 14.96
+  },
+  {
+   "seed": 178,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.881243944093786,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.714,
+   "max_tilt_deg": 15.2,
+   "joint_rmse": 0.1833745593342156,
+   "body_err": 0.04280980940249547,
+   "duration": 14.96
+  },
+  {
+   "seed": 179,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7584046371159392,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.17806312513473058,
+   "body_err": 0.04500300239154631,
+   "duration": 14.96
+  },
+  {
+   "seed": 180,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5284610977866653,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.1786296044079927,
+   "body_err": 0.04472093126691177,
+   "duration": 14.96
+  },
+  {
+   "seed": 181,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2137916515800053,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.17943575404994266,
+   "body_err": 0.043253660634993744,
+   "duration": 14.96
+  },
+  {
+   "seed": 182,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.458463799997791,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.17726401424711968,
+   "body_err": 0.042985815760280946,
+   "duration": 14.96
+  },
+  {
+   "seed": 183,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7952573004692851,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18125838651948928,
+   "body_err": 0.044580699262647766,
+   "duration": 14.96
+  },
+  {
+   "seed": 184,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9866452477181078,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 15.0,
+   "joint_rmse": 0.17900888822044084,
+   "body_err": 0.04259499503681902,
+   "duration": 14.96
+  },
+  {
+   "seed": 185,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9134495600278905,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.1799246050622533,
+   "body_err": 0.04525298342626213,
+   "duration": 14.96
+  },
+  {
+   "seed": 186,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3237150666244735,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17744714958473135,
+   "body_err": 0.04298987452784515,
+   "duration": 14.96
+  },
+  {
+   "seed": 187,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5772776918765516,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.731,
+   "max_tilt_deg": 16.8,
+   "joint_rmse": 0.18376919499989333,
+   "body_err": 0.04539873200859956,
+   "duration": 14.96
+  },
+  {
+   "seed": 188,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.319601845423263,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.714,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.19153345616348896,
+   "body_err": 0.05004020946376598,
+   "duration": 14.96
+  },
+  {
+   "seed": 189,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.848734828788485,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 14.2,
+   "joint_rmse": 0.18034459895555402,
+   "body_err": 0.043476134341318834,
+   "duration": 14.96
+  },
+  {
+   "seed": 190,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4215906640755855,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18216166242096868,
+   "body_err": 0.044896927832880434,
+   "duration": 14.96
+  },
+  {
+   "seed": 191,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3431071494037543,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.17719254520123887,
+   "body_err": 0.04253131266888895,
+   "duration": 14.96
+  },
+  {
+   "seed": 192,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9016485887116212,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.723,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.1854492032685389,
+   "body_err": 0.04948610575301261,
+   "duration": 14.96
+  },
+  {
+   "seed": 193,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8618264955276824,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.17750361215426416,
+   "body_err": 0.04273175797650037,
+   "duration": 14.96
+  },
+  {
+   "seed": 194,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9870492698220437,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17904527250074062,
+   "body_err": 0.04339742970827564,
+   "duration": 14.96
+  },
+  {
+   "seed": 195,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5196372025894277,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.753,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.17992298513113153,
+   "body_err": 0.04413034172995828,
+   "duration": 14.96
+  },
+  {
+   "seed": 196,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.34126079837032586,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.18549111953350902,
+   "body_err": 0.04710276809232013,
+   "duration": 14.96
+  },
+  {
+   "seed": 197,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8400837836354982,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.17889281835973872,
+   "body_err": 0.04283636804837367,
+   "duration": 14.96
+  },
+  {
+   "seed": 198,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.30289453418166,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.17734951891251408,
+   "body_err": 0.0421289065839878,
+   "duration": 14.96
+  },
+  {
+   "seed": 199,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.09700803404122,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.0,
+   "joint_rmse": 0.17800291340699906,
+   "body_err": 0.0423004215312114,
+   "duration": 14.96
+  },
+  {
+   "seed": 200,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0622998708151214,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.17936656821051752,
+   "body_err": 0.0446894200402168,
+   "duration": 14.96
+  },
+  {
+   "seed": 201,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4100139898204096,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.17777275411488289,
+   "body_err": 0.044442474728115224,
+   "duration": 14.96
+  },
+  {
+   "seed": 202,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8940185559372857,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.726,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.18573558723228467,
+   "body_err": 0.046751939715009516,
+   "duration": 14.96
+  },
+  {
+   "seed": 203,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7846499688958928,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.1815332230244703,
+   "body_err": 0.04408445034464284,
+   "duration": 14.96
+  },
+  {
+   "seed": 204,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9980867499891442,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.1802667936334989,
+   "body_err": 0.04453809546462715,
+   "duration": 14.96
+  },
+  {
+   "seed": 205,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.458528266900881,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1794025372288628,
+   "body_err": 0.04355930119794317,
+   "duration": 14.96
+  },
+  {
+   "seed": 206,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7637957156622244,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.753,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.18282859052255845,
+   "body_err": 0.04434421464787427,
+   "duration": 14.96
+  },
+  {
+   "seed": 207,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8762204175203847,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.702,
+   "max_tilt_deg": 16.2,
+   "joint_rmse": 0.1872120988476262,
+   "body_err": 0.048034752202043084,
+   "duration": 14.96
+  },
+  {
+   "seed": 208,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5083974379435043,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.17952072594162607,
+   "body_err": 0.04275111845782205,
+   "duration": 14.96
+  },
+  {
+   "seed": 209,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.133691087931243,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.17993623899780914,
+   "body_err": 0.043874667980625275,
+   "duration": 14.96
+  },
+  {
+   "seed": 210,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8906742142007491,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.753,
+   "max_tilt_deg": 9.6,
+   "joint_rmse": 0.18280532582531503,
+   "body_err": 0.04454572438668968,
+   "duration": 14.96
+  },
+  {
+   "seed": 211,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.973295176238523,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.18410690111883335,
+   "body_err": 0.04645632315206652,
+   "duration": 14.96
+  },
+  {
+   "seed": 212,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7794071752900791,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18388513822571986,
+   "body_err": 0.04485866026566749,
+   "duration": 14.96
+  },
+  {
+   "seed": 213,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.43759740980336,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.1793606096837322,
+   "body_err": 0.042163173535748596,
+   "duration": 14.96
+  },
+  {
+   "seed": 214,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.544621891096546,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.18025315634534564,
+   "body_err": 0.042979485369982855,
+   "duration": 14.96
+  },
+  {
+   "seed": 215,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3771213635239792,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 14.5,
+   "joint_rmse": 0.17960990121838896,
+   "body_err": 0.04341299543930968,
+   "duration": 14.96
+  },
+  {
+   "seed": 216,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8897355111558594,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.18027043700258064,
+   "body_err": 0.043895949952682124,
+   "duration": 14.96
+  },
+  {
+   "seed": 217,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5782843260804003,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.17882373041784363,
+   "body_err": 0.042413759212561415,
+   "duration": 14.96
+  },
+  {
+   "seed": 218,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8494343080180833,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.17816317731364004,
+   "body_err": 0.042353170034924635,
+   "duration": 14.96
+  },
+  {
+   "seed": 219,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8710600759881835,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.1824161545259097,
+   "body_err": 0.04430614859668969,
+   "duration": 14.96
+  },
+  {
+   "seed": 220,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8607750982363376,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.17927323500499345,
+   "body_err": 0.04313566946857977,
+   "duration": 14.96
+  },
+  {
+   "seed": 221,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2179871372462856,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 10.6,
+   "joint_rmse": 0.18108127478498928,
+   "body_err": 0.0452211154064094,
+   "duration": 14.96
+  },
+  {
+   "seed": 222,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4671121896423881,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 16.8,
+   "joint_rmse": 0.18229476879403528,
+   "body_err": 0.04537902924920234,
+   "duration": 14.96
+  },
+  {
+   "seed": 223,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0680523988760597,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.17873467666039183,
+   "body_err": 0.04427342975470499,
+   "duration": 14.96
+  },
+  {
+   "seed": 224,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5413615167373119,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.178232112706083,
+   "body_err": 0.04282549129301957,
+   "duration": 14.96
+  },
+  {
+   "seed": 225,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3413980311997347,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.17728216584794265,
+   "body_err": 0.04193058751289532,
+   "duration": 14.96
+  },
+  {
+   "seed": 226,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3736068023491301,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 15.5,
+   "joint_rmse": 0.18052800665229185,
+   "body_err": 0.04331731168634289,
+   "duration": 14.96
+  },
+  {
+   "seed": 227,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3377103633630703,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.1792791650336991,
+   "body_err": 0.045316235791212335,
+   "duration": 14.96
+  },
+  {
+   "seed": 228,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6815681834047541,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.17913754480450156,
+   "body_err": 0.044430367272328054,
+   "duration": 14.96
+  },
+  {
+   "seed": 229,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.858308691839873,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.18002773976912767,
+   "body_err": 0.042704095222542954,
+   "duration": 14.96
+  },
+  {
+   "seed": 230,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.058746441049255,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18427834747977528,
+   "body_err": 0.045426033588889844,
+   "duration": 14.96
+  },
+  {
+   "seed": 231,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5736316507812569,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 11.1,
+   "joint_rmse": 0.18041866731536907,
+   "body_err": 0.04478300308156494,
+   "duration": 14.96
+  },
+  {
+   "seed": 232,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0027404116939187,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1757577734585207,
+   "body_err": 0.04207522810145549,
+   "duration": 14.96
+  },
+  {
+   "seed": 233,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3286689614674451,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.723,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.18302926670105335,
+   "body_err": 0.046984162985766055,
+   "duration": 14.96
+  },
+  {
+   "seed": 234,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8100699015239141,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 11.0,
+   "joint_rmse": 0.17748987331445853,
+   "body_err": 0.041983267335245836,
+   "duration": 14.96
+  },
+  {
+   "seed": 235,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2606681610547965,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18040621165173037,
+   "body_err": 0.044590871435267444,
+   "duration": 14.96
+  },
+  {
+   "seed": 236,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8763469140359574,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.732,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.18258767855880467,
+   "body_err": 0.04540393942492268,
+   "duration": 14.96
+  },
+  {
+   "seed": 237,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6508962049704203,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.8,
+   "joint_rmse": 0.1802172449580318,
+   "body_err": 0.045792906140995064,
+   "duration": 14.96
+  },
+  {
+   "seed": 238,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2976396003134074,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.17761484593614774,
+   "body_err": 0.042392641974327856,
+   "duration": 14.96
+  },
+  {
+   "seed": 239,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4782671941034493,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.17923749143064738,
+   "body_err": 0.044321898142987905,
+   "duration": 14.96
+  },
+  {
+   "seed": 240,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.39958477684759725,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 15.6,
+   "joint_rmse": 0.17973336409632276,
+   "body_err": 0.04451508807717255,
+   "duration": 14.96
+  },
+  {
+   "seed": 241,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.46840647103575095,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.17545020115388807,
+   "body_err": 0.04152538655103549,
+   "duration": 14.96
+  },
+  {
+   "seed": 242,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3464376932477309,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.17910189050792272,
+   "body_err": 0.0433767643608118,
+   "duration": 14.96
+  },
+  {
+   "seed": 243,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7539461005670539,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.736,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.17788989002770447,
+   "body_err": 0.04224229717636008,
+   "duration": 14.96
+  },
+  {
+   "seed": 244,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.206156147076672,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18221757701495075,
+   "body_err": 0.04462525868799997,
+   "duration": 14.96
+  },
+  {
+   "seed": 245,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5701411544086532,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.723,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.1839028826850039,
+   "body_err": 0.044891389452194334,
+   "duration": 14.96
+  },
+  {
+   "seed": 246,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.174869948246788,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.2,
+   "joint_rmse": 0.1822744365119534,
+   "body_err": 0.0454092442084567,
+   "duration": 14.96
+  },
+  {
+   "seed": 247,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.749048010881936,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.728,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.18144607412460978,
+   "body_err": 0.045581187601502704,
+   "duration": 14.96
+  },
+  {
+   "seed": 248,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9742027463105123,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.1830945172991836,
+   "body_err": 0.046153827537664574,
+   "duration": 14.96
+  },
+  {
+   "seed": 249,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5879839965165732,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.18004306302862597,
+   "body_err": 0.04410378176749159,
+   "duration": 14.96
+  },
+  {
+   "seed": 250,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5201759489720803,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 9.8,
+   "joint_rmse": 0.17817104580010218,
+   "body_err": 0.044803337236892116,
+   "duration": 14.96
+  },
+  {
+   "seed": 251,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.658964034878097,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.18399800503097205,
+   "body_err": 0.047084689224697274,
+   "duration": 14.96
+  },
+  {
+   "seed": 252,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5882246112121137,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 10.7,
+   "joint_rmse": 0.17767286244038794,
+   "body_err": 0.04272646258043149,
+   "duration": 14.96
+  },
+  {
+   "seed": 253,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2867373482744724,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.17994465045264899,
+   "body_err": 0.04155501408902979,
+   "duration": 14.96
+  },
+  {
+   "seed": 254,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8415464499649614,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18121097370020267,
+   "body_err": 0.04503397897030282,
+   "duration": 14.96
+  },
+  {
+   "seed": 255,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4461107165796339,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.1813377460607784,
+   "body_err": 0.04357644979605195,
+   "duration": 14.96
+  },
+  {
+   "seed": 256,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7711817390094058,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.17818205704121803,
+   "body_err": 0.04381077031298361,
+   "duration": 14.96
+  },
+  {
+   "seed": 257,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7943692491976424,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 15.1,
+   "joint_rmse": 0.17775521310235348,
+   "body_err": 0.04219067523935407,
+   "duration": 14.96
+  },
+  {
+   "seed": 258,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.970922927574306,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.713,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.189147307278336,
+   "body_err": 0.04895544649104026,
+   "duration": 14.96
+  },
+  {
+   "seed": 259,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9536543541769251,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.18144757637627665,
+   "body_err": 0.04540401025572891,
+   "duration": 14.96
+  },
+  {
+   "seed": 260,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8175455280147002,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.1,
+   "joint_rmse": 0.17862035422390388,
+   "body_err": 0.04373069261978144,
+   "duration": 14.96
+  },
+  {
+   "seed": 261,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.48593569878870135,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.1,
+   "joint_rmse": 0.17734436743285587,
+   "body_err": 0.04231875113626044,
+   "duration": 14.96
+  },
+  {
+   "seed": 262,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8395299776287535,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 15.6,
+   "joint_rmse": 0.17566392090058355,
+   "body_err": 0.04151755491913509,
+   "duration": 14.96
+  },
+  {
+   "seed": 263,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7731898568337328,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.17738058739770185,
+   "body_err": 0.0430225420254409,
+   "duration": 14.96
+  },
+  {
+   "seed": 264,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0912134237425635,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.18310896696420004,
+   "body_err": 0.04669546839877228,
+   "duration": 14.96
+  },
+  {
+   "seed": 265,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4494319557827784,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.18156055253732717,
+   "body_err": 0.04632929429399795,
+   "duration": 14.96
+  },
+  {
+   "seed": 266,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9640737391254002,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.18054384611629548,
+   "body_err": 0.04406101348255953,
+   "duration": 14.96
+  },
+  {
+   "seed": 267,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6919014394524902,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18193553349026612,
+   "body_err": 0.045057439201274085,
+   "duration": 14.96
+  },
+  {
+   "seed": 268,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4732066290120054,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.17878310107675352,
+   "body_err": 0.04364831281886651,
+   "duration": 14.96
+  },
+  {
+   "seed": 269,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7745252501992017,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.18029989652235867,
+   "body_err": 0.041634028554622615,
+   "duration": 14.96
+  },
+  {
+   "seed": 270,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.508461299190682,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.714,
+   "max_tilt_deg": 16.8,
+   "joint_rmse": 0.18333193695507619,
+   "body_err": 0.04553367197721162,
+   "duration": 14.96
+  },
+  {
+   "seed": 271,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4784614131966691,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17788666290173297,
+   "body_err": 0.04154887978362925,
+   "duration": 14.96
+  },
+  {
+   "seed": 272,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.261932139996725,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 10.3,
+   "joint_rmse": 0.18062128775277395,
+   "body_err": 0.04380446613801329,
+   "duration": 14.96
+  },
+  {
+   "seed": 273,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5827001526533007,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.17793520015411382,
+   "body_err": 0.04158951633651396,
+   "duration": 14.96
+  },
+  {
+   "seed": 274,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7462669318748603,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18278404438163753,
+   "body_err": 0.04484905694938737,
+   "duration": 14.96
+  },
+  {
+   "seed": 275,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.147019184863275,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.1785853803628878,
+   "body_err": 0.04411650825941411,
+   "duration": 14.96
+  },
+  {
+   "seed": 276,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8275235596099126,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.17909350243517722,
+   "body_err": 0.04204211298387235,
+   "duration": 14.96
+  },
+  {
+   "seed": 277,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3377183807649529,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.73,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.1861573633530704,
+   "body_err": 0.04997517641982569,
+   "duration": 14.96
+  },
+  {
+   "seed": 278,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3983181968804053,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.6,
+   "joint_rmse": 0.1794614812993671,
+   "body_err": 0.04320351109260937,
+   "duration": 14.96
+  },
+  {
+   "seed": 279,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3126973566345,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18176138677674553,
+   "body_err": 0.0463953931408497,
+   "duration": 14.96
+  },
+  {
+   "seed": 280,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.521981971815987,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.18003122357677212,
+   "body_err": 0.043441884312018474,
+   "duration": 14.96
+  },
+  {
+   "seed": 281,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.446655547222058,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.17746769177280092,
+   "body_err": 0.041297294009302404,
+   "duration": 14.96
+  },
+  {
+   "seed": 282,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4967706476782778,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.1,
+   "joint_rmse": 0.17810386919767002,
+   "body_err": 0.0431370011493153,
+   "duration": 14.96
+  },
+  {
+   "seed": 283,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.42788661881448076,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18190251517688336,
+   "body_err": 0.04630873144943103,
+   "duration": 14.96
+  },
+  {
+   "seed": 284,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9191907533935375,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18401403189203194,
+   "body_err": 0.04435781623349728,
+   "duration": 14.96
+  },
+  {
+   "seed": 285,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.955706623648563,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.1786906004007589,
+   "body_err": 0.044772724948575676,
+   "duration": 14.96
+  },
+  {
+   "seed": 286,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6590399659577184,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18077943322191406,
+   "body_err": 0.04594009186452754,
+   "duration": 14.96
+  },
+  {
+   "seed": 287,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4546118024348604,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.18021995570430702,
+   "body_err": 0.04479848769536421,
+   "duration": 14.96
+  },
+  {
+   "seed": 288,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4936535230761805,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18074625868371974,
+   "body_err": 0.04669206011944433,
+   "duration": 14.96
+  },
+  {
+   "seed": 289,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7760885542817438,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.17717019551381874,
+   "body_err": 0.04248602480671429,
+   "duration": 14.96
+  },
+  {
+   "seed": 290,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4010655109585235,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.17757499896153717,
+   "body_err": 0.04326992097623521,
+   "duration": 14.96
+  },
+  {
+   "seed": 291,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6892080284068236,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.18202304035812752,
+   "body_err": 0.04675872945299825,
+   "duration": 14.96
+  },
+  {
+   "seed": 292,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1791197835185927,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.17940469267744233,
+   "body_err": 0.042848892794967466,
+   "duration": 14.96
+  },
+  {
+   "seed": 293,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2750970189915254,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.1759204686060979,
+   "body_err": 0.04161942587319315,
+   "duration": 14.96
+  },
+  {
+   "seed": 294,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.41768888926655934,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18232646973013103,
+   "body_err": 0.04543880368041401,
+   "duration": 14.96
+  },
+  {
+   "seed": 295,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.536025545515776,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.726,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.18215055600917482,
+   "body_err": 0.046367631389789964,
+   "duration": 14.96
+  },
+  {
+   "seed": 296,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0278566701887004,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18088849173490312,
+   "body_err": 0.04489172406564194,
+   "duration": 14.96
+  },
+  {
+   "seed": 297,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1084225112844732,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18138203290994648,
+   "body_err": 0.04604074901598742,
+   "duration": 14.96
+  },
+  {
+   "seed": 298,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0395450047560757,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.1776398244918694,
+   "body_err": 0.04269728026667656,
+   "duration": 14.96
+  },
+  {
+   "seed": 299,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5227143951518933,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 14.5,
+   "joint_rmse": 0.17742120186216578,
+   "body_err": 0.042435741350419866,
+   "duration": 14.96
+  },
+  {
+   "seed": 300,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9768147414614436,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.1807637978752696,
+   "body_err": 0.04367706144249398,
+   "duration": 14.96
+  },
+  {
+   "seed": 301,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5404801463456947,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.18103121196915894,
+   "body_err": 0.04333046812866571,
+   "duration": 14.96
+  },
+  {
+   "seed": 302,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.655700328991112,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.18132128528501154,
+   "body_err": 0.0458758250504534,
+   "duration": 14.96
+  },
+  {
+   "seed": 303,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.582237282993093,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.18183245453646452,
+   "body_err": 0.04666021336060825,
+   "duration": 14.96
+  },
+  {
+   "seed": 304,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.567813422059783,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.17843137902945158,
+   "body_err": 0.042593039975042934,
+   "duration": 14.96
+  },
+  {
+   "seed": 305,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5523115216697552,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.18013310892234108,
+   "body_err": 0.044213956509868646,
+   "duration": 14.96
+  },
+  {
+   "seed": 306,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9109256575667868,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.17973743584183402,
+   "body_err": 0.043263977207981474,
+   "duration": 14.96
+  },
+  {
+   "seed": 307,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8630890715614643,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18271562675798547,
+   "body_err": 0.04634877637320936,
+   "duration": 14.96
+  },
+  {
+   "seed": 308,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5909466400551382,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.8,
+   "joint_rmse": 0.18152226291039772,
+   "body_err": 0.04612887737098826,
+   "duration": 14.96
+  },
+  {
+   "seed": 309,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.993777282881565,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.18353184306344875,
+   "body_err": 0.044188606224742875,
+   "duration": 14.96
+  },
+  {
+   "seed": 310,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9255336051664629,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 14.2,
+   "joint_rmse": 0.18110175007551987,
+   "body_err": 0.04444316941596099,
+   "duration": 14.96
+  },
+  {
+   "seed": 311,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6032284870840965,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18040413365631874,
+   "body_err": 0.04391903175093895,
+   "duration": 14.96
+  },
+  {
+   "seed": 312,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1621628444974095,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1771944092005523,
+   "body_err": 0.04402553659120914,
+   "duration": 14.96
+  },
+  {
+   "seed": 313,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9970224755560595,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.17664628084349882,
+   "body_err": 0.041886179880313214,
+   "duration": 14.96
+  },
+  {
+   "seed": 314,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.116869336090277,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.8,
+   "joint_rmse": 0.17890738821600882,
+   "body_err": 0.04298839181746436,
+   "duration": 14.96
+  },
+  {
+   "seed": 315,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7998169750390078,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.18133367116072466,
+   "body_err": 0.04551978791365119,
+   "duration": 14.96
+  },
+  {
+   "seed": 316,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5035721354236516,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.17655380260783363,
+   "body_err": 0.040303321086201424,
+   "duration": 14.96
+  },
+  {
+   "seed": 317,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5180421686967434,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.17775646337465836,
+   "body_err": 0.04279450044485803,
+   "duration": 14.96
+  },
+  {
+   "seed": 318,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6576619831740143,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.17583171878599924,
+   "body_err": 0.04024402448167809,
+   "duration": 14.96
+  },
+  {
+   "seed": 319,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.630610903091212,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 13.8,
+   "joint_rmse": 0.18260243110026572,
+   "body_err": 0.04692780147353788,
+   "duration": 14.96
+  },
+  {
+   "seed": 320,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.936255372049937,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.727,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.18427138256086636,
+   "body_err": 0.047222258031929955,
+   "duration": 14.96
+  },
+  {
+   "seed": 321,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3263810049050344,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.18001077512753333,
+   "body_err": 0.042561076269219913,
+   "duration": 14.96
+  },
+  {
+   "seed": 322,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7197594930277893,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 15.5,
+   "joint_rmse": 0.1784044902593189,
+   "body_err": 0.042411145442062814,
+   "duration": 14.96
+  },
+  {
+   "seed": 323,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6395814250394336,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18204345206470565,
+   "body_err": 0.0457672319007297,
+   "duration": 14.96
+  },
+  {
+   "seed": 324,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9139136072508158,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18467892044464426,
+   "body_err": 0.045363413286510765,
+   "duration": 14.96
+  },
+  {
+   "seed": 325,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7304732811842163,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.727,
+   "max_tilt_deg": 15.2,
+   "joint_rmse": 0.18037368905397982,
+   "body_err": 0.0431338123054482,
+   "duration": 14.96
+  },
+  {
+   "seed": 326,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7378075461352892,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.1773429310183878,
+   "body_err": 0.04156151191342466,
+   "duration": 14.96
+  },
+  {
+   "seed": 327,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6469898825269313,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 16.7,
+   "joint_rmse": 0.18162625527700824,
+   "body_err": 0.04609268742122268,
+   "duration": 14.96
+  },
+  {
+   "seed": 328,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5167718756803568,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1770616060082993,
+   "body_err": 0.04182471156831829,
+   "duration": 14.96
+  },
+  {
+   "seed": 329,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.224004725588442,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.18555304573305637,
+   "body_err": 0.046982036573961786,
+   "duration": 14.96
+  },
+  {
+   "seed": 330,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2781256850720455,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.733,
+   "max_tilt_deg": 15.2,
+   "joint_rmse": 0.17802324541424067,
+   "body_err": 0.04434230059388667,
+   "duration": 14.96
+  },
+  {
+   "seed": 331,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2080692435500884,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.17984541833653153,
+   "body_err": 0.04697296917891007,
+   "duration": 14.96
+  },
+  {
+   "seed": 332,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1750876530470298,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.1833356069220184,
+   "body_err": 0.046289823378384595,
+   "duration": 14.96
+  },
+  {
+   "seed": 333,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4540390948845634,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.1777192897697735,
+   "body_err": 0.0415757803044298,
+   "duration": 14.96
+  },
+  {
+   "seed": 334,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2030595366835042,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.17850556312501648,
+   "body_err": 0.042835745154512085,
+   "duration": 14.96
+  },
+  {
+   "seed": 335,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9555671707136442,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.18304068604490337,
+   "body_err": 0.04700993930239301,
+   "duration": 14.96
+  },
+  {
+   "seed": 336,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8398652785581915,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.17942732823035362,
+   "body_err": 0.043494547817883804,
+   "duration": 14.96
+  },
+  {
+   "seed": 337,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5963553773484107,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.18123025809576607,
+   "body_err": 0.044026393702964794,
+   "duration": 14.96
+  },
+  {
+   "seed": 338,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9627491158765527,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.18092705313503243,
+   "body_err": 0.044940106791433725,
+   "duration": 14.96
+  },
+  {
+   "seed": 339,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.815075961713466,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 10.4,
+   "joint_rmse": 0.1789591960685018,
+   "body_err": 0.04248132000021858,
+   "duration": 14.96
+  },
+  {
+   "seed": 340,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9056109986696892,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 17.3,
+   "joint_rmse": 0.1809022419990145,
+   "body_err": 0.042381023780828295,
+   "duration": 14.96
+  },
+  {
+   "seed": 341,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7400379148662308,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.17944480057668993,
+   "body_err": 0.04310694258565423,
+   "duration": 14.96
+  },
+  {
+   "seed": 342,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5190681523564222,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.738,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1787249315036101,
+   "body_err": 0.043278821930256305,
+   "duration": 14.96
+  },
+  {
+   "seed": 343,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7065633353738776,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.1818900800256547,
+   "body_err": 0.045206273944546245,
+   "duration": 14.96
+  },
+  {
+   "seed": 344,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8332013349798577,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.17885540841485803,
+   "body_err": 0.042343118848553775,
+   "duration": 14.96
+  },
+  {
+   "seed": 345,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8027593599703218,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.1815914440710709,
+   "body_err": 0.04534009052546902,
+   "duration": 14.96
+  },
+  {
+   "seed": 346,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4992844427473602,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.17944437058402493,
+   "body_err": 0.044641188368261565,
+   "duration": 14.96
+  },
+  {
+   "seed": 347,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2121535695680488,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.17653691458473658,
+   "body_err": 0.040424904300493905,
+   "duration": 14.96
+  },
+  {
+   "seed": 348,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8993222268319245,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.734,
+   "max_tilt_deg": 14.8,
+   "joint_rmse": 0.18137453626803365,
+   "body_err": 0.04612885680697769,
+   "duration": 14.96
+  },
+  {
+   "seed": 349,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3604089085521343,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.1820316040125311,
+   "body_err": 0.04453150947056697,
+   "duration": 14.96
+  },
+  {
+   "seed": 350,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5528857566712608,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.17640644858994672,
+   "body_err": 0.04188397046748337,
+   "duration": 14.96
+  },
+  {
+   "seed": 351,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1704385746516983,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.18020277578759325,
+   "body_err": 0.04387135322768578,
+   "duration": 14.96
+  },
+  {
+   "seed": 352,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6470813625171024,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.1778565380284413,
+   "body_err": 0.041826692966926766,
+   "duration": 14.96
+  },
+  {
+   "seed": 353,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.443442584309095,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 18.0,
+   "joint_rmse": 0.18228408915124386,
+   "body_err": 0.045411987912303685,
+   "duration": 14.96
+  },
+  {
+   "seed": 354,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1166519811724165,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.18065018254528487,
+   "body_err": 0.044893816727915155,
+   "duration": 14.96
+  },
+  {
+   "seed": 355,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3966161129221568,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.1776429906198452,
+   "body_err": 0.042160476073180575,
+   "duration": 14.96
+  },
+  {
+   "seed": 356,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8725361935942655,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.1860796667915073,
+   "body_err": 0.048571795309805224,
+   "duration": 14.96
+  },
+  {
+   "seed": 357,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6413097141220458,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.729,
+   "max_tilt_deg": 14.1,
+   "joint_rmse": 0.18258605849559248,
+   "body_err": 0.04557809435219971,
+   "duration": 14.96
+  },
+  {
+   "seed": 358,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.144908185533241,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.17905865538503496,
+   "body_err": 0.04441785164453462,
+   "duration": 14.96
+  },
+  {
+   "seed": 359,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2887644784280479,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.0,
+   "joint_rmse": 0.18333351736332854,
+   "body_err": 0.04514496000228044,
+   "duration": 14.96
+  },
+  {
+   "seed": 360,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6958149845347095,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18079317355320337,
+   "body_err": 0.04431564236406614,
+   "duration": 14.96
+  },
+  {
+   "seed": 361,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2976958834928207,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 10.5,
+   "joint_rmse": 0.1810552899593052,
+   "body_err": 0.04504101269955475,
+   "duration": 14.96
+  },
+  {
+   "seed": 362,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7857274524858735,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.695,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18570280496066144,
+   "body_err": 0.04856631585457989,
+   "duration": 14.96
+  },
+  {
+   "seed": 363,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3363932266728882,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18166978185842594,
+   "body_err": 0.045536033293431616,
+   "duration": 14.96
+  },
+  {
+   "seed": 364,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.638263302036145,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.726,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.1821413118863273,
+   "body_err": 0.04629865781530686,
+   "duration": 14.96
+  },
+  {
+   "seed": 365,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8882467861013708,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 19.6,
+   "joint_rmse": 0.1850550998420376,
+   "body_err": 0.04447375831570194,
+   "duration": 14.96
+  },
+  {
+   "seed": 366,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0151646427461418,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.18133387974575849,
+   "body_err": 0.04391251032065329,
+   "duration": 14.96
+  },
+  {
+   "seed": 367,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6834724090140254,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17690004716066907,
+   "body_err": 0.042995526273091014,
+   "duration": 14.96
+  },
+  {
+   "seed": 368,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.173343765929772,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1802638092619368,
+   "body_err": 0.04515975947895878,
+   "duration": 14.96
+  },
+  {
+   "seed": 369,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6421881338571558,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.17913078829776502,
+   "body_err": 0.043857580005534885,
+   "duration": 14.96
+  },
+  {
+   "seed": 370,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3291583760436991,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.18104245459058138,
+   "body_err": 0.045439160926755165,
+   "duration": 14.96
+  },
+  {
+   "seed": 371,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9764266115517846,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.737,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18531239739605343,
+   "body_err": 0.04757857645421314,
+   "duration": 14.96
+  },
+  {
+   "seed": 372,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7825960803472183,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.17977640469759193,
+   "body_err": 0.04632123881998211,
+   "duration": 14.96
+  },
+  {
+   "seed": 373,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8149936369845026,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.17501036666563663,
+   "body_err": 0.041413193371519906,
+   "duration": 14.96
+  },
+  {
+   "seed": 374,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6385483993296168,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.18099468184427567,
+   "body_err": 0.04367802632353718,
+   "duration": 14.96
+  },
+  {
+   "seed": 375,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0866517748209497,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.1781550318656894,
+   "body_err": 0.0431348804119892,
+   "duration": 14.96
+  },
+  {
+   "seed": 376,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3927585509143219,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.725,
+   "max_tilt_deg": 13.7,
+   "joint_rmse": 0.17920353889277893,
+   "body_err": 0.04601856975705917,
+   "duration": 14.96
+  },
+  {
+   "seed": 377,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4066671257664898,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.1766063155863932,
+   "body_err": 0.04328443237227018,
+   "duration": 14.96
+  },
+  {
+   "seed": 378,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5462792441665189,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.17825009581438922,
+   "body_err": 0.04283021674947749,
+   "duration": 14.96
+  },
+  {
+   "seed": 379,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9910481014510137,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 15.2,
+   "joint_rmse": 0.17603101571210458,
+   "body_err": 0.041624371900703505,
+   "duration": 14.96
+  },
+  {
+   "seed": 380,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0389251674443818,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.17950218334118795,
+   "body_err": 0.043741325186832415,
+   "duration": 14.96
+  },
+  {
+   "seed": 381,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8510492984505642,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.17626127421677767,
+   "body_err": 0.041758484371941164,
+   "duration": 14.96
+  },
+  {
+   "seed": 382,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2178103696587157,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 17.3,
+   "joint_rmse": 0.17688462088901813,
+   "body_err": 0.0418868813860194,
+   "duration": 14.96
+  },
+  {
+   "seed": 383,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3632070992539993,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.17784885238296066,
+   "body_err": 0.04313733635552293,
+   "duration": 14.96
+  },
+  {
+   "seed": 384,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.659780725047302,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.1838008336775895,
+   "body_err": 0.046977540605588994,
+   "duration": 14.96
+  },
+  {
+   "seed": 385,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9267218481227935,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.731,
+   "max_tilt_deg": 14.6,
+   "joint_rmse": 0.18248326226763922,
+   "body_err": 0.044496581649546986,
+   "duration": 14.96
+  },
+  {
+   "seed": 386,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.580059847089071,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.1799636637711506,
+   "body_err": 0.04350218626925689,
+   "duration": 14.96
+  },
+  {
+   "seed": 387,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6224149194706894,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.1794079064776623,
+   "body_err": 0.04266809801816591,
+   "duration": 14.96
+  },
+  {
+   "seed": 388,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9437751490462798,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.1791080272483011,
+   "body_err": 0.04313549644601819,
+   "duration": 14.96
+  },
+  {
+   "seed": 389,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2657853410234519,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 10.7,
+   "joint_rmse": 0.1829223368667188,
+   "body_err": 0.04404160489093545,
+   "duration": 14.96
+  },
+  {
+   "seed": 390,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4633991471766381,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.17831150756817352,
+   "body_err": 0.04179234160998236,
+   "duration": 14.96
+  },
+  {
+   "seed": 391,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9841879184965097,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.717,
+   "max_tilt_deg": 21.2,
+   "joint_rmse": 0.19005821767544798,
+   "body_err": 0.04584957981832034,
+   "duration": 14.96
+  },
+  {
+   "seed": 392,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7927313877241586,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 15.7,
+   "joint_rmse": 0.1806404639800489,
+   "body_err": 0.04435006167070451,
+   "duration": 14.96
+  },
+  {
+   "seed": 393,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7582248395139393,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.17941803125754954,
+   "body_err": 0.04315181471337492,
+   "duration": 14.96
+  },
+  {
+   "seed": 394,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9602814201517804,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.18030647900706215,
+   "body_err": 0.0433627216520347,
+   "duration": 14.96
+  },
+  {
+   "seed": 395,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5066815409941154,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.176304978843896,
+   "body_err": 0.04042784357760786,
+   "duration": 14.96
+  },
+  {
+   "seed": 396,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3114088185747843,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.18078020829812733,
+   "body_err": 0.044982981587721446,
+   "duration": 14.96
+  },
+  {
+   "seed": 397,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.48003372162343305,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.736,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.179701014672168,
+   "body_err": 0.04494439150738858,
+   "duration": 14.96
+  },
+  {
+   "seed": 398,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5119963830584091,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.18019939147130767,
+   "body_err": 0.04519208043891142,
+   "duration": 14.96
+  },
+  {
+   "seed": 399,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7967538369184528,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18327688131299327,
+   "body_err": 0.045118180762087,
+   "duration": 14.96
+  },
+  {
+   "seed": 400,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.45380138917639185,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 15.3,
+   "joint_rmse": 0.17891426747154038,
+   "body_err": 0.043646549891171345,
+   "duration": 14.96
+  },
+  {
+   "seed": 401,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5142390403020238,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18292931780748642,
+   "body_err": 0.0456534723785047,
+   "duration": 14.96
+  },
+  {
+   "seed": 402,
+   "success": false,
+   "t_fail": 6.88,
+   "cause": "ee_body_pos",
+   "dr": {
+    "friction": 0.30397888789584077,
+    "delay_ms": 15
+   },
+   "real_fall": true,
+   "min_pelvis_z": 0.063,
+   "max_tilt_deg": 121.8,
+   "joint_rmse": 0.4121701781133861,
+   "body_err": 0.27479096960304844,
+   "duration": 14.96
+  },
+  {
+   "seed": 403,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.836162403679539,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.1801330180442946,
+   "body_err": 0.044654570380471,
+   "duration": 14.96
+  },
+  {
+   "seed": 404,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1420232954804401,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.735,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.18191279724709006,
+   "body_err": 0.045573692576613985,
+   "duration": 14.96
+  },
+  {
+   "seed": 405,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1601099440322578,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.74,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18256384207146423,
+   "body_err": 0.04475849640064445,
+   "duration": 14.96
+  },
+  {
+   "seed": 406,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0652780677437057,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.1776925983608273,
+   "body_err": 0.04221172293234957,
+   "duration": 14.96
+  },
+  {
+   "seed": 407,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7003484335081678,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.1831787799172765,
+   "body_err": 0.04640222787800199,
+   "duration": 14.96
+  },
+  {
+   "seed": 408,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4326915227841825,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.732,
+   "max_tilt_deg": 13.8,
+   "joint_rmse": 0.17746115331355475,
+   "body_err": 0.044431688275311985,
+   "duration": 14.96
+  },
+  {
+   "seed": 409,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.978015423148313,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.709,
+   "max_tilt_deg": 22.4,
+   "joint_rmse": 0.18359114667539378,
+   "body_err": 0.043945392816329656,
+   "duration": 14.96
+  },
+  {
+   "seed": 410,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.449368835841001,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.729,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18461114652746988,
+   "body_err": 0.04766827836210139,
+   "duration": 14.96
+  },
+  {
+   "seed": 411,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9111330406114244,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.18072367539311515,
+   "body_err": 0.04531990346793436,
+   "duration": 14.96
+  },
+  {
+   "seed": 412,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5152028749503914,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.1813767666147022,
+   "body_err": 0.045138808761329766,
+   "duration": 14.96
+  },
+  {
+   "seed": 413,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.3384648742403716,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.726,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.18370197705883407,
+   "body_err": 0.047490531119309384,
+   "duration": 14.96
+  },
+  {
+   "seed": 414,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7563306673951382,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.1807575085751276,
+   "body_err": 0.0432523431913865,
+   "duration": 14.96
+  },
+  {
+   "seed": 415,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5635352687581516,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.18072908152696032,
+   "body_err": 0.04466833476691312,
+   "duration": 14.96
+  },
+  {
+   "seed": 416,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3680630360123862,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 10.8,
+   "joint_rmse": 0.17960242410672692,
+   "body_err": 0.04426338572511642,
+   "duration": 14.96
+  },
+  {
+   "seed": 417,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.65180959359353,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 14.8,
+   "joint_rmse": 0.1807572074365958,
+   "body_err": 0.04439984964765395,
+   "duration": 14.96
+  },
+  {
+   "seed": 418,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6042749593530117,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.3,
+   "joint_rmse": 0.18288663677938344,
+   "body_err": 0.04554499411091255,
+   "duration": 14.96
+  },
+  {
+   "seed": 419,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.35606594370402617,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.1813896394615754,
+   "body_err": 0.044075305196592536,
+   "duration": 14.96
+  },
+  {
+   "seed": 420,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.4429124098013273,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17783188617126372,
+   "body_err": 0.04298623574711139,
+   "duration": 14.96
+  },
+  {
+   "seed": 421,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8700397494742405,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.18305376557302533,
+   "body_err": 0.0465221844509403,
+   "duration": 14.96
+  },
+  {
+   "seed": 422,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.855517579369172,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.1789254004821586,
+   "body_err": 0.04434756140390513,
+   "duration": 14.96
+  },
+  {
+   "seed": 423,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0521342448537405,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.1790711635812109,
+   "body_err": 0.0430210359785313,
+   "duration": 14.96
+  },
+  {
+   "seed": 424,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5073589083587631,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 13.8,
+   "joint_rmse": 0.1796538750844657,
+   "body_err": 0.04260086616589582,
+   "duration": 14.96
+  },
+  {
+   "seed": 425,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3193587955809145,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18143199082681524,
+   "body_err": 0.04484749086383028,
+   "duration": 14.96
+  },
+  {
+   "seed": 426,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8797299101620495,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.17876671594244323,
+   "body_err": 0.042838169882828965,
+   "duration": 14.96
+  },
+  {
+   "seed": 427,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6183059125352112,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.0,
+   "joint_rmse": 0.17622521148572118,
+   "body_err": 0.042220253926372235,
+   "duration": 14.96
+  },
+  {
+   "seed": 428,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3417981202842488,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.17855747625585372,
+   "body_err": 0.042086388308837965,
+   "duration": 14.96
+  },
+  {
+   "seed": 429,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8489340714573583,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.18056793933971654,
+   "body_err": 0.04289010163935263,
+   "duration": 14.96
+  },
+  {
+   "seed": 430,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5685947812563183,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.17903147858028884,
+   "body_err": 0.04138365970112252,
+   "duration": 14.96
+  },
+  {
+   "seed": 431,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4006420307533114,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.2,
+   "joint_rmse": 0.18030201424823136,
+   "body_err": 0.04278447281412434,
+   "duration": 14.96
+  },
+  {
+   "seed": 432,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6118387330873887,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.1764707288539856,
+   "body_err": 0.04111946473382902,
+   "duration": 14.96
+  },
+  {
+   "seed": 433,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3475888316521094,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.17899594635544203,
+   "body_err": 0.04454696850384264,
+   "duration": 14.96
+  },
+  {
+   "seed": 434,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6460849775866289,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.17988040443489456,
+   "body_err": 0.043264716706684164,
+   "duration": 14.96
+  },
+  {
+   "seed": 435,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4455767771361172,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.736,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.1823181194654791,
+   "body_err": 0.045202630610272916,
+   "duration": 14.96
+  },
+  {
+   "seed": 436,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.901211818051548,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.18001711987535035,
+   "body_err": 0.04350615671541858,
+   "duration": 14.96
+  },
+  {
+   "seed": 437,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9679430235121007,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.71,
+   "max_tilt_deg": 21.1,
+   "joint_rmse": 0.18214913111467734,
+   "body_err": 0.04249089719224363,
+   "duration": 14.96
+  },
+  {
+   "seed": 438,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1687760088418557,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.5,
+   "joint_rmse": 0.1794867904339982,
+   "body_err": 0.04159652105668667,
+   "duration": 14.96
+  },
+  {
+   "seed": 439,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1685704486889699,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.1778474396089601,
+   "body_err": 0.043269064455664086,
+   "duration": 14.96
+  },
+  {
+   "seed": 440,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9952380350526362,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.9,
+   "joint_rmse": 0.1830183651098278,
+   "body_err": 0.04536230772281936,
+   "duration": 14.96
+  },
+  {
+   "seed": 441,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7996012333331,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.9,
+   "joint_rmse": 0.18267363018384355,
+   "body_err": 0.04653304682504315,
+   "duration": 14.96
+  },
+  {
+   "seed": 442,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4030006389140495,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.1817099354039832,
+   "body_err": 0.04489674729471591,
+   "duration": 14.96
+  },
+  {
+   "seed": 443,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3341971374997204,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 10.5,
+   "joint_rmse": 0.179657733819197,
+   "body_err": 0.043466437793868676,
+   "duration": 14.96
+  },
+  {
+   "seed": 444,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.36069976097445466,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18148775179179627,
+   "body_err": 0.043688074572290306,
+   "duration": 14.96
+  },
+  {
+   "seed": 445,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7798684354333976,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.184856663170621,
+   "body_err": 0.04472421007060489,
+   "duration": 14.96
+  },
+  {
+   "seed": 446,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.34335145093183844,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.18667754512659882,
+   "body_err": 0.04725639824159331,
+   "duration": 14.96
+  },
+  {
+   "seed": 447,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4135105381656827,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.7,
+   "joint_rmse": 0.18076675039404075,
+   "body_err": 0.043985203153856414,
+   "duration": 14.96
+  },
+  {
+   "seed": 448,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6877753569034293,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.5,
+   "joint_rmse": 0.1795873000747532,
+   "body_err": 0.04355457183214324,
+   "duration": 14.96
+  },
+  {
+   "seed": 449,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8574808201779365,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 14.7,
+   "joint_rmse": 0.17711678375779216,
+   "body_err": 0.04315104573657524,
+   "duration": 14.96
+  },
+  {
+   "seed": 450,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.896454321617058,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.689,
+   "max_tilt_deg": 15.3,
+   "joint_rmse": 0.18185377615554432,
+   "body_err": 0.04542218484639624,
+   "duration": 14.96
+  },
+  {
+   "seed": 451,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.910256481166769,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.717,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.1839787475912284,
+   "body_err": 0.04658673777771109,
+   "duration": 14.96
+  },
+  {
+   "seed": 452,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6038887639670326,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 15.4,
+   "joint_rmse": 0.17927531526347953,
+   "body_err": 0.043407236317082515,
+   "duration": 14.96
+  },
+  {
+   "seed": 453,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6150777786528272,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.18175201160403162,
+   "body_err": 0.04403628693808693,
+   "duration": 14.96
+  },
+  {
+   "seed": 454,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.965198663863543,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 14.4,
+   "joint_rmse": 0.1787214485544406,
+   "body_err": 0.04519762065934248,
+   "duration": 14.96
+  },
+  {
+   "seed": 455,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6138990261663717,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.8,
+   "joint_rmse": 0.17898625828866274,
+   "body_err": 0.043391028329095194,
+   "duration": 14.96
+  },
+  {
+   "seed": 456,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.921875822946121,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.723,
+   "max_tilt_deg": 15.7,
+   "joint_rmse": 0.1804000727858891,
+   "body_err": 0.04511836244048874,
+   "duration": 14.96
+  },
+  {
+   "seed": 457,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1011576766781406,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.8,
+   "joint_rmse": 0.17993310330011192,
+   "body_err": 0.04543759107405475,
+   "duration": 14.96
+  },
+  {
+   "seed": 458,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8121879987843157,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.18323996330471906,
+   "body_err": 0.047185921401537836,
+   "duration": 14.96
+  },
+  {
+   "seed": 459,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7998888904666603,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.18239135691291938,
+   "body_err": 0.045477476470336745,
+   "duration": 14.96
+  },
+  {
+   "seed": 460,
+   "success": false,
+   "t_fail": 7.52,
+   "cause": "ee_body_pos",
+   "dr": {
+    "friction": 1.979498680679638,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.728,
+   "max_tilt_deg": 18.3,
+   "joint_rmse": 0.18853642253614897,
+   "body_err": 0.04825630422931356,
+   "duration": 14.96
+  },
+  {
+   "seed": 461,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8315930664492062,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18536777973801566,
+   "body_err": 0.047794528112195686,
+   "duration": 14.96
+  },
+  {
+   "seed": 462,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7474535001306493,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 16.5,
+   "joint_rmse": 0.17915450040129555,
+   "body_err": 0.04088263842731956,
+   "duration": 14.96
+  },
+  {
+   "seed": 463,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9636703452648874,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.17756045312087446,
+   "body_err": 0.04285937999879962,
+   "duration": 14.96
+  },
+  {
+   "seed": 464,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6057520794356084,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.744,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.18029056775545182,
+   "body_err": 0.04319058228816376,
+   "duration": 14.96
+  },
+  {
+   "seed": 465,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.31388588084625846,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.739,
+   "max_tilt_deg": 11.2,
+   "joint_rmse": 0.18370030853147692,
+   "body_err": 0.045204016201553225,
+   "duration": 14.96
+  },
+  {
+   "seed": 466,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8187780186394427,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.18222104203714243,
+   "body_err": 0.04318588486890595,
+   "duration": 14.96
+  },
+  {
+   "seed": 467,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.33673486926077983,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18810378507010225,
+   "body_err": 0.04771582231982106,
+   "duration": 14.96
+  },
+  {
+   "seed": 468,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.827694040844925,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.17874709125603927,
+   "body_err": 0.04486568287758072,
+   "duration": 14.96
+  },
+  {
+   "seed": 469,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.483609030373017,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.6,
+   "joint_rmse": 0.18099276587111127,
+   "body_err": 0.04417288417569647,
+   "duration": 14.96
+  },
+  {
+   "seed": 470,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0352809708586468,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.1787063053317936,
+   "body_err": 0.04147459498930634,
+   "duration": 14.96
+  },
+  {
+   "seed": 471,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7168386640699005,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.18198701507986098,
+   "body_err": 0.046125653518622786,
+   "duration": 14.96
+  },
+  {
+   "seed": 472,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.333968297183072,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.6,
+   "joint_rmse": 0.17736440024695008,
+   "body_err": 0.042967165711864104,
+   "duration": 14.96
+  },
+  {
+   "seed": 473,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0249978601436733,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.18110186815069956,
+   "body_err": 0.04519172260122384,
+   "duration": 14.96
+  },
+  {
+   "seed": 474,
+   "success": false,
+   "t_fail": 5.02,
+   "cause": "ee_body_pos",
+   "dr": {
+    "friction": 1.9943064141114533,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.619,
+   "max_tilt_deg": 25.2,
+   "joint_rmse": 0.20685648096049145,
+   "body_err": 0.059147576228265636,
+   "duration": 14.96
+  },
+  {
+   "seed": 475,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0785323741174566,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.7,
+   "joint_rmse": 0.1814797310854133,
+   "body_err": 0.0457700442738793,
+   "duration": 14.96
+  },
+  {
+   "seed": 476,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1038499730719702,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 14.6,
+   "joint_rmse": 0.18107289680791952,
+   "body_err": 0.04531153414367865,
+   "duration": 14.96
+  },
+  {
+   "seed": 477,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.371762268298931,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.18003067613369053,
+   "body_err": 0.0436379623655688,
+   "duration": 14.96
+  },
+  {
+   "seed": 478,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.8140700069467135,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.73,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.18221732340365107,
+   "body_err": 0.045471737486318026,
+   "duration": 14.96
+  },
+  {
+   "seed": 479,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.341528508006413,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.752,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.17722874776708883,
+   "body_err": 0.0409215882602081,
+   "duration": 14.96
+  },
+  {
+   "seed": 480,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1021258110420358,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.18346657172618644,
+   "body_err": 0.04590203111112229,
+   "duration": 14.96
+  },
+  {
+   "seed": 481,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9033689596275365,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.707,
+   "max_tilt_deg": 14.1,
+   "joint_rmse": 0.18448848208375537,
+   "body_err": 0.047988921562350004,
+   "duration": 14.96
+  },
+  {
+   "seed": 482,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6993239886116195,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 11.1,
+   "joint_rmse": 0.17993667073728506,
+   "body_err": 0.04456615734238429,
+   "duration": 14.96
+  },
+  {
+   "seed": 483,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7750883457074493,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.708,
+   "max_tilt_deg": 19.6,
+   "joint_rmse": 0.18240737600171855,
+   "body_err": 0.04351783437894862,
+   "duration": 14.96
+  },
+  {
+   "seed": 484,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.9723356626491746,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.728,
+   "max_tilt_deg": 16.4,
+   "joint_rmse": 0.18912097164776895,
+   "body_err": 0.044848522882804887,
+   "duration": 14.96
+  },
+  {
+   "seed": 485,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5541574048688696,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 13.3,
+   "joint_rmse": 0.17895647425700326,
+   "body_err": 0.04298154489715466,
+   "duration": 14.96
+  },
+  {
+   "seed": 486,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9540114752661637,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 11.4,
+   "joint_rmse": 0.1804984663433503,
+   "body_err": 0.043303185006178226,
+   "duration": 14.96
+  },
+  {
+   "seed": 487,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7276829005543366,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.17856662435273807,
+   "body_err": 0.04385041566290944,
+   "duration": 14.96
+  },
+  {
+   "seed": 488,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.9732366459269692,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.18388577834944797,
+   "body_err": 0.046120515446548126,
+   "duration": 14.96
+  },
+  {
+   "seed": 489,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.091053243784824,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.4,
+   "joint_rmse": 0.17774527713319785,
+   "body_err": 0.04155791740231061,
+   "duration": 14.96
+  },
+  {
+   "seed": 490,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7771992934958682,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 14.0,
+   "joint_rmse": 0.17713898046789414,
+   "body_err": 0.04275694296038516,
+   "duration": 14.96
+  },
+  {
+   "seed": 491,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.1709570748556004,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 14.9,
+   "joint_rmse": 0.18198999168918756,
+   "body_err": 0.045528458185513224,
+   "duration": 14.96
+  },
+  {
+   "seed": 492,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6388397597070272,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.746,
+   "max_tilt_deg": 12.8,
+   "joint_rmse": 0.18100611955387047,
+   "body_err": 0.04345258274429623,
+   "duration": 14.96
+  },
+  {
+   "seed": 493,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.483656895292922,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.745,
+   "max_tilt_deg": 11.5,
+   "joint_rmse": 0.178489457455417,
+   "body_err": 0.04178441269290745,
+   "duration": 14.96
+  },
+  {
+   "seed": 494,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2410553996716667,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 11.6,
+   "joint_rmse": 0.17861039011220248,
+   "body_err": 0.04361824242110768,
+   "duration": 14.96
+  },
+  {
+   "seed": 495,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6041218227137115,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.741,
+   "max_tilt_deg": 13.1,
+   "joint_rmse": 0.1840825839292505,
+   "body_err": 0.04577003581635084,
+   "duration": 14.96
+  },
+  {
+   "seed": 496,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8810467275858078,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.705,
+   "max_tilt_deg": 19.0,
+   "joint_rmse": 0.18459863072483365,
+   "body_err": 0.044748818439139686,
+   "duration": 14.96
+  },
+  {
+   "seed": 497,
+   "success": false,
+   "t_fail": 6.88,
+   "cause": "ee_body_pos",
+   "dr": {
+    "friction": 0.3205466964065407,
+    "delay_ms": 15
+   },
+   "real_fall": true,
+   "min_pelvis_z": 0.058,
+   "max_tilt_deg": 105.7,
+   "joint_rmse": 0.3265425030824229,
+   "body_err": 0.17812560682693546,
+   "duration": 14.96
+  },
+  {
+   "seed": 498,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7623085350364154,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 14.3,
+   "joint_rmse": 0.17589255436361093,
+   "body_err": 0.041193314160205045,
+   "duration": 14.96
+  },
+  {
+   "seed": 499,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3865123685179137,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 11.2,
+   "joint_rmse": 0.1795448761275245,
+   "body_err": 0.04450256018749001,
+   "duration": 14.96
+  },
+  {
+   "seed": 500,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.101961307692093,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 10.8,
+   "joint_rmse": 0.18103494907693,
+   "body_err": 0.044089366761478545,
+   "duration": 14.96
+  },
+  {
+   "seed": 501,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.6480369272622178,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 12.5,
+   "joint_rmse": 0.17845324811808827,
+   "body_err": 0.04234587204773663,
+   "duration": 14.96
+  },
+  {
+   "seed": 502,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.6560050408356997,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.73,
+   "max_tilt_deg": 15.4,
+   "joint_rmse": 0.18163068683080835,
+   "body_err": 0.045744994029796225,
+   "duration": 14.96
+  },
+  {
+   "seed": 503,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.8665529301904888,
+    "delay_ms": 10
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.736,
+   "max_tilt_deg": 15.0,
+   "joint_rmse": 0.18309766394090246,
+   "body_err": 0.047225741476677525,
+   "duration": 14.96
+  },
+  {
+   "seed": 504,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.2900368587629796,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.749,
+   "max_tilt_deg": 10.9,
+   "joint_rmse": 0.185699456572071,
+   "body_err": 0.045321996211551384,
+   "duration": 14.96
+  },
+  {
+   "seed": 505,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.4849010325506167,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.748,
+   "max_tilt_deg": 13.4,
+   "joint_rmse": 0.1813632132380481,
+   "body_err": 0.04445550500042355,
+   "duration": 14.96
+  },
+  {
+   "seed": 506,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.0740127188276243,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.751,
+   "max_tilt_deg": 12.2,
+   "joint_rmse": 0.17775951942752258,
+   "body_err": 0.04187511310069589,
+   "duration": 14.96
+  },
+  {
+   "seed": 507,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.422061552119358,
+    "delay_ms": 0
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 12.9,
+   "joint_rmse": 0.1833750405105232,
+   "body_err": 0.04532905950055287,
+   "duration": 14.96
+  },
+  {
+   "seed": 508,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.7408120448333937,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.747,
+   "max_tilt_deg": 11.3,
+   "joint_rmse": 0.18185031053287495,
+   "body_err": 0.04539455003805622,
+   "duration": 14.96
+  },
+  {
+   "seed": 509,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 0.5030155836988075,
+    "delay_ms": 20
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.75,
+   "max_tilt_deg": 14.2,
+   "joint_rmse": 0.17727257755083894,
+   "body_err": 0.04292825247217981,
+   "duration": 14.96
+  },
+  {
+   "seed": 510,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.5218293264181866,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.731,
+   "max_tilt_deg": 12.1,
+   "joint_rmse": 0.18222359759302742,
+   "body_err": 0.047238824486340564,
+   "duration": 14.96
+  },
+  {
+   "seed": 511,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.7054411188873306,
+    "delay_ms": 15
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.742,
+   "max_tilt_deg": 13.2,
+   "joint_rmse": 0.18037015646594062,
+   "body_err": 0.04393361761319487,
+   "duration": 14.96
+  },
+  {
+   "seed": 512,
+   "success": true,
+   "t_fail": null,
+   "cause": null,
+   "dr": {
+    "friction": 1.3830595403190296,
+    "delay_ms": 5
+   },
+   "real_fall": false,
+   "min_pelvis_z": 0.743,
+   "max_tilt_deg": 14.2,
+   "joint_rmse": 0.17938603343317303,
+   "body_err": 0.04333762104719933,
+   "duration": 14.96
+  }
+ ]
+}

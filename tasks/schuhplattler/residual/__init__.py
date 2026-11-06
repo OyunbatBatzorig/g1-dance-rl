@@ -93,6 +93,13 @@ for _id, _cls, _agent in (
      f"{__name__}.rsl_rl_ppo_cfg:MimicPPORunnerCfg"),
     ("Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DR-SchBal2", "MimicSchBal2DR",
      f"{__name__}.rsl_rl_ppo_cfg:MimicPPORunnerCfg"),
+    # Schuhplattler v3s (Oyunbat's edited ref): DR v2 baseline and DR v2 + sim2real extras
+    ("Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DR-SchV3s", "MimicSchV3sDR",
+     f"{__name__}.rsl_rl_ppo_cfg:MimicPPORunnerCfg"),
+    ("Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRPlus-SchV3s", "MimicSchV3sDRPlus",
+     f"{__name__}.rsl_rl_ppo_cfg:MimicPPORunnerCfg"),
+    ("Unitree-G1-29dof-Mimic-Schuhplattler-MimicAction-DRFloor-SchV3s", "MimicSchV3sDRFloor",
+     f"{__name__}.rsl_rl_ppo_cfg:MimicPPORunnerCfg"),
 ):
     gym.register(
         id=_id,

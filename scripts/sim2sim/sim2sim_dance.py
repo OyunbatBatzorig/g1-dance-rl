@@ -128,10 +128,54 @@ class Policy:
         return x
 
 
-def build_model(xml, dr, sim_dt):
+# uneven floors as in Isaac apply_floor_mix (residual_env_cfg.py): 8 x 8 m tile, 10 cm grid, 0.25 m flat border
+TILE, H_SCALE, BORDER = 8.0, 0.1, 0.25
+TERRAIN_R = 1.5  # modelled half-width around the start [m]; the feet stay within ~0.7 m
+
+
+def make_terrain(kind, seed):
+    """Height field [m] of one floor tile, robot start at its centre (Isaac: env origin = tile centre)."""
+    n = int(TILE / H_SCALE)
+    b = int(BORDER / H_SCALE)
+    rng = np.random.default_rng(seed)
+    inner = n - 2 * b
+    if kind == "flatbox":  # control: the same boxes, all at height 0 (separates box contact from unevenness)
+        h = np.zeros((inner, inner))
+    elif kind in ("rough", "stone"):  # HfRandomUniformTerrainCfg: one random height per cell, 5 mm steps
+        top = 0.01 if kind == "rough" else 0.025
+        h = rng.choice(np.arange(0.0, top + 1e-9, 0.005), size=(inner, inner))
+    elif kind == "slope":  # HfPyramidSlopedTerrainCfg at the top of slope_range (5 % grade), 0.5 m flat top
+        c = inner // 2
+        x = np.arange(inner)
+        f = (c - np.abs(c - x)) / c
+        h = 0.05 * (inner * H_SCALE) / 2 * f[:, None] * f[None, :]
+        pw = int(0.5 / H_SCALE / 2)
+        h = np.minimum(h, h[c - pw, c - pw])
+    else:
+        raise ValueError(kind)
+    hf = np.zeros((n, n))
+    hf[b:b + inner, b:b + inner] = np.round(h / 0.005) * 0.005  # vertical_scale 5 mm
+    return hf
+
+
+def build_model(xml, dr, sim_dt, hf=None, center=(0.0, 0.0)):
     spec = mujoco.MjSpec.from_file(os.path.expanduser(xml))
     spec.option.timestep = sim_dt
     spec.option.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
+    if hf is not None:
+        # one 10 cm box per cell around the robot, the xml plane drops 5 cm. Not equal to the plane: a foot sphere on
+        # a seam touches 2-4 boxes (stiffer contact); floor policy on all-zero boxes 17% vs 94% on the plane, so
+        # compare policies against --terrain flatbox, not against flat. (A MuJoCo hfield was worse still: 3%.)
+        for g in [g for g in spec.geoms if g.type == mujoco.mjtGeom.mjGEOM_PLANE]:
+            g.pos = [g.pos[0], g.pos[1], -0.05]
+        n, r = hf.shape[0], int(TERRAIN_R / H_SCALE)
+        for i in range(n // 2 - r, n // 2 + r):
+            for j in range(n // 2 - r, n // 2 + r):
+                h = float(hf[i, j])
+                spec.worldbody.add_geom(type=mujoco.mjtGeom.mjGEOM_BOX, size=[H_SCALE / 2, H_SCALE / 2, (h + 0.05) / 2],
+                                        pos=[center[0] + (i - n // 2 + 0.5) * H_SCALE,
+                                             center[1] + (j - n // 2 + 0.5) * H_SCALE, (h - 0.05) / 2],
+                                        rgba=[0.55 + 8 * h, 0.45 + 6 * h, 0.35, 1])
     model = spec.compile()
     if not np.any(model.geom_type == mujoco.mjtGeom.mjGEOM_PLANE):  # robot-only xml: add a floor
         spec.worldbody.add_geom(type=mujoco.mjtGeom.mjGEOM_PLANE, size=[0, 0, 0.05], name="s2s_floor")
@@ -164,7 +208,16 @@ def run_once(cfg):
     if a.friction is not None: dr["friction"] = a.friction
     if a.delay_substeps is not None: dr["delay"] = a.delay_substeps
 
-    model, qadr, vadr, kd = build_model(a.xml, dr, a.sim_dt)
+    M = np.load(os.path.expanduser(a.motion))
+    rp = M["body_pos_w"][:, 0].astype(np.float64)
+    k0 = int(round(a.start * float(np.asarray(M["fps"]).reshape(-1)[0])))
+    hf, z0 = None, 0.0
+    if a.terrain != "flat":
+        hf = make_terrain(a.terrain, cfg["seed"] if a.terrain_seed is None else a.terrain_seed)
+        # Isaac env origin height = highest point of the central 2 x 2 m; robot and reference ride on it
+        c, r = hf.shape[0] // 2, int(1.0 / H_SCALE)
+        z0 = float(hf[c - r:c + r, c - r:c + r].max())
+    model, qadr, vadr, kd = build_model(a.xml, dr, a.sim_dt, hf, rp[k0, :2])
     m = np.broadcast_to(dr["mass"], (64,))[: model.nbody - 1] if np.ndim(dr["mass"]) else np.full(model.nbody - 1, dr["mass"])
     model.body_mass[1:] *= m
     model.body_inertia[1:] *= m[:, None]
@@ -178,6 +231,7 @@ def run_once(cfg):
     decim = int(round(1.0 / fps / a.sim_dt))
     jp, jv = M["joint_pos"].astype(np.float64), M["joint_vel"].astype(np.float64)
     rp, rq = M["body_pos_w"][:, 0].astype(np.float64), M["body_quat_w"][:, 0].astype(np.float64)
+    rp[:, 2] += z0
     rlv, rav = M["body_lin_vel_w"][:, 0].astype(np.float64), M["body_ang_vel_w"][:, 0].astype(np.float64)
     T = len(jp)
     k0 = int(round(a.start * fps)); k1 = T - 1 if a.end is None else min(T - 1, int(round(a.end * fps)))
@@ -208,19 +262,21 @@ def run_once(cfg):
     viewer = None
     if cfg.get("viewer"):
         from mujoco import viewer as mj_viewer
-        state = dict(paused=not a.no_wait)
+        state = dict(paused=not a.no_wait, restart=False)
 
-        def on_key(key):  # Space in the viewer window: start / pause / resume
+        def on_key(key):  # Space in the viewer window: start / pause / resume; Enter: dance again from the start
             if key == 32:
                 state["paused"] = not state["paused"]
                 print("[sim2sim] paused" if state["paused"] else "[sim2sim] playing")
+            elif key in (257, 335):  # GLFW Enter / keypad Enter
+                state["restart"], state["paused"] = True, False
 
         viewer = mj_viewer.launch_passive(model, data, key_callback=on_key)
         aim(viewer.cam)
         viewer.sync()
         if state["paused"]:
             print("[sim2sim] viewer open and paused: set up the camera, then press Space in the viewer to start "
-                  "(Space again = pause / resume, close the window to quit)")
+                  "(Space again = pause / resume, Enter = dance again from the start, close the window to quit)")
 
         def wait_paused():
             while state["paused"] and viewer.is_running():
@@ -243,82 +299,113 @@ def run_once(cfg):
             renderer.update_scene(data, camera=rcam)
             rec.append_data(renderer.render())
         grab()
-    res = dict(seed=cfg["seed"], dr=dict(kp=float(dr["kp"].mean()), mass=float(np.mean(m)),
-                                          friction=dr["friction"], delay_ms=dr["delay"] * a.sim_dt * 1000),
-               success=True, t_fail=None, cause=None)
-    jerr, berr = [], []
-    t_wall = time.time()
-    k = k0
-    print(f"[sim2sim] playing {(k1 - k0) / fps:.2f} s of {os.path.basename(a.motion)}")
-    while k < k1:
-        set_ref(k)
-        # ---- observation at frame k
-        R_robot_t, R_ref_t = data.xquat[torso].copy(), ref.xquat[torso].copy()
-        rel = quat_mat(quat_mul(quat_conj(R_robot_t), R_ref_t))
-        ang_vel_b = data.qvel[3:6].copy()
-        q, qd = data.qpos[qadr], data.qvel[vadr]
-        obs = np.concatenate([jp[k], jv[k], rel[:, :2].reshape(-1), ang_vel_b, q - DEFAULT_Q, qd, last])
-        act = pol(obs, k)
-        last = act
-        # ---- action -> PD targets
-        prev_t, prev_qd_t = q_t, qd_t
-        kn = min(k + 1, T - 1)
-        if a.action == "wide":
-            q_t = jp[kn] + np.clip(act * SCALE, -1.0, 1.0)
-            qd_t = jv[kn]
-        else:
-            q_t = DEFAULT_Q + act * SCALE
-            qd_t = np.zeros(29)
-        for s in range(decim):
-            tq, tqd = (prev_t, prev_qd_t) if s < dr["delay"] else (q_t, qd_t)
-            # Kp (q* - q) + Kd qd*  explicitly; -Kd qd implicitly via dof_damping; clip like Isaac's effort limit
-            tau = kp * (tq - data.qpos[qadr]) + kd * tqd
-            tau = np.clip(tau - kd * data.qvel[vadr], -EFFORT, EFFORT) + kd * data.qvel[vadr]
-            data.qfrc_applied[vadr] = tau
-            mujoco.mj_step(model, data)
-        if viewer is not None:  # draw once per 20 ms policy step, on a wall clock (no drift from slow frames)
-            if state["paused"]:
-                wait_paused()
-                t_wall = time.time() - (k + 1 - k0) / fps / a.speed
-            viewer.sync()
-            dt = t_wall + (k + 1 - k0) / fps / a.speed - time.time()
-            if dt > 0: time.sleep(dt)
-        k += 1
-        if rec is not None:
-            grab()
-        # ---- training terminations against frame k
-        set_ref(k)
-        cause = None
-        if abs(data.xpos[torso, 2] - ref.xpos[torso, 2]) > 0.25: cause = "anchor_pos"
-        elif max(abs(data.xpos[bid[b], 2] - ref.xpos[bid[b], 2]) for b in EE) > 0.25: cause = "ee_body_pos"
-        else:
-            gz_r = quat_mat(data.xquat[torso])[2, 2]; gz_m = quat_mat(ref.xquat[torso])[2, 2]
-            if abs(gz_r - gz_m) > 0.8: cause = "anchor_ori"
-        # tracking error: joints, and key bodies relative to the torso in each one's heading frame
-        jerr.append(np.sqrt(np.mean((data.qpos[qadr] - jp[k]) ** 2)))
-        Yr, Ym = yaw_mat(data.xquat[torso]), yaw_mat(ref.xquat[torso])
-        pr = np.array([Yr.T @ (data.xpos[bid[b]] - data.xpos[torso]) for b in TRACK])
-        pm = np.array([Ym.T @ (ref.xpos[bid[b]] - ref.xpos[torso]) for b in TRACK])
-        berr.append(np.mean(np.linalg.norm(pr - pm, axis=1)))
-        if cause and res["success"]:
-            res.update(success=False, t_fail=round((k - k0) / fps, 2), cause=cause)
-            if not a.no_fall_stop:
+    def restart():  # viewer Enter: back onto the first reference frame, fresh policy state
+        mujoco.mj_resetData(model, data)
+        data.qpos[:3], data.qpos[3:7], data.qpos[qadr] = rp[k0], rq[k0], jp[k0]
+        data.qvel[:3] = rlv[k0]
+        data.qvel[3:6] = quat_mat(rq[k0]).T @ rav[k0]
+        data.qvel[vadr] = jv[k0]
+        mujoco.mj_forward(model, data)
+        return Policy(a.checkpoint), np.zeros(29), jp[k0].copy(), np.zeros(29)
+
+    # the viewer keeps dancing after a fall (training terminations are only reported); Enter starts it over
+    keep_going = a.no_fall_stop or viewer is not None
+    while True:
+        res = dict(seed=cfg["seed"], dr=dict(kp=float(dr["kp"].mean()), mass=float(np.mean(m)),
+                                              friction=dr["friction"], delay_ms=dr["delay"] * a.sim_dt * 1000),
+                   success=True, t_fail=None, cause=None)
+        jerr, berr = [], []
+        low_z, max_tilt, max_ee, max_anchor, ee_e, anc_e = np.inf, 0.0, 0.0, 0.0, 0.0, 0.0  # real-fall check: lowest pelvis height above its start floor, worst torso tilt
+        t_wall = time.time()
+        k = k0
+        print(f"[sim2sim] playing {(k1 - k0) / fps:.2f} s of {os.path.basename(a.motion)}")
+        while k < k1:
+            set_ref(k)
+            # ---- observation at frame k
+            R_robot_t, R_ref_t = data.xquat[torso].copy(), ref.xquat[torso].copy()
+            rel = quat_mat(quat_mul(quat_conj(R_robot_t), R_ref_t))
+            ang_vel_b = data.qvel[3:6].copy()
+            q, qd = data.qpos[qadr], data.qvel[vadr]
+            obs = np.concatenate([jp[k], jv[k], rel[:, :2].reshape(-1), ang_vel_b, q - DEFAULT_Q, qd, last])
+            act = pol(obs, k)
+            last = act
+            # ---- action -> PD targets
+            prev_t, prev_qd_t = q_t, qd_t
+            kn = min(k + 1, T - 1)
+            if a.action == "wide":
+                q_t = jp[kn] + np.clip(act * SCALE, -1.0, 1.0)
+                qd_t = jv[kn]
+            else:
+                q_t = DEFAULT_Q + act * SCALE
+                qd_t = np.zeros(29)
+            for s in range(decim):
+                tq, tqd = (prev_t, prev_qd_t) if s < dr["delay"] else (q_t, qd_t)
+                # Kp (q* - q) + Kd qd*  explicitly; -Kd qd implicitly via dof_damping; clip like Isaac's effort limit
+                tau = kp * (tq - data.qpos[qadr]) + kd * tqd
+                tau = np.clip(tau - kd * data.qvel[vadr], -EFFORT, EFFORT) + kd * data.qvel[vadr]
+                data.qfrc_applied[vadr] = tau
+                mujoco.mj_step(model, data)
+            if viewer is not None:  # draw once per 20 ms policy step, on a wall clock (no drift from slow frames)
+                if state["paused"]:
+                    wait_paused()
+                    t_wall = time.time() - (k + 1 - k0) / fps / a.speed
+                viewer.sync()
+                dt = t_wall + (k + 1 - k0) / fps / a.speed - time.time()
+                if dt > 0: time.sleep(dt)
+            k += 1
+            if rec is not None:
+                grab()
+            # ---- training terminations against frame k
+            set_ref(k)
+            cause = None
+            if abs(data.xpos[torso, 2] - ref.xpos[torso, 2]) > 0.25: cause = "anchor_pos"
+            elif max(abs(data.xpos[bid[b], 2] - ref.xpos[bid[b], 2]) for b in EE) > 0.25: cause = "ee_body_pos"
+            else:
+                gz_r = quat_mat(data.xquat[torso])[2, 2]; gz_m = quat_mat(ref.xquat[torso])[2, 2]
+                if abs(gz_r - gz_m) > 0.8: cause = "anchor_ori"
+            low_z = min(low_z, float(data.qpos[2]) - z0)
+            anc_e = abs(data.xpos[torso, 2] - ref.xpos[torso, 2])
+            ee_e = max(abs(data.xpos[bid[b], 2] - ref.xpos[bid[b], 2]) for b in EE)
+            max_ee, max_anchor = max(max_ee, ee_e), max(max_anchor, anc_e)
+            max_tilt = max(max_tilt, float(np.degrees(np.arccos(np.clip(quat_mat(data.xquat[torso])[2, 2], -1, 1)))))
+            # tracking error: joints, and key bodies relative to the torso in each one's heading frame
+            jerr.append(np.sqrt(np.mean((data.qpos[qadr] - jp[k]) ** 2)))
+            Yr, Ym = yaw_mat(data.xquat[torso]), yaw_mat(ref.xquat[torso])
+            pr = np.array([Yr.T @ (data.xpos[bid[b]] - data.xpos[torso]) for b in TRACK])
+            pm = np.array([Ym.T @ (ref.xpos[bid[b]] - ref.xpos[torso]) for b in TRACK])
+            berr.append(np.mean(np.linalg.norm(pr - pm, axis=1)))
+            if cause and res["success"]:
+                res.update(success=False, t_fail=round((k - k0) / fps, 2), cause=cause)
+                if viewer is not None:
+                    print(f"[sim2sim] fell at {res['t_fail']:.2f} s ({cause}), keeps dancing (Enter = start over)")
+                if not keep_going:
+                    break
+            if viewer is not None and (state["restart"] or not viewer.is_running()):
                 break
-        if viewer is not None and not viewer.is_running():
+        if viewer is None or not viewer.is_running() or a.close_at_end:
             break
+        if not state["restart"]:  # clip finished: wait for Enter (or the window closing)
+            print("[sim2sim] done: press Enter in the viewer to dance again, close the window to exit")
+            while not state["restart"] and viewer.is_running():
+                viewer.sync()
+                time.sleep(0.05)
+            if not viewer.is_running():
+                break
+        state["restart"] = False
+        pol, last, q_t, qd_t = restart()
+        prev_t, prev_qd_t = q_t.copy(), qd_t.copy()
+        viewer.sync()
     if rec is not None:
         rec.close()
         print(f"[sim2sim] video: {path} ({(k - k0) / fps:.2f} s at {fps:.0f} fps)")
     if viewer is not None:
-        if not a.close_at_end and viewer.is_running():
-            print("[sim2sim] done: the viewer stays open, close its window to exit")
-            while viewer.is_running():
-                viewer.sync()
-                time.sleep(0.05)
         viewer.close()
     res["joint_rmse"] = float(np.mean(jerr)) if jerr else None
     res["body_err"] = float(np.mean(berr)) if berr else None
     res["duration"] = round((k1 - k0) / fps, 2)
+    res["min_pelvis_z"], res["max_torso_tilt_deg"] = round(low_z, 3), round(max_tilt, 1)
+    res["max_ee_err"], res["max_anchor_err"] = round(float(max_ee), 3), round(float(max_anchor), 3)
+    res["end_ee_err"], res["end_anchor_err"] = round(float(ee_e), 3), round(float(anc_e), 3)
     return res
 
 
@@ -349,6 +436,10 @@ def main():
     p.add_argument("--kp_scale", type=float, default=None, help="fix Kp and Kd scale for every joint")
     p.add_argument("--mass_scale", type=float, default=None, help="fix every link mass scale")
     p.add_argument("--friction", type=float, default=None)
+    p.add_argument("--terrain", choices=["flat", "flatbox", "rough", "stone", "slope"], default="flat",
+                   help="floor tile as in the DRFloor training: rough 0-1 cm, stone 0-2.5 cm, slope 5 %% / 0.5 m top; "
+                        "flatbox = same 10 cm boxes at height 0 (control)")
+    p.add_argument("--terrain_seed", type=int, default=None, help="fixed floor layout (default: one per run seed)")
     p.add_argument("--delay_substeps", type=int, default=None, help="actuation delay in 5 ms sub-steps")
     p.add_argument("--procs", type=int, default=8)
     p.add_argument("--seed", type=int, default=0)
